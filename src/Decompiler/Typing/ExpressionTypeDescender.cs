@@ -631,25 +631,25 @@ namespace Reko.Typing
             {
                 if (offset != 0)
                 {
-                    SetSize(eBase, id, stride);
-                    MemoryAccessCommon(eBase, id, offset, tvField.DataType, platform.PointerType.BitSize);
+                    SetSize(eBase, id, stride, id.DataType.BitSize);
+                    MemoryAccessCommon(eBase, id, offset, tvField.DataType, id.DataType.BitSize);
                 }
             }
             else
             {
-                SetSize(eBase, id, stride);
-                MemoryAccessCommon(eBase, id, offset, tvField.DataType, platform.PointerType.BitSize);
+                SetSize(eBase, id, stride, id.DataType.BitSize);
+                MemoryAccessCommon(eBase, id, offset, tvField.DataType, id.DataType.BitSize);
             }
         }
 
-        public DataType SetSize(Expression eBase, Expression tStruct, int size)
+        public DataType SetSize(Expression eBase, Expression tStruct, int size, int ptrBitSize)
         {
             if (size <= 0)
                 throw new ArgumentOutOfRangeException("size must be positive");
             var s = factory.CreateStructureType(null, size);
             var ptr = eBase != null && eBase != globals
-                ? (DataType) factory.CreateMemberPointer(eBase.TypeVariable, s, platform.FramePointerType.Size)
-                : (DataType) factory.CreatePointer(s, platform.PointerType.BitSize);
+                ? (DataType) factory.CreateMemberPointer(eBase.TypeVariable, s, ptrBitSize / DataType.BitsPerByte)
+                : (DataType) factory.CreatePointer(s, ptrBitSize);
             return MeetDataType(tStruct, ptr);
         }
 

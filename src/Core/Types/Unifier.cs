@@ -196,11 +196,10 @@ namespace Reko.Core.Types
                 return
                     AreCompatible(mpA.BasePointer, mpB.BasePointer, ++depth) && 
 				    AreCompatible(mpA.Pointee, mpB.Pointee, ++depth);
-			PrimitiveType pb = b as PrimitiveType;
-			if (pb != null && pb.BitSize == mpA.BitSize)
+			if (b is PrimitiveType pb)
 			{
-				if (pb == PrimitiveType.Word16 || pb.Domain == Domain.Pointer ||
-                    pb.Domain == Domain.Selector || pb.Domain == Domain.Offset)
+				if ((pb.BitSize == 0 || mpA.BitSize == 0 || pb.BitSize == mpA.BitSize) &&
+                    (pb.Domain & (Domain.Pointer|Domain.Selector|Domain.Offset)) != 0)
 					return true;
 			}
 			return false;
@@ -709,13 +708,11 @@ namespace Reko.Core.Types
 
 		public DataType UnifyMemberPointer(MemberPointer mpA, DataType b)
 		{
-			PrimitiveType pb = b as PrimitiveType;
-			if (pb != null && pb.BitSize == mpA.BitSize)
+			if (b is PrimitiveType pb)
 			{
-                if (pb == PrimitiveType.Word16 || pb.Domain == Domain.Pointer ||
-                    pb.Domain == Domain.Selector || pb.Domain == Domain.Offset)
+                if ((mpA.BitSize == 0 || pb.BitSize == 0 || mpA.BitSize == pb.BitSize) && 
+                    (pb.Domain & (Domain.Pointer|Domain.Selector|Domain.Offset)) != 0)
 				{
-					//$REVIEW: line above should be if (mpA.Size = b.Size .... as in UnifyPointer.
 					return mpA.Clone();
 				}
 			}

@@ -185,6 +185,7 @@ namespace Reko.Core.Types
             : base(DataTypeComparer.Instance)
         {
         }
+
 		public void Add(UnionAlternative a)
 		{
             base[a.DataType] = a;

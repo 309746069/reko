@@ -40,7 +40,7 @@ namespace Reko.Core.Types
 		{
 			this.Pointee = pointee;
 			this.BasePointer = basePtr;
-			this.byteSize = byteSize;
+            this.byteSize = byteSize;
 		}
 
         public override void Accept(IDataTypeVisitor v)

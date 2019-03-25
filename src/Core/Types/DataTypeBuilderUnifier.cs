@@ -1,4 +1,4 @@
-﻿#region License
+#region License
 /* 
  * Copyright (C) 1999-2019 John Källén.
  *
@@ -37,7 +37,9 @@ namespace Reko.Core.Types
 
         public override DataType UnifyTypeVariables(TypeVariable tA, TypeVariable tB)
         {
-            var dt = Unify(tA.Class.DataType, tB.Class.DataType);
+            var dt = Unify(
+                tA.Class.DataType ?? tA.OriginalDataType, 
+                tB.Class.DataType ?? tB.OriginalDataType);
             var eq = store.MergeClasses(tA, tB);
             eq.DataType = dt;
             return eq.Representative;
