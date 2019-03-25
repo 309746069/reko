@@ -29,10 +29,10 @@ void fn0472(word16 r1)
 	if (r3_n != null)
 		r0_n = r3_n->ptr0002;
 	fn0528(r0_n);
-	Eq_n sp_n = <invalid>;
-	fn0528(*sp_n);
+	struct Eq_n * sp_n = (struct Eq_n *) <invalid>;
+	fn0528(sp_n->ptr0000);
 	fn0468(&globals->b05EF);
-	Eq_n sp_n = <invalid>;
+	struct Eq_n * sp_n = (struct Eq_n *) <invalid>;
 	ci16 v21_n = *globals->ptr5426;
 	if (v21_n == 0x00)
 	{
@@ -43,12 +43,12 @@ void fn0472(word16 r1)
 	else
 	{
 		fn04FA(v21_n);
-		sp_n.u0 = <invalid>;
+		sp_n = (struct Eq_n *) <invalid>;
 	}
 	if (r1 == 0x3D || r1 == 0x3F)
 	{
 		fn0468(&globals->b0601);
-		Eq_n r1_n = *((byte) sp_n.u0 + 0x0010);
+		Eq_n r1_n = sp_n->t0010;
 		Eq_n r0_n = 0x0018;
 		while (true)
 		{
@@ -91,7 +91,6 @@ void fn04FA(ci16 r0)
 		wLoc02_n = v10_n;
 	} while (v10_n >= 0x00);
 	byte bLoc02_n = SLICE(v10_n + 0x3A, byte, 0);
-	bLoc02_n = SLICE(v10_n + 0x3A, byte, 0);
 	if (r0_n != 0x01)
 		fn04FA(r0_n - 0x01);
 	Eq_n r0_n = (int16) bLoc02_n;
@@ -150,13 +149,11 @@ void fn054C(Eq_n r0, struct Eq_n * r3)
 	r0_n->w0096 |= v15_n;
 }
 
-// 0608: void fn0608(Stack (ptr16 code) wArg00, Stack byte bArg01, Stack Eq_n wArg02, Stack byte bArg03)
-void fn0608(<anonymous> * wArg00, byte bArg01, Eq_n wArg02, byte bArg03)
+// 0608: void fn0608(Stack (ptr16 code) wArg00, Stack Eq_n wArg02)
+void fn0608(<anonymous> * wArg00, Eq_n wArg02)
 {
 	byte bArg03_n = SLICE(wArg02, byte, 8);
-	bArg03_n = SLICE(wArg02, byte, 8);
 	byte bArg02_n = SLICE(wArg02, byte, 0);
-	bArg02_n = SLICE(wArg02, byte, 0);
 	struct Eq_n * r4_n = globals->ptr5424;
 	r4_n->ptr002A = wArg00;
 	Eq_n wArg00_n = 0x00;
@@ -170,8 +167,10 @@ void fn0608(<anonymous> * wArg00, byte bArg01, Eq_n wArg02, byte bArg03)
 	Eq_n v17_n = __rol(wLoc04, wLoc04);
 	wLoc04 = v17_n;
 	cui16 r2_n = 0x90;
+	Eq_n bArg02_n = SEQ(bArg03_n, bArg02_n);
 	while (true)
 	{
+		bArg02_n.u0 = SLICE(bArg02_n, byte, 0);
 		r1_n = __rol(r1_n, r1_n);
 		if (r1_n < 0x00)
 			break;
@@ -452,8 +451,8 @@ void fn0A64(word16 * r5)
 	globals->ptr5414();
 }
 
-// 0AAE: void fn0AAE(Register (ptr16 Eq_n) r5, Stack word16 wArg00)
-void fn0AAE(struct Eq_n * r5, word16 wArg00)
+// 0AAE: void fn0AAE(Register (ptr16 Eq_n) r5)
+void fn0AAE(struct Eq_n * r5)
 {
 	struct Eq_n * r4_n = r5->ptr0002;
 	cui16 v11_n = r4_n->w0000;
@@ -505,34 +504,32 @@ l105E:
 	goto l107E;
 }
 
-// 0AC4: void fn0AC4(Register word16 r3, Register (ptr16 (ptr16 code)) r4, Stack byte bArg00, Stack byte bArg01, Stack (ptr16 code) wArg02, Stack (ptr16 code) wArg04)
-void fn0AC4(word16 r3, <anonymous> ** r4, byte bArg00, byte bArg01, <anonymous> * wArg02, <anonymous> * wArg04)
+// 0AC4: void fn0AC4(Register word16 r3, Register (ptr16 (ptr16 code)) r4, Stack byte bArg00, Stack (ptr16 code) wArg02, Stack (ptr16 code) wArg04)
+void fn0AC4(word16 r3, <anonymous> ** r4, byte bArg00, <anonymous> * wArg02, <anonymous> * wArg04)
 {
-	cup16 wLoc01_n = SEQ(bArg00, 0x01);
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg2 = <invalid>;
-	fn0AE6(r3, r4, 0x01, wLoc01_n, stackArg2, bArg01, wArg02, wArg04);
+	byte bArg00_n = SLICE(wLoc01, byte, 8);
+	byte bArg01_n = SLICE(wArg00, byte, 8);
+	cup16 wLoc01_n = SEQ(bArg00_n, 0x01);
+	byte bArg00_n = SLICE(wLoc01_n, byte, 8);
+	fn0AE6(r3, r4, 0x01, wLoc01_n, SEQ(bArg01_n, bArg00_n), wArg02, wArg04);
 }
 
-// 0AE2: void fn0AE2(Register word16 r3, Register (ptr16 (ptr16 code)) r4, Stack byte bArg00, Stack byte bArg01, Stack (ptr16 code) wArg02, Stack (ptr16 code) wArg04)
-void fn0AE2(word16 r3, <anonymous> ** r4, byte bArg00, byte bArg01, <anonymous> * wArg02, <anonymous> * wArg04)
+// 0AE2: void fn0AE2(Register word16 r3, Register (ptr16 (ptr16 code)) r4, Stack byte bArg00, Stack (ptr16 code) wArg02, Stack (ptr16 code) wArg04)
+void fn0AE2(word16 r3, <anonymous> ** r4, byte bArg00, <anonymous> * wArg02, <anonymous> * wArg04)
 {
-	cup16 wLoc01_n = SEQ(bArg00, 0x02);
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg2 = <invalid>;
-	fn0AE6(r3, r4, 0x02, wLoc01_n, stackArg2, bArg01, wArg02, wArg04);
+	byte bArg00_n = SLICE(wLoc01, byte, 8);
+	byte bArg01_n = SLICE(wArg00, byte, 8);
+	cup16 wLoc01_n = SEQ(bArg00_n, 0x02);
+	byte bArg00_n = SLICE(wLoc01_n, byte, 8);
+	fn0AE6(r3, r4, 0x02, wLoc01_n, SEQ(bArg01_n, bArg00_n), wArg02, wArg04);
 }
 
-// 0AE6: void fn0AE6(Register word16 r3, Register (ptr16 (ptr16 code)) r4, Stack Eq_n wArg00, Stack cup16 wArg01, Stack Eq_n wArg02, Stack byte bArg03, Stack (ptr16 code) wArg04, Stack (ptr16 code) wArg06)
-void fn0AE6(word16 r3, <anonymous> ** r4, Eq_n wArg00, cup16 wArg01, Eq_n wArg02, byte bArg03, <anonymous> * wArg04, <anonymous> * wArg06)
+// 0AE6: void fn0AE6(Register word16 r3, Register (ptr16 (ptr16 code)) r4, Stack byte bArg00, Stack cup16 wArg01, Stack Eq_n bArg02, Stack (ptr16 code) wArg04, Stack (ptr16 code) wArg06)
+void fn0AE6(word16 r3, <anonymous> ** r4, byte bArg00, cup16 wArg01, Eq_n bArg02, <anonymous> * wArg04, <anonymous> * wArg06)
 {
 	byte bArg02_n = SLICE(wArg01, byte, 8);
 	byte bArg01_n = SLICE(wArg01, byte, 0);
-	byte bArg02_n = SLICE(wArg01, byte, 8);
-	byte bArg01_n = SLICE(wArg01, byte, 0);
-	byte bArg01_n = SLICE(wArg01, byte, 0);
+	bArg03_n = SLICE(bArg03_n, byte, 8);
 	struct Eq_n * r3_n = globals->ptr5424;
 	wLoc04_n = (uint16) (uint8) bArg00;
 	uint16 wLoc04_n = (uint16) (uint8) bArg00;
@@ -543,23 +540,17 @@ void fn0AE6(word16 r3, <anonymous> ** r4, Eq_n wArg00, cup16 wArg01, Eq_n wArg02
 	}
 	uint16 v15_n = wLoc04_n + (wArg01 - SEQ(bArg01_n, bArg00) < 0x00);
 	r3_n->w00A4 = v15_n;
-	byte bLoc03_n = SLICE(v15_n, byte, 8);
-	byte bLoc03_n = SLICE(v15_n, byte, 8);
+	byte bArg03_n = SLICE(bArg03_n, byte, 8);
 	byte bLoc03_n = SLICE(v15_n, byte, 8);
 	word16 wArg00_n = SEQ(bArg01_n, bArg00);
-	word16 wArg02_n = SEQ(bArg03, bArg02_n);
+	word16 wArg02_n = SEQ(bArg03_n, bArg02_n);
 	word16 wArg00_n = SEQ(bArg01_n, bArg00);
-	<anonymous> * wArg02_n = SEQ(bArg03, bArg02_n);
+	<anonymous> * wArg02_n = SEQ(bArg03_n, bArg02_n);
 	byte bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);
-	byte bArg02_n = SLICE(wArg02_n, byte, 0);
 	byte bArg03_n = SLICE(wArg02_n, byte, 8);
 	byte bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);
-	byte bArg00_n = SLICE(wArg00_n, byte, 0);
-	byte bArg01_n = SLICE(wArg00_n, byte, 8);
-	byte bArg02_n = SLICE(wArg02_n, byte, 0);
-	byte bArg03_n = SLICE(wArg02_n, byte, 8);
 	byte bArg02_n = SLICE(wArg02_n, byte, 0);
 	byte bArg03_n = SLICE(wArg02_n, byte, 8);
 	if (r3_n->b0074 == 0x00)
@@ -577,34 +568,32 @@ void fn0AE6(word16 r3, <anonymous> ** r4, Eq_n wArg00, cup16 wArg01, Eq_n wArg02
 	}
 }
 
-// 0B3E: void fn0B3E(Register uint16 r0, Register (ptr16 word16) r3, Stack byte bArg00, Stack byte bArg01, Stack (ptr16 code) wArg02, Stack (ptr16 word16) ptrArg04)
-void fn0B3E(uint16 r0, word16 * r3, byte bArg00, byte bArg01, <anonymous> * wArg02, word16 * ptrArg04)
+// 0B3E: void fn0B3E(Register uint16 r0, Register (ptr16 word16) r3, Stack byte bArg00, Stack (ptr16 code) wArg02, Stack (ptr16 word16) ptrArg04)
+void fn0B3E(uint16 r0, word16 * r3, byte bArg00, <anonymous> * wArg02, word16 * ptrArg04)
 {
-	cup16 wLoc01_n = SEQ(bArg00, 0x02);
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg2 = <invalid>;
-	fn0B60(r0, r3, 0x02, wLoc01_n, stackArg2, bArg01, wArg02, ptrArg04);
+	byte bArg00_n = SLICE(wLoc01, byte, 8);
+	byte bArg01_n = SLICE(wArg00, byte, 8);
+	cup16 wLoc01_n = SEQ(bArg00_n, 0x02);
+	byte bArg00_n = SLICE(wLoc01_n, byte, 8);
+	fn0B60(r0, r3, 0x02, wLoc01_n, SEQ(bArg01_n, bArg00_n), wArg02, ptrArg04);
 }
 
-// 0B44: void fn0B44(Register uint16 r0, Register (ptr16 word16) r3, Stack byte bArg00, Stack byte bArg01, Stack (ptr16 code) wArg02, Stack (ptr16 word16) ptrArg04)
-void fn0B44(uint16 r0, word16 * r3, byte bArg00, byte bArg01, <anonymous> * wArg02, word16 * ptrArg04)
+// 0B44: void fn0B44(Register uint16 r0, Register (ptr16 word16) r3, Stack byte bArg00, Stack (ptr16 code) wArg02, Stack (ptr16 word16) ptrArg04)
+void fn0B44(uint16 r0, word16 * r3, byte bArg00, <anonymous> * wArg02, word16 * ptrArg04)
 {
-	cup16 wLoc01_n = SEQ(bArg00, 0x01);
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg2 = <invalid>;
-	fn0B60(r0, r3, 0x01, wLoc01_n, stackArg2, bArg01, wArg02, ptrArg04);
+	byte bArg00_n = SLICE(wLoc01, byte, 8);
+	byte bArg01_n = SLICE(wArg00, byte, 8);
+	cup16 wLoc01_n = SEQ(bArg00_n, 0x01);
+	byte bArg00_n = SLICE(wLoc01_n, byte, 8);
+	fn0B60(r0, r3, 0x01, wLoc01_n, SEQ(bArg01_n, bArg00_n), wArg02, ptrArg04);
 }
 
-// 0B60: void fn0B60(Register uint16 r0, Register (ptr16 word16) r3, Stack Eq_n wArg00, Stack cup16 wArg01, Stack Eq_n wArg02, Stack byte bArg03, Stack (ptr16 code) wArg04, Stack (ptr16 word16) ptrArg06)
-void fn0B60(uint16 r0, word16 * r3, Eq_n wArg00, cup16 wArg01, Eq_n wArg02, byte bArg03, <anonymous> * wArg04, word16 * ptrArg06)
+// 0B60: void fn0B60(Register uint16 r0, Register (ptr16 word16) r3, Stack byte bArg00, Stack cup16 wArg01, Stack Eq_n bArg02, Stack (ptr16 code) wArg04, Stack (ptr16 word16) ptrArg06)
+void fn0B60(uint16 r0, word16 * r3, byte bArg00, cup16 wArg01, Eq_n bArg02, <anonymous> * wArg04, word16 * ptrArg06)
 {
 	byte bArg02_n = SLICE(wArg01, byte, 8);
 	byte bArg01_n = SLICE(wArg01, byte, 0);
-	byte bArg02_n = SLICE(wArg01, byte, 8);
-	byte bArg01_n = SLICE(wArg01, byte, 0);
-	byte bArg01_n = SLICE(wArg01, byte, 0);
+	bArg03_n = SLICE(bArg03_n, byte, 8);
 	word16 * wLoc02_n = r3;
 	struct Eq_n * r3_n = globals->ptr5424;
 	wLoc04_n = (uint16) (uint8) bArg00;
@@ -619,19 +608,18 @@ void fn0B60(uint16 r0, word16 * r3, Eq_n wArg00, cup16 wArg01, Eq_n wArg02, byte
 	<anonymous> ** sp_n;
 	uint16 v22_n = wLoc04_n + (wArg01 - SEQ(bArg01_n, bArg00) < 0x00);
 	r3_n->w00A4 = v22_n;
+	byte bArg03_n = SLICE(bArg03_n, byte, 8);
 	uint16 wLoc04_n = v22_n;
 	word16 wArg00_n = SEQ(bArg01_n, bArg00);
-	word16 wArg02_n = SEQ(bArg03, bArg02_n);
+	word16 wArg02_n = SEQ(bArg03_n, bArg02_n);
 	word16 wArg00_n = SEQ(bArg01_n, bArg00);
-	<anonymous> * wArg02_n = SEQ(bArg03, bArg02_n);
+	<anonymous> * wArg02_n = SEQ(bArg03_n, bArg02_n);
 	bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);
-	byte bArg02_n = SLICE(wArg02_n, byte, 0);
-	bArg03_n = SLICE(wArg02_n, byte, 8);
+	byte bArg03_n = SLICE(wArg02_n, byte, 8);
 	byte bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);
 	byte bArg02_n = SLICE(wArg02_n, byte, 0);
-	byte bArg03_n = SLICE(wArg02_n, byte, 8);
 	if (r3_n->b0074 != 0x00)
 	{
 		r3_n->w0052 = wArg00_n;
@@ -641,6 +629,9 @@ void fn0B60(uint16 r0, word16 * r3, Eq_n wArg00, cup16 wArg01, Eq_n wArg02, byte
 		sp_n = fp + 0x06;
 		wArg01_n = SEQ(bArg02_n, bArg01_n);
 l0BC6:
+		bArg03_n = SLICE(wArg02_n, byte, 8);
+		byte bArg02_n = SLICE(wArg01_n, byte, 8);
+		byte bLoc03_n = SLICE(wLoc04_n, byte, 8);
 		word16 r0_n;
 		(*sp_n)();
 		ptr16 sp_n = (char *) sp_n + 0x02;
@@ -651,8 +642,6 @@ l0BC6:
 		uint16 v36_n = *(sp_n - 0x04);
 		word16 v38_n = r3_n->w005A - 0x01;
 		r3_n->w005A = v38_n;
-		byte bArg02_n = SLICE(wArg01_n, byte, 8);
-		byte bLoc03_n = SLICE(wLoc04_n, byte, 8);
 		sp_n = sp_n - 0x02;
 		r0 = v36_n;
 		if (v38_n == 0x00)
@@ -676,6 +665,7 @@ l0BC6:
 	}
 	sp_n = sp_n + 0x01;
 	r3_n = *sp_n;
+	wArg02_n = SEQ(SLICE(bArg03_n, byte, 8), SLICE(wArg01_n, byte, 8));
 	goto l0BC6;
 }
 
@@ -731,14 +721,14 @@ struct Eq_n * fn0D3E(struct Eq_n * r0, Eq_n r2)
 	return (char *) &r0->t0002 + 0x02;
 }
 
-// 0D7A: void fn0D7A(Register word16 r0, Register word16 r1, Register word16 r2, Register word16 r3, Register word16 r4, Register word16 r5, Stack word16 wArg00, Stack word16 wArg02, Stack word16 wArg04)
-void fn0D7A(word16 r0, word16 r1, word16 r2, word16 r3, word16 r4, word16 r5, word16 wArg00, word16 wArg02, word16 wArg04)
+// 0D7A: void fn0D7A(Register word16 r0, Register word16 r1, Register word16 r2, Register word16 r3, Register word16 r4, Register word16 r5)
+void fn0D7A(word16 r0, word16 r1, word16 r2, word16 r3, word16 r4, word16 r5)
 {
 	globals->t0D7E();
 }
 
-// 0DC8: void fn0DC8(Register word16 r0, Register word16 r1, Register word16 r2, Register word16 r3, Register word16 r4, Register word16 r5, Stack word16 wArg00, Stack word16 wArg02, Stack word16 wArg04)
-void fn0DC8(word16 r0, word16 r1, word16 r2, word16 r3, word16 r4, word16 r5, word16 wArg00, word16 wArg02, word16 wArg04)
+// 0DC8: void fn0DC8(Register word16 r0, Register word16 r1, Register word16 r2, Register word16 r3, Register word16 r4, Register word16 r5)
+void fn0DC8(word16 r0, word16 r1, word16 r2, word16 r3, word16 r4, word16 r5)
 {
 	globals->t0DCC();
 }
@@ -804,9 +794,10 @@ void fn0EA8(struct Eq_n * r3, word16 wArg00)
 	}
 }
 
-// 0EF8: void fn0EF8(Register (ptr16 Eq_n) r4, Register (ptr16 word16) r5, Stack Eq_n wArg00, Stack Eq_n bArg01)
-void fn0EF8(struct Eq_n * r4, word16 * r5, Eq_n wArg00, Eq_n bArg01)
+// 0EF8: void fn0EF8(Register (ptr16 Eq_n) r4, Register (ptr16 word16) r5, Stack Eq_n bArg00)
+void fn0EF8(struct Eq_n * r4, word16 * r5, Eq_n bArg00)
 {
+	byte bArg01_n = SLICE(wArg00, byte, 8);
 }
 
 // 0F48: void fn0F48(Register (ptr16 Eq_n) r5)
@@ -998,7 +989,7 @@ l1326:
 l132A:
 			if (*r4_n <= 0x00)
 			{
-				if (r3->ptr001C - r1_n < 0x00)
+				if (Mem101[r3 + 0x1C:word16] - r1_n <u 0x00)
 				{
 					Eq_n r5_n = (int16) *r3->ptr001C;
 					*r3->ptr001C = (union Eq_n *) 0x80;
@@ -1075,28 +1066,10 @@ Eq_n fn1370(Eq_n r0, struct Eq_n * r3, Eq_n r4, union Eq_n & r2Out, struct Eq_n 
 	else
 	{
 		*((word16) r4 + 0x0E) = 0x00;
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		Eq_n stackArg0 = <invalid>;
-		Eq_n stackArg2 = <invalid>;
-		Eq_n stackArg4 = <invalid>;
-		Eq_n stackArg6 = <invalid>;
-		Eq_n stackArg8 = <invalid>;
-		Eq_n stackArg10 = <invalid>;
 		union Eq_n * r2_n;
 		struct Eq_n * r3_n;
 		Eq_n r4_n;
-		Eq_n r0_n = fn1836(r0, r3, r4, stackArg0, stackArg2, stackArg4, stackArg6, stackArg8, stackArg10, out r2_n, out r3_n, out r4_n);
+		Eq_n r0_n = fn1836(r0, r3, r4, out r2_n, out r3_n, out r4_n);
 		r2Out = r2_n;
 		r3Out = r3_n;
 		r4Out = r4_n;
@@ -1219,50 +1192,10 @@ void fn14A8(Eq_n r2, uint16 r5)
 							r3_n->t0072.u0 = 0x151E;
 						r3_n->ptr0064 = fp - 0x09;
 						while (true)
-						{
-							// Failed to bind call argument.
-							// Please report this issue at https://github.com/uxmal/reko
-							// Failed to bind call argument.
-							// Please report this issue at https://github.com/uxmal/reko
-							// Failed to bind call argument.
-							// Please report this issue at https://github.com/uxmal/reko
-							// Failed to bind call argument.
-							// Please report this issue at https://github.com/uxmal/reko
-							// Failed to bind call argument.
-							// Please report this issue at https://github.com/uxmal/reko
-							// Failed to bind call argument.
-							// Please report this issue at https://github.com/uxmal/reko
-							Eq_n stackArg0 = <invalid>;
-							Eq_n stackArg2 = <invalid>;
-							Eq_n stackArg4 = <invalid>;
-							Eq_n stackArg6 = <invalid>;
-							Eq_n stackArg8 = <invalid>;
-							Eq_n stackArg10 = <invalid>;
-							r0_n = fn1836(r0_n, r3_n, r4_n, stackArg0, stackArg2, stackArg4, stackArg6, stackArg8, stackArg10, out r2_n, out r3_n, out r4_n);
-						}
+							r0_n = fn1836(r0_n, r3_n, r4_n, out r2_n, out r3_n, out r4_n);
 					}
 					while (*((word16) r4_n + 0x001A) - *((word16) r4_n + 22) <= 0x00)
-					{
-						// Failed to bind call argument.
-						// Please report this issue at https://github.com/uxmal/reko
-						// Failed to bind call argument.
-						// Please report this issue at https://github.com/uxmal/reko
-						// Failed to bind call argument.
-						// Please report this issue at https://github.com/uxmal/reko
-						// Failed to bind call argument.
-						// Please report this issue at https://github.com/uxmal/reko
-						// Failed to bind call argument.
-						// Please report this issue at https://github.com/uxmal/reko
-						// Failed to bind call argument.
-						// Please report this issue at https://github.com/uxmal/reko
-						Eq_n stackArg0 = <invalid>;
-						Eq_n stackArg2 = <invalid>;
-						Eq_n stackArg4 = <invalid>;
-						Eq_n stackArg6 = <invalid>;
-						Eq_n stackArg8 = <invalid>;
-						Eq_n stackArg10 = <invalid>;
-						r0_n = fn1836(r0_n, r3_n, r4_n, stackArg0, stackArg2, stackArg4, stackArg6, stackArg8, stackArg10, out r2_n, out r3_n, out r4_n);
-					}
+						r0_n = fn1836(r0_n, r3_n, r4_n, out r2_n, out r3_n, out r4_n);
 				}
 			}
 			fn13FE();
@@ -1357,51 +1290,15 @@ void fn16DA(Eq_n r0, cui16 r2, struct Eq_n * r3, Eq_n r4)
 		*r4 = v13_n;
 		if (v13_n != 0x00)
 		{
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			Eq_n stackArg0 = <invalid>;
-			Eq_n stackArg2 = <invalid>;
-			Eq_n stackArg4 = <invalid>;
-			Eq_n stackArg6 = <invalid>;
-			Eq_n stackArg8 = <invalid>;
-			Eq_n stackArg10 = <invalid>;
-			r0 = fn1836(r0, r3, r4, stackArg0, stackArg2, stackArg4, stackArg6, stackArg8, stackArg10, out r2_n, out r3, out r4);
+			r0 = fn1836(r0, r3, r4, out r2_n, out r3, out r4);
 			*((word16) r4 + 0x0018) = 0x00;
 			*r4 &= ~0x02;
 		}
 		*((word16) r4 + 22) = r3->w005E;
 		if (*r4 > 0x00 || (r3->t005C > 0x0200 || *((word16) r4 + 0x0E) != 0x00))
 		{
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			// Failed to bind call argument.
-			// Please report this issue at https://github.com/uxmal/reko
-			Eq_n stackArg0 = <invalid>;
-			Eq_n stackArg2 = <invalid>;
-			Eq_n stackArg4 = <invalid>;
-			Eq_n stackArg6 = <invalid>;
-			Eq_n stackArg8 = <invalid>;
-			Eq_n stackArg10 = <invalid>;
 			struct Eq_n * r4_n;
-			r3 = fn18BE(r0, r3, r4, stackArg0, stackArg2, stackArg4, stackArg6, stackArg8, stackArg10, out r4_n);
+			r3 = fn18BE(r0, r3, r4, out r4_n);
 			--r4_n->w0016;
 		}
 	}
@@ -1452,8 +1349,8 @@ void fn172C(struct Eq_n * r0, ui16 r2)
 	}
 }
 
-// 1836: Register Eq_n fn1836(Register Eq_n r0, Register (ptr16 Eq_n) r3, Register Eq_n r4, Stack Eq_n wArg00, Stack Eq_n wArg02, Stack Eq_n wArg04, Stack Eq_n wArg06, Stack Eq_n wArg08, Stack Eq_n wArg0A, Register out ptr16 r2Out, Register out (ptr16 Eq_n) r3Out, Register out (ptr16 Eq_n) r4Out)
-Eq_n fn1836(Eq_n r0, struct Eq_n * r3, Eq_n r4, Eq_n wArg00, Eq_n wArg02, Eq_n wArg04, Eq_n wArg06, Eq_n wArg08, Eq_n wArg0A, ptr16 & r2Out, struct Eq_n & r3Out, struct Eq_n & r4Out)
+// 1836: Register Eq_n fn1836(Register Eq_n r0, Register (ptr16 Eq_n) r3, Register Eq_n r4, Register out ptr16 r2Out, Register out (ptr16 Eq_n) r3Out, Register out (ptr16 Eq_n) r4Out)
+Eq_n fn1836(Eq_n r0, struct Eq_n * r3, Eq_n r4, ptr16 & r2Out, struct Eq_n & r3Out, struct Eq_n & r4Out)
 {
 	*((word16) r4 + 0x0018) = *((word16) r4 + 22);
 	*((word16) r4 + 0x0018) = (word16) *((word16) r4 + 0x0018) + 0x01;
@@ -1479,8 +1376,8 @@ Eq_n fn1836(Eq_n r0, struct Eq_n * r3, Eq_n r4, Eq_n wArg00, Eq_n wArg02, Eq_n w
 	return r0_n;
 }
 
-// 18BE: Register (ptr16 Eq_n) fn18BE(Register Eq_n r0, Register (ptr16 Eq_n) r3, Register Eq_n r4, Stack Eq_n wArg00, Stack Eq_n wArg02, Stack Eq_n wArg04, Stack Eq_n wArg06, Stack Eq_n wArg08, Stack Eq_n wArg0A, Register out (ptr16 Eq_n) r4Out)
-struct Eq_n * fn18BE(Eq_n r0, struct Eq_n * r3, Eq_n r4, Eq_n wArg00, Eq_n wArg02, Eq_n wArg04, Eq_n wArg06, Eq_n wArg08, Eq_n wArg0A, struct Eq_n & r4Out)
+// 18BE: Register (ptr16 Eq_n) fn18BE(Register Eq_n r0, Register (ptr16 Eq_n) r3, Register Eq_n r4, Register out (ptr16 Eq_n) r4Out)
+struct Eq_n * fn18BE(Eq_n r0, struct Eq_n * r3, Eq_n r4, struct Eq_n & r4Out)
 {
 	if (*((word16) r4 + 0x0018) == 0x00 || *((word16) r4 + 0x0018) - *((word16) r4 + 22) < 0x00)
 	{
@@ -1661,8 +1558,8 @@ void fn1CFA()
 {
 }
 
-// 1CFC: void fn1CFC(Stack word16 wArg00, Stack word16 wArg02, Stack word16 wArg04, Stack word16 wArg06, Stack word16 wArg08, Stack word16 wArg0A)
-void fn1CFC(word16 wArg00, word16 wArg02, word16 wArg04, word16 wArg06, word16 wArg08, word16 wArg0A)
+// 1CFC: void fn1CFC(Stack word16 wArg02)
+void fn1CFC(word16 wArg02)
 {
 }
 
@@ -1714,25 +1611,7 @@ Eq_n fn1D30(Eq_n r0, struct Eq_n * r3, struct Eq_n & r3Out, union Eq_n & r4Out)
 			*r2_n |= 0x8000;
 		}
 	}
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg2 = <invalid>;
-	Eq_n stackArg4 = <invalid>;
-	Eq_n stackArg6 = <invalid>;
-	Eq_n stackArg8 = <invalid>;
-	Eq_n stackArg10 = <invalid>;
-	r0 = fn1836(r0, r3, r0, stackArg0, stackArg2, stackArg4, stackArg6, stackArg8, stackArg10, out r2_n, out r3, out r4_n);
+	r0 = fn1836(r0, r3, r0, out r2_n, out r3, out r4_n);
 l1D84:
 	r3Out = r3;
 	r4Out = r4_n;
@@ -1854,220 +1733,112 @@ l0372:
 	EXIT(&globals->b0397);
 }
 
-// 243A: void fn243A(Register (ptr16 word16) r5)
-void fn243A(word16 * r5)
+// 243A: void fn243A(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn243A(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t243E, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t243E, r5, r4);
 }
 
-// 2B90: void fn2B90(Register (ptr16 word16) r5)
-void fn2B90(word16 * r5)
+// 2B90: void fn2B90(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn2B90(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t2B94, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t2B94, r5, r4);
 }
 
-// 2E20: void fn2E20(Register (ptr16 word16) r5)
-void fn2E20(word16 * r5)
+// 2E20: void fn2E20(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn2E20(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t2E24, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t2E24, r5, r4);
 }
 
-// 2EC4: void fn2EC4(Register (ptr16 word16) r5)
-void fn2EC4(word16 * r5)
+// 2EC4: void fn2EC4(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn2EC4(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t2EC8, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t2EC8, r5, r4);
 }
 
-// 3220: void fn3220(Register (ptr16 word16) r5)
-void fn3220(word16 * r5)
+// 3220: void fn3220(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn3220(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t3224, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t3224, r5, r4);
 }
 
-// 34AC: void fn34AC(Register (ptr16 word16) r5)
-void fn34AC(word16 * r5)
+// 34AC: void fn34AC(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn34AC(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t34B0, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t34B0, r5, r4);
 }
 
-// 395C: void fn395C(Register (ptr16 word16) r5)
-void fn395C(word16 * r5)
+// 395C: void fn395C(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn395C(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t3960, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t3960, r5, r4);
 }
 
-// 3B3C: void fn3B3C(Register (ptr16 word16) r5)
-void fn3B3C(word16 * r5)
+// 3B3C: void fn3B3C(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn3B3C(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t3B40, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t3B40, r5, r4);
 }
 
-// 3E12: void fn3E12(Register (ptr16 word16) r5)
-void fn3E12(word16 * r5)
+// 3E12: void fn3E12(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn3E12(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t3E16, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t3E16, r5, r4);
 }
 
-// 3F42: void fn3F42(Register (ptr16 word16) r5)
-void fn3F42(word16 * r5)
+// 3F42: void fn3F42(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn3F42(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t3F46, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t3F46, r5, r4);
 }
 
-// 4030: void fn4030(Register (ptr16 word16) r5)
-void fn4030(word16 * r5)
+// 4030: void fn4030(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn4030(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t4034, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t4034, r5, r4);
 }
 
-// 4072: void fn4072(Register (ptr16 word16) r5)
-void fn4072(word16 * r5)
+// 4072: void fn4072(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn4072(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t4076, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t4076, r5, r4);
 }
 
-// 413C: void fn413C(Register (ptr16 word16) r5)
-void fn413C(word16 * r5)
+// 413C: void fn413C(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn413C(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t4140, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t4140, r5, r4);
 }
 
-// 4180: void fn4180(Register (ptr16 word16) r5)
-void fn4180(word16 * r5)
+// 4180: void fn4180(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn4180(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t4184, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t4184, r5, r4);
 }
 
-// 4230: void fn4230(Register (ptr16 word16) r5)
-void fn4230(word16 * r5)
+// 4230: void fn4230(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn4230(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t4234, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t4234, r5, r4);
 }
 
-// 4534: void fn4534(Register (ptr16 word16) r5)
-void fn4534(word16 * r5)
+// 4534: void fn4534(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn4534(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t4538, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t4538, r5, r4);
 }
 
-// 457C: void fn457C(Register (ptr16 word16) r5)
-void fn457C(word16 * r5)
+// 457C: void fn457C(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn457C(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t4580, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t4580, r5, r4);
 }
 
-// 45C8: void fn45C8(Register (ptr16 word16) r5)
-void fn45C8(word16 * r5)
+// 45C8: void fn45C8(Register Eq_n r4, Register (ptr16 word16) r5)
+void fn45C8(Eq_n r4, word16 * r5)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	Eq_n stackArg1 = <invalid>;
-	fn0EF8(&globals->t45CC, r5, stackArg0, stackArg1);
+	fn0EF8(&globals->t45CC, r5, r4);
 }
 
 // 45F6: void fn45F6(Register (ptr16 ci16) r0, Register Eq_n r2, Register (ptr16 Eq_n) r3)

@@ -8,11 +8,11 @@
 void fn00000000(byte TABLAT)
 {
 	Stack[0x01].ptr0000 = 0x0148;
-	fn00000E(TABLAT, 0x00, 0x00);
+	fn00000E(TABLAT, null, 0x00);
 }
 
-// 00000E: void fn00000E(Register byte TABLAT, Register Eq_n FSR0, Register word24 TBLPTR)
-void fn00000E(byte TABLAT, Eq_n FSR0, word24 TBLPTR)
+// 00000E: void fn00000E(Register byte TABLAT, Register (ptr16 byte) FSR0, Register word24 TBLPTR)
+void fn00000E(byte TABLAT, byte * FSR0, word24 TBLPTR)
 {
 	__tblrd(TBLPTR, 0x01);
 	0x00->b00C5 = TABLAT;
@@ -92,18 +92,18 @@ void fn0000D0(byte LATB, byte FSR2L, ptr16 FSR2, byte * FSR1)
 	}
 }
 
-// 000128: void fn000128(Register cu8 WREG, Register cu8 FSR0L, Register cu8 FSR0H, Register cu8 PRODL, Register Eq_n FSR0)
-void fn000128(cu8 WREG, cu8 FSR0L, cu8 FSR0H, cu8 PRODL, Eq_n FSR0)
+// 000128: void fn000128(Register cu8 WREG, Register cu8 FSR0L, Register cu8 FSR0H, Register cu8 PRODL, Register (ptr16 byte) FSR0)
+void fn000128(cu8 WREG, cu8 FSR0L, cu8 FSR0H, cu8 PRODL, byte * FSR0)
 {
 	while (FSR0H < WREG)
 	{
 		*FSR0 = 0x00;
-		FSR0 = (word32) FSR0 + 0x01;
+		++FSR0;
 	}
 	while (FSR0L < PRODL)
 	{
 		*FSR0 = 0x00;
-		FSR0 = (word32) FSR0 + 0x01;
+		++FSR0;
 	}
 }
 

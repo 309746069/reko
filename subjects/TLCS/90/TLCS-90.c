@@ -4,8 +4,8 @@
 
 #include "TLCS-90.h"
 
-// 0000: void fn0000(Register byte a, Stack Eq_n wArg00)
-void fn0000(byte a, Eq_n wArg00)
+// 0000: void fn0000(Register byte a)
+void fn0000(byte a)
 {
 	null = (byte *) a;
 }
@@ -15,8 +15,8 @@ void fn02C2()
 {
 }
 
-// 02F4: Register word16 fn02F4(Register word16 af, Register cu8 c, Register byte b, Register Eq_n de, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n bcOut, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
-word16 fn02F4(word16 af, cu8 c, byte b, Eq_n de, byte h, struct Eq_n * ix, Eq_n wArg24, union Eq_n & bcOut, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
+// 02F4: Register word16 fn02F4(Register word16 af, Register cu8 c, Register byte b, Register (ptr16 byte) de, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n bcOut, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
+word16 fn02F4(word16 af, cu8 c, byte b, byte * de, byte h, struct Eq_n * ix, Eq_n wArg24, union Eq_n & bcOut, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
 {
 	word16 hl_n = DPB(hl, h, 8);
 	word16 bc_n = DPB(DPB(bc, c, 0), b, 8);
@@ -32,7 +32,7 @@ word16 fn02F4(word16 af, cu8 c, byte b, Eq_n de, byte h, struct Eq_n * ix, Eq_n 
 	ix->tFFFFFFF7 = a_n;
 	cu8 a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFF8 + a_n);
 	ix->bFFFFFFF8 = a_n;
-	ix->bFFFFFFF9 = (bool) (a_n < 0x00) + (ix->bFFFFFFF9 + a_n);
+	ix->bFFFFFFF9 = (byte) ((bool) (a_n < 0x00) + (ix->bFFFFFFF9 + a_n));
 	uint8 v26_n = ix->bFFFFFFF6;
 	Eq_n v27_n = ix->tFFFFFFF7;
 	uint8 c_n = v26_n;
@@ -62,8 +62,8 @@ word16 fn02F4(word16 af, cu8 c, byte b, Eq_n de, byte h, struct Eq_n * ix, Eq_n 
 	return af_n;
 }
 
-// 034E: Register word16 fn034E(Register word16 af, Register word16 bc, Register Eq_n de, Register ui16 hl, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n bcOut, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
-word16 fn034E(word16 af, word16 bc, Eq_n de, ui16 hl, struct Eq_n * ix, Eq_n wArg24, union Eq_n & bcOut, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
+// 034E: Register word16 fn034E(Register word16 af, Register word16 bc, Register (ptr16 byte) de, Register ui16 hl, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n bcOut, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
+word16 fn034E(word16 af, word16 bc, byte * de, ui16 hl, struct Eq_n * ix, Eq_n wArg24, union Eq_n & bcOut, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
 {
 	word16 af_n = DPB(af, a, 8);
 	ix->bFFFFFFFA = a;
@@ -110,8 +110,8 @@ word16 fn0350(cu8 b, cu8 l, byte h, struct Eq_n * ix, union Eq_n & bcOut, union 
 	return af_n;
 }
 
-// 039D: void fn039D(Register word16 af, Register Eq_n de, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24)
-void fn039D(word16 af, Eq_n de, byte h, struct Eq_n * ix, Eq_n wArg24)
+// 039D: void fn039D(Register word16 af, Register (ptr16 byte) de, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24)
+void fn039D(word16 af, byte * de, byte h, struct Eq_n * ix, Eq_n wArg24)
 {
 	word16 hl_n = DPB(hl, h, 8);
 	ix->bFFFFFFFD = a ^ h;
@@ -126,8 +126,8 @@ void fn03AA()
 {
 }
 
-// 03B2: Register word16 fn03B2(Register word16 af, Register word16 bc, Register Eq_n de, Register ui16 hl, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n bcOut, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
-word16 fn03B2(word16 af, word16 bc, Eq_n de, ui16 hl, struct Eq_n * ix, Eq_n wArg24, union Eq_n & bcOut, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
+// 03B2: Register word16 fn03B2(Register word16 af, Register word16 bc, Register (ptr16 byte) de, Register ui16 hl, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n bcOut, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
+word16 fn03B2(word16 af, word16 bc, byte * de, ui16 hl, struct Eq_n * ix, Eq_n wArg24, union Eq_n & bcOut, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
 {
 	uint8 h_n = SLICE(hl, byte, 8);
 	Eq_n l_n = (byte) hl;
@@ -136,8 +136,8 @@ word16 fn03B2(word16 af, word16 bc, Eq_n de, ui16 hl, struct Eq_n * ix, Eq_n wAr
 	byte a_n = SLICE(af, byte, 8);
 }
 
-// 03CD: void fn03CD(Register byte a, Register byte c, Register byte b, Register Eq_n de, Register byte l, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24)
-void fn03CD(byte a, byte c, byte b, Eq_n de, byte l, struct Eq_n * ix, Eq_n wArg24)
+// 03CD: void fn03CD(Register byte a, Register byte c, Register byte b, Register (ptr16 byte) de, Register byte l, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24)
+void fn03CD(byte a, byte c, byte b, byte * de, byte l, struct Eq_n * ix, Eq_n wArg24)
 {
 	ui8 a_n = b ^ ix->bFFFFFFFB;
 	ui8 a_n = l ^ ix->bFFFFFFFC;
@@ -148,7 +148,7 @@ void fn03CD(byte a, byte c, byte b, Eq_n de, byte l, struct Eq_n * ix, Eq_n wArg
 	ix->bFFFFFFF3 = a_n;
 	cu8 a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFF4 + a_n);
 	ix->bFFFFFFF4 = a_n;
-	ix->bFFFFFFF5 = (bool) (a_n < 0x00) + (ix->bFFFFFFF5 + a_n);
+	ix->bFFFFFFF5 = (byte) ((bool) (a_n < 0x00) + (ix->bFFFFFFF5 + a_n));
 	cu8 v24_n = ix->bFFFFFFEA;
 	cu8 a_n = (bool) (v24_n < ~0x00) + (ix->bFFFFFFEB + ~0x00);
 	cu8 a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFEC + ~0x00);
@@ -163,16 +163,16 @@ void fn03CD(byte a, byte c, byte b, Eq_n de, byte l, struct Eq_n * ix, Eq_n wArg
 		fn0434(de, ix, wArg24, out de_n, out hl_n, out ix_n, out sp_n);
 }
 
-// 0434: Register word16 fn0434(Register Eq_n de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
-word16 fn0434(Eq_n de, struct Eq_n * ix, Eq_n wArg24, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
+// 0434: Register word16 fn0434(Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24, Register out Eq_n deOut, Register out Eq_n hlOut, Register out Eq_n ixOut, Register out Eq_n spOut)
+word16 fn0434(byte * de, struct Eq_n * ix, Eq_n wArg24, union Eq_n & deOut, union Eq_n & hlOut, union Eq_n & ixOut, union Eq_n & spOut)
 {
-	Eq_n hl_n = fp + 0x1C;
+	byte * hl_n = fp + 0x1C;
 	word16 bc_n;
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
-		de = (word32) de + 0x01;
+		++hl_n;
+		++de;
 	}
 	Eq_n de_n = wArg24;
 	Eq_n hl_n = fp + 0x18;
@@ -180,8 +180,8 @@ word16 fn0434(Eq_n de, struct Eq_n * ix, Eq_n wArg24, union Eq_n & deOut, union 
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de_n = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
-		++de_n;
+		++hl_n;
+		de_n = (word32) de_n + 0x01;
 	}
 	Eq_n ix_n = ix->t0000;
 	deOut = de_n;
@@ -191,8 +191,8 @@ word16 fn0434(Eq_n de, struct Eq_n * ix, Eq_n wArg24, union Eq_n & deOut, union 
 	return bc_n;
 }
 
-// 04EE: void fn04EE(Register Eq_n de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn04EE(Eq_n de, struct Eq_n * ix, Eq_n wArg20)
+// 04EE: void fn04EE(Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn04EE(byte * de, struct Eq_n * ix, byte * wArg20)
 {
 	ix->bFFFFFFDB = 55;
 	ix->bFFFFFFDC = ~0x10;
@@ -240,7 +240,7 @@ void fn04EE(Eq_n de, struct Eq_n * ix, Eq_n wArg20)
 		ui16 hl_n = DPB(hl_n, h_n, 8);
 		c_n = __rcr(c_n, 0x01, SLICE(cond(b_n), bool, 0));
 	}
-	uint8 a_n = (word16) c_n + ix->bFFFFFFEA;
+	cu8 a_n = (word16) c_n + ix->bFFFFFFEA;
 	cu8 a_n = (bool) (a_n < 0x00) + ((word16) b_n + ix->bFFFFFFEB);
 	cu8 a_n = (bool) (a_n < 0x00) + ((word16) l_n + ix->bFFFFFFEC);
 	uint8 a_n = h_n + ix->bFFFFFFED + (a_n < 0x00);
@@ -266,7 +266,7 @@ void fn04EE(Eq_n de, struct Eq_n * ix, Eq_n wArg20)
 		byte l_n = (byte) hl_n;
 		byte h_n = SLICE(hl_n, byte, 8);
 	}
-	uint8 a_n = (byte) c_n.u1 + ix->bFFFFFFEE;
+	uint8 a_n = (word16) c_n + ix->bFFFFFFEE;
 	ix->bFFFFFFFC = a_n;
 	uint8 a_n = (bool) (a_n < 0x00) + ((word16) b_n + ix->bFFFFFFEF);
 	ix->bFFFFFFFD = a_n;
@@ -277,16 +277,16 @@ void fn04EE(Eq_n de, struct Eq_n * ix, Eq_n wArg20)
 	fn0607(v64_n, de, ix, wArg20);
 }
 
-// 0607: void fn0607(Register Eq_n a, Register Eq_n de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn0607(Eq_n a, Eq_n de, struct Eq_n * ix, Eq_n wArg20)
+// 0607: void fn0607(Register Eq_n a, Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn0607(Eq_n a, byte * de, struct Eq_n * ix, byte * wArg20)
 {
 	cu8 a_n = (word16) a + ix->bFFFFFFDA;
 	Eq_n v9_n = ix->tFFFFFFDF;
 	fn060E(v9_n, a_n, de, ix, wArg20);
 }
 
-// 060E: void fn060E(Register Eq_n a, Register cu8 c, Register Eq_n de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn060E(Eq_n a, cu8 c, Eq_n de, struct Eq_n * ix, Eq_n wArg20)
+// 060E: void fn060E(Register Eq_n a, Register cu8 c, Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn060E(Eq_n a, cu8 c, byte * de, struct Eq_n * ix, byte * wArg20)
 {
 	do
 	{
@@ -328,7 +328,7 @@ void fn060E(Eq_n a, cu8 c, Eq_n de, struct Eq_n * ix, Eq_n wArg20)
 		ix->bFFFFFFDB = a_n;
 		cu8 a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFDC + 200);
 		ix->bFFFFFFDC = a_n;
-		ix->bFFFFFFDD = (bool) (a_n < 0x00) + (ix->bFFFFFFDD + 0x61);
+		ix->bFFFFFFDD = (byte) ((bool) (a_n < 0x00) + (ix->bFFFFFFDD + 0x61));
 		cu8 v48_n = ix->bFFFFFFE2;
 		cu8 a_n = (bool) (v48_n < ~0x00) + (ix->bFFFFFFE3 + ~0x00);
 		cu8 a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFE4 + ~0x00);
@@ -340,22 +340,22 @@ void fn060E(Eq_n a, cu8 c, Eq_n de, struct Eq_n * ix, Eq_n wArg20)
 		c = v48_n + ~0x00;
 		a = a_n | a_n | a_n | v48_n + ~0x00;
 	} while (a != 0x00);
-	Eq_n hl_n = fp + 0x0C;
+	byte * hl_n = fp + 0x0C;
 	word16 bc_n;
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
-		de = (word32) de + 0x01;
+		++hl_n;
+		++de;
 	}
-	Eq_n de_n = wArg20;
-	Eq_n hl_n = fp + 0x04;
+	byte * de_n = wArg20;
+	byte * hl_n = fp + 0x04;
 	word16 bc_n;
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de_n = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
-		de_n = (word32) de_n + 0x01;
+		++hl_n;
+		++de_n;
 	}
 }
 
@@ -363,10 +363,7 @@ void fn060E(Eq_n a, cu8 c, Eq_n de, struct Eq_n * ix, Eq_n wArg20)
 void fn0805()
 {
 	__disable_interrupts();
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	fn0823(stackArg0);
+	fn0823();
 	fn0822();
 	__halt();
 }
@@ -374,14 +371,11 @@ void fn0805()
 // 0822: void fn0822()
 void fn0822()
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg0 = <invalid>;
-	fn0823(stackArg0);
+	fn0823();
 }
 
-// 0823: void fn0823(Stack Eq_n wArg00)
-void fn0823(Eq_n wArg00)
+// 0823: void fn0823()
+void fn0823()
 {
 }
 
@@ -425,7 +419,7 @@ void fn0AA6(uint8 a, cu8 c, cu8 b, Eq_n l, byte h, struct Eq_n * ix)
 void fn0B1B(byte a, ui8 h, struct Eq_n * ix)
 {
 	ix->bFFFFFFF4 = a;
-	ix->bFFFFFFF5 = (bool) C + (ix->bFFFFFFF5 + h);
+	ix->bFFFFFFF5 = (byte) ((bool) C + (ix->bFFFFFFF5 + h));
 	// Failed to bind call argument.
 	// Please report this issue at https://github.com/uxmal/reko
 	Eq_n stackArg36 = <invalid>;
@@ -437,7 +431,7 @@ void fn0B2C(Eq_n wArg24)
 {
 	a_n = (cu8) ((bool) C + (ix->bFFFFFFEB + ~0x00));
 	a_n = (cu8) ((bool) (a_n < 0x00) + (ix->bFFFFFFEC + ~0x00));
-	a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFED + ~0x00);
+	a_n = (byte) ((bool) (a_n < 0x00) + (ix->bFFFFFFED + ~0x00));
 	ix->bFFFFFFEA = c;
 	ix->bFFFFFFEB = a_n;
 	ix->bFFFFFFEC = a_n;
@@ -448,25 +442,25 @@ void fn0B2C(Eq_n wArg24)
 		fn0B55(de, ix, wArg24);
 }
 
-// 0B55: void fn0B55(Register Eq_n de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24)
-void fn0B55(Eq_n de, struct Eq_n * ix, Eq_n wArg24)
+// 0B55: void fn0B55(Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg24)
+void fn0B55(byte * de, struct Eq_n * ix, Eq_n wArg24)
 {
-	Eq_n hl_n = fp + 0x1C;
+	byte * hl_n = fp + 0x1C;
 	word16 bc_n;
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
+		++hl_n;
 		++de;
 	}
 	Eq_n de_n = wArg24;
-	Eq_n hl_n = fp + 0x18;
+	byte * hl_n = fp + 0x18;
 	word16 bc_n;
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de_n = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
-		++de_n;
+		++hl_n;
+		de_n = (word32) de_n + 0x01;
 	}
 }
 
@@ -475,8 +469,8 @@ void fn0BFE()
 {
 }
 
-// 0C1D: void fn0C1D(Register Eq_n de, Register (ptr16 Eq_n) ix, Stack word16 wArg00, Stack Eq_n wArg22)
-void fn0C1D(Eq_n de, struct Eq_n * ix, word16 wArg00, Eq_n wArg22)
+// 0C1D: void fn0C1D(Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg22)
+void fn0C1D(byte * de, struct Eq_n * ix, byte * wArg22)
 {
 	Eq_n c_n = ix->tFFFFFFE6;
 	Eq_n b_n = ix->tFFFFFFE7;
@@ -493,15 +487,15 @@ void fn0C1D(Eq_n de, struct Eq_n * ix, word16 wArg00, Eq_n wArg22)
 	fn0C35(c_n, b_n, de, l_n, h_n, ix, wArg22);
 }
 
-// 0C35: void fn0C35(Register Eq_n c, Register Eq_n b, Register Eq_n de, Register byte l, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn0C35(Eq_n c, Eq_n b, Eq_n de, byte l, byte h, struct Eq_n * ix, Eq_n wArg20)
+// 0C35: void fn0C35(Register Eq_n c, Register Eq_n b, Register (ptr16 byte) de, Register byte l, Register byte h, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn0C35(Eq_n c, Eq_n b, byte * de, byte l, byte h, struct Eq_n * ix, byte * wArg20)
 {
 	uint8 a_n = (word16) c + ix->bFFFFFFF6;
 	fn0C39(a_n, b, de, l, h, ix, wArg20);
 }
 
-// 0C39: void fn0C39(Register uint8 a, Register Eq_n b, Register Eq_n de, Register byte l, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn0C39(uint8 a, Eq_n b, Eq_n de, byte l, byte h, struct Eq_n * ix, Eq_n wArg20)
+// 0C39: void fn0C39(Register uint8 a, Register Eq_n b, Register (ptr16 byte) de, Register byte l, Register byte h, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn0C39(uint8 a, Eq_n b, byte * de, byte l, byte h, struct Eq_n * ix, byte * wArg20)
 {
 	ix->bFFFFFFFC = a;
 	byte a_n = b + Mem5[ix + -0x09:byte] + C;
@@ -519,8 +513,8 @@ void fn0C39(uint8 a, Eq_n b, Eq_n de, byte l, byte h, struct Eq_n * ix, Eq_n wAr
 	fn0C80(v28_n, de, a_n, a_n, ix, wArg20);
 }
 
-// 0C80: void fn0C80(Register uint8 a, Register Eq_n de, Register cu8 l, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn0C80(uint8 a, Eq_n de, cu8 l, byte h, struct Eq_n * ix, Eq_n wArg20)
+// 0C80: void fn0C80(Register uint8 a, Register (ptr16 byte) de, Register cu8 l, Register byte h, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn0C80(uint8 a, byte * de, cu8 l, byte h, struct Eq_n * ix, byte * wArg20)
 {
 	ix->bFFFFFFFE = a ^ l;
 	ix->bFFFFFFFF = ix->bFFFFFFFF ^ h;
@@ -542,8 +536,8 @@ void fn0C80(uint8 a, Eq_n de, cu8 l, byte h, struct Eq_n * ix, Eq_n wArg20)
 	fn0CB7(a_n, a_n, de, h_n, a_n, ix, wArg20);
 }
 
-// 0CB7: void fn0CB7(Register cu8 c, Register cu8 b, Register Eq_n de, Register uint8 h, Register byte l, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn0CB7(cu8 c, cu8 b, Eq_n de, uint8 h, byte l, struct Eq_n * ix, Eq_n wArg20)
+// 0CB7: void fn0CB7(Register cu8 c, Register cu8 b, Register (ptr16 byte) de, Register uint8 h, Register byte l, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn0CB7(cu8 c, cu8 b, byte * de, uint8 h, byte l, struct Eq_n * ix, byte * wArg20)
 {
 	word16 hl_n = DPB(DPB(hl, h, 8), l, 0);
 	byte a_n = (bool) C + (h + ix->bFFFFFFED);
@@ -569,7 +563,7 @@ void fn0CB7(cu8 c, cu8 b, Eq_n de, uint8 h, byte l, struct Eq_n * ix, Eq_n wArg2
 		byte l_n = (byte) hl_n;
 		byte h_n = SLICE(hl_n, byte, 8);
 	}
-	uint8 a_n = (byte) c_n.u1 + ix->bFFFFFFEE;
+	uint8 a_n = (word16) c_n + ix->bFFFFFFEE;
 	ix->bFFFFFFFC = a_n;
 	uint8 a_n = (bool) (a_n < 0x00) + ((word16) b_n + ix->bFFFFFFEF);
 	ix->bFFFFFFFD = a_n;
@@ -615,7 +609,7 @@ void fn0CB7(cu8 c, cu8 b, Eq_n de, uint8 h, byte l, struct Eq_n * ix, Eq_n wArg2
 	ix->bFFFFFFDB = a_n;
 	cu8 a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFDC + 200);
 	ix->bFFFFFFDC = a_n;
-	ix->bFFFFFFDD = (bool) (a_n < 0x00) + (ix->bFFFFFFDD + 0x61);
+	ix->bFFFFFFDD = (byte) ((bool) (a_n < 0x00) + (ix->bFFFFFFDD + 0x61));
 	cu8 v69_n = ix->bFFFFFFE2;
 	cu8 a_n = (bool) (v69_n < ~0x00) + (ix->bFFFFFFE3 + ~0x00);
 	cu8 a_n = (bool) (a_n < 0x00) + (ix->bFFFFFFE4 + ~0x00);
@@ -631,8 +625,8 @@ void fn0CB7(cu8 c, cu8 b, Eq_n de, uint8 h, byte l, struct Eq_n * ix, Eq_n wArg2
 		fn0E13(de, ix, wArg20);
 }
 
-// 0DFC: void fn0DFC(Register cu8 c, Register cu8 b, Register Eq_n de, Register cu8 l, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn0DFC(cu8 c, cu8 b, Eq_n de, cu8 l, byte h, struct Eq_n * ix, Eq_n wArg20)
+// 0DFC: void fn0DFC(Register cu8 c, Register cu8 b, Register (ptr16 byte) de, Register cu8 l, Register byte h, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn0DFC(cu8 c, cu8 b, byte * de, cu8 l, byte h, struct Eq_n * ix, byte * wArg20)
 {
 	ix->bFFFFFFE2 = c;
 	ix->bFFFFFFE3 = b;
@@ -645,35 +639,35 @@ void fn0DFC(cu8 c, cu8 b, Eq_n de, cu8 l, byte h, struct Eq_n * ix, Eq_n wArg20)
 		fn0E13(de, ix, wArg20);
 }
 
-// 0E13: void fn0E13(Register Eq_n de, Register (ptr16 Eq_n) ix, Stack Eq_n wArg20)
-void fn0E13(Eq_n de, struct Eq_n * ix, Eq_n wArg20)
+// 0E13: void fn0E13(Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg20)
+void fn0E13(byte * de, struct Eq_n * ix, byte * wArg20)
 {
-	Eq_n hl_n = fp + 0x0C;
+	byte * hl_n = fp + 0x0C;
 	word16 bc_n;
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
+		++hl_n;
 		++de;
 	}
-	Eq_n de_n = wArg20;
-	Eq_n hl_n = fp + 0x04;
+	byte * de_n = wArg20;
+	byte * hl_n = fp + 0x04;
 	word16 bc_n;
 	for (bc_n = 0x04; bc_n != 0x00; --bc_n)
 	{
 		*de_n = *hl_n;
-		hl_n = (word32) hl_n + 0x01;
+		++hl_n;
 		++de_n;
 	}
 }
 
-// 0F9A: void fn0F9A(Stack word16 wArg00)
-void fn0F9A(word16 wArg00)
+// 0F9A: void fn0F9A()
+void fn0F9A()
 {
 }
 
-// 164F: void fn164F(Register word16 af, Register byte c, Register byte b, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg13, Stack word16 wArg1A, Stack (ptr16 Eq_n) wArg1B)
-void fn164F(word16 af, byte c, byte b, byte h, struct Eq_n * ix, Eq_n wArg13, word16 wArg1A, struct Eq_n * wArg1B)
+// 164F: void fn164F(Register word16 af, Register byte c, Register byte b, Register byte h, Register (ptr16 Eq_n) ix, Stack (ptr16 byte) wArg13, Stack byte bArg1A, Stack (ptr16 Eq_n) wArg1B)
+void fn164F(word16 af, byte c, byte b, byte h, struct Eq_n * ix, byte * wArg13, byte bArg1A, struct Eq_n * wArg1B)
 {
 	byte bArg1B_n = SLICE(wArg1B, byte, 0);
 	ix->bFFFFFFEC = a;
@@ -683,7 +677,7 @@ void fn164F(word16 af, byte c, byte b, byte h, struct Eq_n * ix, Eq_n wArg13, wo
 	cu8 a_n = c - wArg1B->b0000;
 	byte a_n = ix->bFFFFFFF9 - ix->bFFFFFFFD - (a_n < 0x00);
 	word16 bc_n;
-	Eq_n de_n;
+	byte * de_n;
 	word16 hl_n;
 	struct Eq_n * ix_n;
 	struct Eq_n * sp_n;
@@ -720,22 +714,22 @@ void fn164F(word16 af, byte c, byte b, byte h, struct Eq_n * ix, Eq_n wArg13, wo
 		word16 v51_n = sp_n->w0017;
 		sp_n->w0002 = v51_n;
 		sp_n->w0000 = DPB(DPB(DPB(DPB(bc_n, v31_n, 0), v32_n, 8), a_n, 0), a_n, 8);
-		Eq_n de_n = DPB(DPB(DPB(DPB(DPB(DPB(de_n, v34_n, 0), v36_n, 8), v39_n, 0), v40_n, 8), a_n, 0), a_n, 8);
-		*(sp_n - 0x02) = (union Eq_n *) de_n;
+		byte * de_n = DPB(DPB(DPB(DPB(DPB(DPB(de_n, v34_n, 0), v36_n, 8), v39_n, 0), v40_n, 8), a_n, 0), a_n, 8);
+		*(sp_n - 0x02) = (byte **) de_n;
 		word16 af_n = DPB(af_n, a_n, 8);
 		byte h_n = SLICE(v51_n, byte, 8);
 		fn16F7(af_n, a_n, a_n, de_n, h_n, ix_n, sp_n->t0020);
 	}
 	else
-		fn0C35(c_n, b_n, de_n, 0x03, h_n, ix_n, sp_n->t0026);
+		fn0C35(c_n, b_n, de_n, 0x03, h_n, ix_n, sp_n->ptr0026);
 }
 
-// 16F7: void fn16F7(Register word16 af, Register cu8 c, Register byte b, Register Eq_n de, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg22)
-void fn16F7(word16 af, cu8 c, byte b, Eq_n de, byte h, struct Eq_n * ix, Eq_n wArg22)
+// 16F7: void fn16F7(Register word16 af, Register cu8 c, Register byte b, Register (ptr16 byte) de, Register byte h, Register (ptr16 Eq_n) ix, Stack Eq_n wArg22)
+void fn16F7(word16 af, cu8 c, byte b, byte * de, byte h, struct Eq_n * ix, Eq_n wArg22)
 {
 	word16 af_n = DPB(af, a, 8);
 	word16 bc_n;
-	Eq_n de_n;
+	byte * de_n;
 	word16 hl_n;
 	struct Eq_n * ix_n;
 	struct Eq_n * sp_n;
@@ -744,13 +738,13 @@ void fn16F7(word16 af, cu8 c, byte b, Eq_n de, byte h, struct Eq_n * ix, Eq_n wA
 	Eq_n b_n = SLICE(bc_n, byte, 8);
 	byte h_n = SLICE(hl_n, byte, 8);
 	if ((byte) hl_n != 0x00)
-		fn0C35(c_n, b_n, de_n, 0x00, h_n, ix_n, sp_n->t0026);
+		fn0C35(c_n, b_n, de_n, 0x00, h_n, ix_n, sp_n->ptr0026);
 	else
-		fn0C35(c_n, b_n, de_n, 0x03, h_n, ix_n, sp_n->t0026);
+		fn0C35(c_n, b_n, de_n, 0x03, h_n, ix_n, sp_n->ptr0026);
 }
 
-// 1873: void fn1873(Register Eq_n c, Register Eq_n b, Register Eq_n de, Register (ptr16 Eq_n) ix, Stack (ptr16 Eq_n) wArg13, Stack Eq_n wArg20)
-void fn1873(Eq_n c, Eq_n b, Eq_n de, struct Eq_n * ix, struct Eq_n * wArg13, Eq_n wArg20)
+// 1873: void fn1873(Register Eq_n c, Register Eq_n b, Register (ptr16 byte) de, Register (ptr16 Eq_n) ix, Stack (ptr16 Eq_n) wArg13, Stack (ptr16 byte) wArg20)
+void fn1873(Eq_n c, Eq_n b, byte * de, struct Eq_n * ix, struct Eq_n * wArg13, byte * wArg20)
 {
 	wArg13->t0000 = c;
 	wArg13->t0001 = b;
@@ -758,8 +752,8 @@ void fn1873(Eq_n c, Eq_n b, Eq_n de, struct Eq_n * ix, struct Eq_n * wArg13, Eq_
 	fn0C35(c, b, de, 0x02, h_n, ix, wArg20);
 }
 
-// 1929: void fn1929(Register word16 af, Register word16 bc, Register byte e, Register byte d, Register (ptr16 Eq_n) ix, Stack word16 wArg11, Stack word16 wArg13, Stack Eq_n wArg1A)
-void fn1929(word16 af, word16 bc, byte e, byte d, struct Eq_n * ix, word16 wArg11, word16 wArg13, Eq_n wArg1A)
+// 1929: void fn1929(Register word16 af, Register word16 bc, Register byte e, Register byte d, Register (ptr16 Eq_n) ix, Stack byte bArg11, Stack Eq_n wArg1A)
+void fn1929(word16 af, word16 bc, byte e, byte d, struct Eq_n * ix, byte bArg11, Eq_n wArg1A)
 {
 	word16 de_n = DPB(DPB(de, e, 0), d, 8);
 	cu8 c_n = (byte) bc;
@@ -778,16 +772,16 @@ void fn1929(word16 af, word16 bc, byte e, byte d, struct Eq_n * ix, word16 wArg1
 	}
 }
 
-// 1BA4: void fn1BA4(Register word16 bc, Register Eq_n de, Stack word16 wArg00, Stack word16 wArg10, Stack word16 wArg1D, Stack word16 wArg1F)
-void fn1BA4(word16 bc, Eq_n de, word16 wArg00, word16 wArg10, word16 wArg1D, word16 wArg1F)
+// 1BA4: void fn1BA4(Register word16 bc, Register (ptr16 byte) de)
+void fn1BA4(word16 bc, byte * de)
 {
-	Eq_n de;
+	byte * de;
 	word16 bc;
 	fn0805();
 }
 
-// 1BDE: void fn1BDE(Register word16 bc, Register Eq_n de, Register (ptr16 Eq_n) ix)
-void fn1BDE(word16 bc, Eq_n de, struct Eq_n * ix)
+// 1BDE: void fn1BDE(Register word16 bc, Register (ptr16 byte) de, Register (ptr16 Eq_n) ix)
+void fn1BDE(word16 bc, byte * de, struct Eq_n * ix)
 {
 	word16 bc_n = DPB(bc, b, 8);
 	++ix->bFFFFFFE9;
@@ -795,20 +789,20 @@ void fn1BDE(word16 bc, Eq_n de, struct Eq_n * ix)
 	fn1BF9(bc_n, de, ix);
 }
 
-// 1BF9: void fn1BF9(Register word16 bc, Register Eq_n de, Register (ptr16 Eq_n) ix)
-void fn1BF9(word16 bc, Eq_n de, struct Eq_n * ix)
+// 1BF9: void fn1BF9(Register word16 bc, Register (ptr16 byte) de, Register (ptr16 Eq_n) ix)
+void fn1BF9(word16 bc, byte * de, struct Eq_n * ix)
 {
 	cu8 v4_n = ix->bFFFFFFF7;
 	ix->bFFFFFFF7 = v4_n + 0x09;
-	ix->bFFFFFFF8 = (bool) (v4_n < 0x09) + ix->bFFFFFFF8;
+	ix->bFFFFFFF8 = (byte) ((bool) (v4_n < 0x09) + ix->bFFFFFFF8);
 	++ix->bFFFFFFF5;
 	word16 bc_n;
-	Eq_n hl_n = 0x0823;
+	byte * hl_n = globals->a0823;
 	do
 	{
 		*de = *hl_n;
 		++hl_n;
-		de = (word32) de + 0x01;
+		++de;
 		--bc_n;
 	} while (bc_n != 0x00);
 }
@@ -818,13 +812,13 @@ void fn1C54()
 {
 }
 
-// 1C89: void fn1C89(Register byte a, Register byte c, Stack word16 wArg00)
-void fn1C89(byte a, byte c, word16 wArg00)
+// 1C89: void fn1C89(Register byte a, Register byte c)
+void fn1C89(byte a, byte c)
 {
 }
 
-// 22A6: void fn22A6(Register word16 bc, Register (ptr16 Eq_n) hl, Register (ptr16 Eq_n) ix, Stack word16 wArg03, Stack word16 wArg05, Stack word16 wArg0D, Stack word16 wArg10)
-void fn22A6(word16 bc, struct Eq_n * hl, struct Eq_n * ix, word16 wArg03, word16 wArg05, word16 wArg0D, word16 wArg10)
+// 22A6: void fn22A6(Register word16 bc, Register (ptr16 Eq_n) hl, Register (ptr16 Eq_n) ix, Stack word16 wArg05, Stack word16 wArg10)
+void fn22A6(word16 bc, struct Eq_n * hl, struct Eq_n * ix, word16 wArg05, word16 wArg10)
 {
 	ix->bFFFFFFFC = ix->bFFFFFFF7;
 	ix->bFFFFFFFD = 0x00;
@@ -850,8 +844,8 @@ void fn384A(word16 ix)
 {
 }
 
-// 3E2D: void fn3E2D(Register word16 bc, Register (ptr16 Eq_n) ix, Stack word16 wArg03, Stack word16 wArg05, Stack word16 wArg0D, Stack word16 wArg10)
-void fn3E2D(word16 bc, struct Eq_n * ix, word16 wArg03, word16 wArg05, word16 wArg0D, word16 wArg10)
+// 3E2D: void fn3E2D(Register word16 bc, Register (ptr16 Eq_n) ix, Stack word16 wArg05, Stack word16 wArg0D, Stack word16 wArg10)
+void fn3E2D(word16 bc, struct Eq_n * ix, word16 wArg05, word16 wArg0D, word16 wArg10)
 {
 	ix->bFFFFFFFC = ix->bFFFFFFF7;
 	ix->bFFFFFFFD = 0x00;
@@ -869,30 +863,24 @@ void fn3E2D(word16 bc, struct Eq_n * ix, word16 wArg03, word16 wArg05, word16 wA
 	struct Eq_n * hl_n = wArg0D + DPB(DPB(DPB(DPB(bc, v28_n, 0), 0x00, 8), l_n, 0), h_n, 8);
 	byte v38_n = *hl_n;
 	byte v41_n = ((word16) (DPB(DPB(hl_n, v38_n, 0), 0x00, 8) * 0x08) + DPB(DPB(wArg05 + 0x03, v38_n, 0), 0x00, 8) + DPB(DPB(DPB(DPB(DPB(DPB(bc, v28_n, 0), 0x00, 8), l_n, 0), h_n, 8), hl_n->b0000, 0), hl_n->b0001, 8))->b0003;
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg3 = <invalid>;
-	Eq_n stackArg5 = <invalid>;
-	fn3EC2(v41_n, stackArg3, stackArg5);
+	fn3EC2(v41_n);
 }
 
-// 3EC2: void fn3EC2(Register byte b, Stack Eq_n wArg03, Stack Eq_n wArg05)
-void fn3EC2(byte b, Eq_n wArg03, Eq_n wArg05)
+// 3EC2: void fn3EC2(Register byte b)
+void fn3EC2(byte b)
 {
 	fn03AA();
 }
 
-// 59FE: void fn59FE(Stack word16 wArg0A, Stack word16 wArg10)
-void fn59FE(word16 wArg0A, word16 wArg10)
+// 59FE: void fn59FE()
+void fn59FE()
 {
 	<type-error> Mem0;
 	fn0BFE();
 }
 
-// 5A49: void fn5A49(Register cu8 c, Register cu8 b, Register word16 de, Register word16 hl, Register (ptr16 Eq_n) ix, Stack word16 wArg02, Stack (ptr16 Eq_n) wArg06, Stack word16 wArg08)
-void fn5A49(cu8 c, cu8 b, word16 de, word16 hl, struct Eq_n * ix, word16 wArg02, struct Eq_n * wArg06, word16 wArg08)
+// 5A49: void fn5A49(Register cu8 c, Register cu8 b, Register word16 de, Register word16 hl, Register (ptr16 Eq_n) ix, Stack (ptr16 Eq_n) wArg06)
+void fn5A49(cu8 c, cu8 b, word16 de, word16 hl, struct Eq_n * ix, struct Eq_n * wArg06)
 {
 	word16 bc_n = DPB(DPB(DPB(DPB(DPB(DPB(DPB(DPB(bc, c, 0), b, 8), c, 0), b, 8), c, 0), b, 8), c, 0), b, 8);
 	word16 hl_n = DPB(hl, (bool) C + (ix->bFFFFFFFD + 0x80), 8) + de;

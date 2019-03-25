@@ -4,11 +4,9 @@
 
 #include "BENCHFN.h"
 
-Eq_n g_tFFFFFFFF;
 struct Eq_n * g_ptr0000;
 Eq_n g_t0001;
 struct Eq_n * g_ptr0004;
-Eq_n g_t0005;
 word32 g_a0008[];
 ui32 g_a0010[];
 byte g_b142C = 0x65;
@@ -17,6 +15,7 @@ Eq_n g_t288D =
 	{
 		
 		{
+			0x20
 		},
 	};
 ptr32 g_ptr3E70 = 0x00000000;
@@ -36,6 +35,7 @@ Eq_n g_t3EAC =
 	{
 		
 		{
+			0x06
 		},
 	};
 word32 g_dw3FB0;

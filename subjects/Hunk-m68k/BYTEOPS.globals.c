@@ -26,6 +26,7 @@ Eq_n g_t2BC4 =
 	{
 		
 		{
+			0x06
 		},
 	};
 word32 g_dw2CC8;

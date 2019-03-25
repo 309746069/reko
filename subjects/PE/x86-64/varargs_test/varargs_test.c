@@ -7,34 +7,10 @@
 // 0000000140001000: Register word64 fn0000000140001000(Register word64 rbx, Register word64 rsi, Register word64 rdi, Register out ptr64 rcxOut, Register out ptr64 rdxOut, Register out ptr64 r8Out, Register out ptr64 r9Out, Register out Eq_n xmm0Out)
 word64 fn0000000140001000(word64 rbx, word64 rsi, word64 rdi, ptr64 & rcxOut, ptr64 & rdxOut, ptr64 & r8Out, ptr64 & r9Out, union Eq_n & xmm0Out)
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
 	ui64 rax_n = globals->t40003000 ^ fp - 200;
 	Eq_n xmm0_n = globals->t40002260;
-	Eq_n stackArg8 = <invalid>;
-	Eq_n stackArg16 = <invalid>;
-	Eq_n stackArg24 = <invalid>;
-	Eq_n stackArg32 = <invalid>;
-	fn0000000140001140(rax_n, 0x140002210, 0x03, rbx, rsi, rdi, 0x140002250, 0x140002240, stackArg8, stackArg16, stackArg24, stackArg32);
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
-	Eq_n stackArg16 = <invalid>;
-	Eq_n stackArg24 = <invalid>;
-	Eq_n stackArg32 = <invalid>;
-	ptr64 r9_n = fn00000001400010D0(fp - 0x80, 0x140002228, fp - 0x7C, rbx, rsi, rdi, fp - 0x70, fp - 0x50, stackArg8, stackArg16, stackArg24, stackArg32);
+	fn0000000140001140(rax_n, 0x140002210, 0x03, rbx, rsi, rdi, 0x140002250, 0x140002240);
+	ptr64 r9_n = fn00000001400010D0(fp - 0x80, 0x140002228, fp - 0x7C, rbx, rsi, rdi, fp - 0x70, fp - 0x50);
 	ptr64 r8_n;
 	ptr64 rcx_n;
 	ptr64 rdx_n;
@@ -53,8 +29,8 @@ ptr64 fn00000001400010C0()
 	return 0x140003628;
 }
 
-// 00000001400010D0: Register ptr64 fn00000001400010D0(Register ptr64 rax, Register ptr64 rcx, Register ptr64 rdx, Register word64 rbx, Register word64 rsi, Register word64 rdi, Register ptr64 r8, Register ptr64 r9, Stack Eq_n qwArg08, Stack Eq_n qwArg10, Stack Eq_n qwArg18, Stack Eq_n qwArg20)
-ptr64 fn00000001400010D0(ptr64 rax, ptr64 rcx, ptr64 rdx, word64 rbx, word64 rsi, word64 rdi, ptr64 r8, ptr64 r9, Eq_n qwArg08, Eq_n qwArg10, Eq_n qwArg18, Eq_n qwArg20)
+// 00000001400010D0: Register ptr64 fn00000001400010D0(Register ptr64 rax, Register ptr64 rcx, Register ptr64 rdx, Register word64 rbx, Register word64 rsi, Register word64 rdi, Register ptr64 r8, Register ptr64 r9)
+ptr64 fn00000001400010D0(ptr64 rax, ptr64 rcx, ptr64 rdx, word64 rbx, word64 rsi, word64 rdi, ptr64 r8, ptr64 r9)
 {
 	word64 rax_n;
 	_acrt_iob_func();
@@ -70,8 +46,8 @@ ptr64 fn0000000140001130()
 	return 0x140003620;
 }
 
-// 0000000140001140: void fn0000000140001140(Register ui64 rax, Register ptr64 rcx, Register uint64 rdx, Register word64 rbx, Register word64 rsi, Register word64 rdi, Register ptr64 r8, Register ptr64 r9, Stack Eq_n qwArg08, Stack Eq_n qwArg10, Stack Eq_n qwArg18, Stack Eq_n qwArg20)
-void fn0000000140001140(ui64 rax, ptr64 rcx, uint64 rdx, word64 rbx, word64 rsi, word64 rdi, ptr64 r8, ptr64 r9, Eq_n qwArg08, Eq_n qwArg10, Eq_n qwArg18, Eq_n qwArg20)
+// 0000000140001140: void fn0000000140001140(Register ui64 rax, Register ptr64 rcx, Register uint64 rdx, Register word64 rbx, Register word64 rsi, Register word64 rdi, Register ptr64 r8, Register ptr64 r9)
+void fn0000000140001140(ui64 rax, ptr64 rcx, uint64 rdx, word64 rbx, word64 rsi, word64 rdi, ptr64 r8, ptr64 r9)
 {
 	word64 rax_n;
 	_acrt_iob_func();
@@ -94,13 +70,10 @@ word64 fn00000001400011B0(Eq_n rcx, word64 rbx, word64 rsi, word64 rdi, word64 q
 		}
 		rcx = __ror(rcx_n, 0x10);
 	}
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
 	ptr64 r8_n;
 	Eq_n rcx_n;
 	ptr64 rdx_n;
-	word64 rax_n = fn000000014000147C(rcx, rbx, rsi, rdi, qwArg00, stackArg8, out rcx_n, out rdx_n, out r8_n);
+	word64 rax_n = fn000000014000147C(rcx, rbx, rsi, rdi, qwArg00, out rcx_n, out rdx_n, out r8_n);
 	rcxOut = rcx_n;
 	rdxOut = rdx_n;
 	r8Out = r8_n;
@@ -115,9 +88,6 @@ void fn00000001400011D4(word64 rax, word64 rdx, word64 rbx, ptr64 rbp, word64 rs
 	_set_fmode(dwLoc28);
 	int32 * rax_n = __p__commode();
 	*rax_n = (word32) fn0000000140001ABC();
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
 	word64 r8_n;
 	word64 r9_n;
 	ptr64 rbp_n;
@@ -125,16 +95,10 @@ void fn00000001400011D4(word64 rax, word64 rdx, word64 rbx, ptr64 rbp, word64 rs
 	word64 rdx_n;
 	word128 xmm0_n;
 	word128 xmm1_n;
-	Eq_n rax_n = fn000000014000164C(0x01, rdx, rax_n, rbp, r8, r9, xmm0, xmm1, stackArg8, out rdx_n, out rbx_n, out rbp_n, out r8_n, out r9_n, out xmm0_n, out xmm1_n);
+	Eq_n rax_n = fn000000014000164C(0x01, rdx, rax_n, rbp, r8, r9, xmm0, xmm1, out rdx_n, out rbx_n, out rbp_n, out r8_n, out r9_n, out xmm0_n, out xmm1_n);
 	if ((byte) rax_n != 0x00)
 	{
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		Eq_n stackArg8 = <invalid>;
-		Eq_n stackArg16 = <invalid>;
-		fn0000000140001B5C(rbx_n, rsi, rdi, stackArg8, stackArg16);
+		fn0000000140001B5C(rbx_n, rsi, rdi);
 		word64 rdx_n = fn0000000140001854(rax_n, 0x140001BA8, rbx_n);
 		word64 rax_n = fn0000000140001918();
 		word64 rax_n;
@@ -166,16 +130,10 @@ void fn00000001400011D4(word64 rax, word64 rdx, word64 rbx, ptr64 rbp, word64 rs
 	}
 	else
 	{
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		Eq_n stackArg8 = <invalid>;
-		fn0000000140001974(0x07, rbx_n, rbp_n, qwLoc30, stackArg8, qwLoc20, out rcx_n, out rdx_n, out r8_n);
+		fn0000000140001974(0x07, rbx_n, rbp_n, qwLoc30, qwLoc20, out rcx_n, out rdx_n, out r8_n);
 		int3();
 	}
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
-	fn0000000140001974(0x07, rbx_n, rbp_n, qwLoc30, stackArg8, qwLoc20, out rcx_n, out rdx_n, out r8_n);
+	fn0000000140001974(0x07, rbx_n, rbp_n, qwLoc30, qwLoc20, out rcx_n, out rdx_n, out r8_n);
 	int3();
 	int3();
 	fn0000000140001290();
@@ -195,17 +153,14 @@ void fn00000001400012A0()
 	set_new_mode();
 }
 
-// 00000001400012BC: void fn00000001400012BC(Register word64 rax, Register ptr64 rdx, Register (ptr64 int32) rbx, Register ptr64 rbp, Register word64 rsi, Register word64 rdi, Register word64 r8, Register word64 r9, Register word128 xmm0, Stack Eq_n qwArg08, Stack Eq_n qwArg10)
-void fn00000001400012BC(word64 rax, ptr64 rdx, int32 * rbx, ptr64 rbp, word64 rsi, word64 rdi, word64 r8, word64 r9, word128 xmm0, Eq_n qwArg08, Eq_n qwArg10)
+// 00000001400012BC: void fn00000001400012BC(Register word64 rax, Register ptr64 rdx, Register (ptr64 int32) rbx, Register ptr64 rbp, Register word64 rsi, Register word64 rdi, Register word64 r8, Register word64 r9, Register word128 xmm0)
+void fn00000001400012BC(word64 rax, ptr64 rdx, int32 * rbx, ptr64 rbp, word64 rsi, word64 rdi, word64 r8, word64 r9, word128 xmm0)
 {
 	struct Eq_n * rax_n = DPB(rax, al, 0);
 	fn0000000140001600(ecx, edx);
 	if (al == 0x00)
 	{
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		Eq_n stackArg8 = <invalid>;
-		rax_n = fn0000000140001974(0x07, rbx, rbp, qwLoc40, stackArg8, qwLoc30, out rcx_n, out rdx, out r8);
+		rax_n = fn0000000140001974(0x07, rbx, rbp, qwLoc40, qwLoc30, out rcx_n, out rdx, out r8);
 		int3();
 		al = (byte) rax_n;
 	}
@@ -218,10 +173,7 @@ void fn00000001400012BC(word64 rax, ptr64 rdx, int32 * rbx, ptr64 rbp, word64 rs
 	word32 ecx_n = (word32) rcx_n;
 	if (ecx_n == 0x01)
 	{
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		Eq_n stackArg8 = <invalid>;
-		rax_n = fn0000000140001974(0x07, rbx_n, rbp, qwLoc40, stackArg8, qwLoc30, out rcx_n, out rdx, out r8);
+		rax_n = fn0000000140001974(0x07, rbx_n, rbp, qwLoc40, qwLoc30, out rcx_n, out rdx, out r8);
 		ecx_n = (word32) rcx_n;
 	}
 	Eq_n rcx_n = DPB(rcx_n, ecx_n, 0);
@@ -301,20 +253,8 @@ void fn00000001400012BC(word64 rax, ptr64 rdx, int32 * rbx, ptr64 rbp, word64 rs
 // 0000000140001434: Register Eq_n Win32CrtStartup()
 Eq_n Win32CrtStartup()
 {
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
-	Eq_n stackArg32 = <invalid>;
-	word64 rax_n = fn000000014000186C(stackArg8, qwLoc20, dwLoc18, dwLoc14, stackArg32);
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
-	Eq_n stackArg16 = <invalid>;
-	fn00000001400012BC(rax_n, rdx, rbx, rbp, rsi, rdi, r8, r9, xmm0, stackArg8, stackArg16);
+	word64 rax_n = fn000000014000186C(qwLoc20, dwLoc18);
+	fn00000001400012BC(rax_n, rdx, rbx, rbp, rsi, rdi, r8, r9, xmm0);
 	return <invalid>;
 }
 
@@ -328,11 +268,11 @@ Eq_n fn0000000140001448(Eq_n tArg00, Eq_n tArg08)
 	return <invalid>;
 }
 
-// 000000014000147C: Register word64 fn000000014000147C(Register Eq_n rcx, Register word64 rbx, Register word64 rsi, Register word64 rdi, Stack word64 qwArg00, Stack Eq_n qwArg08, Register out ptr64 rcxOut, Register out ptr64 rdxOut, Register out ptr64 r8Out)
-word64 fn000000014000147C(Eq_n rcx, word64 rbx, word64 rsi, word64 rdi, word64 qwArg00, Eq_n qwArg08, ptr64 & rcxOut, ptr64 & rdxOut, ptr64 & r8Out)
+// 000000014000147C: Register word64 fn000000014000147C(Register Eq_n rcx, Register word64 rbx, Register word64 rsi, Register word64 rdi, Stack word64 qwArg00, Register out ptr64 rcxOut, Register out ptr64 rdxOut, Register out ptr64 r8Out)
+word64 fn000000014000147C(Eq_n rcx, word64 rbx, word64 rsi, word64 rdi, word64 qwArg00, ptr64 & rcxOut, ptr64 & rdxOut, ptr64 & r8Out)
 {
-	word64 qwLoc38_n = SEQ(dwLoc34, tLoc38);
-	Eq_n tLoc38_n = SLICE(qwLoc38_n, DWORD, 0);
+	word32 dwLoc34_n = SLICE(qwLoc38, word32, 32);
+	word64 qwLoc38_n = SEQ(dwLoc34_n, tLoc38);
 	if (IsProcessorFeaturePresent(tLoc38) == 0x00)
 	{
 		fn0000000140001550(&globals->t400030E0, rbx, rsi, rdi, qwLoc38_n);
@@ -344,7 +284,7 @@ word64 fn000000014000147C(Eq_n rcx, word64 rbx, word64 rsi, word64 rdi, word64 q
 		globals->dw40003044 = 0x01;
 		globals->dw40003058 = 0x01;
 		globals->qw40003060 = 0x02;
-		word64 rax_n = DPB(0x08, fn0000000140001448(tLoc40, tLoc38_n), 0);
+		word64 rax_n = DPB(0x08, fn0000000140001448(tLoc40, tLoc38), 0);
 		rcxOut = rcx_n;
 		rdxOut = rdx_n;
 		r8Out = r8_n;
@@ -400,16 +340,7 @@ void fn0000000140001600(word32 ecx, word32 edx)
 	if (ecx == 0x00)
 		al_n = 0x01;
 	globals->b400035F0 = al_n;
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
-	Eq_n stackArg16 = <invalid>;
-	Eq_n stackArg24 = <invalid>;
-	fn0000000140001BFC(edx, 0x01, stackArg8, stackArg16, stackArg24);
+	fn0000000140001BFC(edx, 0x01);
 	if (fn0000000140001938() == 0x00)
 		return;
 	if (fn0000000140001938() != 0x00)
@@ -417,19 +348,16 @@ void fn0000000140001600(word32 ecx, word32 edx)
 	fn0000000140001938();
 }
 
-// 000000014000164C: Register (ptr64 Eq_n) fn000000014000164C(Register up32 ecx, Register word64 rdx, Register (ptr64 int32) rbx, Register ptr64 rbp, Register ui64 r8, Register ptr64 r9, Register Eq_n xmm0, Register Eq_n xmm1, Stack Eq_n qwArg08, Register out Eq_n rdxOut, Register out (ptr64 int32) rbxOut, Register out ptr64 rbpOut, Register out Eq_n r8Out, Register out ptr64 r9Out, Register out Eq_n xmm0Out, Register out Eq_n xmm1Out)
-struct Eq_n * fn000000014000164C(up32 ecx, word64 rdx, int32 * rbx, ptr64 rbp, ui64 r8, ptr64 r9, Eq_n xmm0, Eq_n xmm1, Eq_n qwArg08, union Eq_n & rdxOut, int32 & rbxOut, ptr64 & rbpOut, union Eq_n & r8Out, ptr64 & r9Out, union Eq_n & xmm0Out, union Eq_n & xmm1Out)
+// 000000014000164C: Register (ptr64 Eq_n) fn000000014000164C(Register up32 ecx, Register word64 rdx, Register (ptr64 int32) rbx, Register ptr64 rbp, Register ui64 r8, Register ptr64 r9, Register Eq_n xmm0, Register Eq_n xmm1, Register out Eq_n rdxOut, Register out (ptr64 int32) rbxOut, Register out ptr64 rbpOut, Register out Eq_n r8Out, Register out ptr64 r9Out, Register out Eq_n xmm0Out, Register out Eq_n xmm1Out)
+struct Eq_n * fn000000014000164C(up32 ecx, word64 rdx, int32 * rbx, ptr64 rbp, ui64 r8, ptr64 r9, Eq_n xmm0, Eq_n xmm1, union Eq_n & rdxOut, int32 & rbxOut, ptr64 & rbpOut, union Eq_n & r8Out, ptr64 & r9Out, union Eq_n & xmm0Out, union Eq_n & xmm1Out)
 {
 	int32 * rbx_n = (uint64) ecx;
 	word32 ebx_n = (word32) rbx_n;
 	uint64 rbx_n = DPB(rbx_n, ebx_n, 0);
 	if (ecx > 0x01)
 	{
-		// Failed to bind call argument.
-		// Please report this issue at https://github.com/uxmal/reko
-		Eq_n stackArg8 = <invalid>;
 		struct Eq_n * rcx_n;
-		fn0000000140001974(0x05, rbx_n, fp - 0x08, qwLoc50, stackArg8, qwLoc40, out rcx_n, out rdx_n, out r8_n);
+		fn0000000140001974(0x05, rbx_n, fp - 0x08, qwLoc50, qwLoc40, out rcx_n, out rdx_n, out r8_n);
 		int3();
 		int3();
 		int3();
@@ -596,16 +524,17 @@ word64 fn0000000140001854(Eq_n rax, Eq_n rcx, int32 * rbx)
 	return rdx_n;
 }
 
-// 000000014000186C: Register word64 fn000000014000186C(Stack Eq_n qwArg08, Stack ui64 qwArg10, Stack Eq_n qwArg18, Stack word32 dwArg1C, Stack Eq_n qwArg20)
-word64 fn000000014000186C(Eq_n qwArg08, ui64 qwArg10, Eq_n qwArg18, word32 dwArg1C, Eq_n qwArg20)
+// 000000014000186C: Register word64 fn000000014000186C(Stack ui64 qwArg10, Stack word32 dwArg18)
+word64 fn000000014000186C(ui64 qwArg10, word32 dwArg18)
 {
+	word32 dwArg1C_n = SLICE(qwArg18, word32, 32);
 	Eq_n rax_n = globals->t40003000;
 	if (rax_n == 769630770)
 	{
 		GetSystemTimeAsFileTime(tLoc28);
 		ui64 v14_n = qwArg10 & 0x00 ^ (uint64) GetCurrentThreadId() ^ (uint64) GetCurrentProcessId();
 		QueryPerformanceCounter(tLoc28);
-		ui64 rax_n = (uint64) dwArg18 << 0x20 ^ SEQ(dwArg1C, dwArg18) ^ v14_n ^ fp + 0x08;
+		ui64 rax_n = (uint64) dwArg18 << 0x20 ^ SEQ(dwArg1C_n, dwArg18) ^ v14_n ^ fp + 0x08;
 		rax_n = rax_n & 0xFFFFFFFF;
 		if ((rax_n & 0xFFFFFFFF) == 769630770)
 			rax_n.u0 = 769630771;
@@ -664,23 +593,24 @@ void fn000000014000196C()
 {
 }
 
-// 0000000140001974: Register Eq_n fn0000000140001974(Register word32 ecx, Register (ptr64 int32) rbx, Register ptr64 rbp, Stack Eq_n qwArg00, Stack Eq_n qwArg08, Stack word64 qwArg10, Register out Eq_n rcxOut, Register out Eq_n rdxOut, Register out Eq_n r8Out)
-Eq_n fn0000000140001974(word32 ecx, int32 * rbx, ptr64 rbp, Eq_n qwArg00, Eq_n qwArg08, word64 qwArg10, union Eq_n & rcxOut, union Eq_n & rdxOut, union Eq_n & r8Out)
+// 0000000140001974: Register Eq_n fn0000000140001974(Register word32 ecx, Register (ptr64 int32) rbx, Register ptr64 rbp, Stack Eq_n qwArg00, Stack word64 qwArg10, Register out Eq_n rcxOut, Register out Eq_n rdxOut, Register out Eq_n r8Out)
+Eq_n fn0000000140001974(word32 ecx, int32 * rbx, ptr64 rbp, Eq_n qwArg00, word64 qwArg10, union Eq_n & rcxOut, union Eq_n & rdxOut, union Eq_n & r8Out)
 {
+	word32 dwLoc05C4_n = SLICE(ptrLoc05C8, word32, 32);
 	word32 ebx_n = (word32) (uint64) ecx;
-	Eq_n ptrLoc05C8_n = SEQ(dwLoc05C4, tLoc05C8);
-	Eq_n tLoc05C8_n = SLICE(ptrLoc05C8_n, DWORD, 0);
+	Eq_n ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8);
 	word32 dwLoc05C4_n = SLICE(ptrLoc05C8_n, word32, 32);
 	if (IsProcessorFeaturePresent(tLoc05C8) == 0x00)
 	{
 		globals->dw40003610 &= 0x00;
 		memset(ptrLoc05C8_n, dwLoc05C0, tLoc05B8);
-		RtlCaptureContext(ptrLoc05C8_n);
+		RtlCaptureContext(SEQ(dwLoc05C4_n, tLoc05C8));
 		Eq_n rax_n = RtlLookupFunctionEntry(qwLoc03E0, fp + 0x10, null);
+		Eq_n ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8);
 		if (rax_n != null)
 		{
 			KERNEL32.dll!RtlVirtualUnwind();
-			ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8_n);
+			ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8);
 		}
 		memset(ptrLoc05C8_n, dwLoc05C0, tLoc05B8);
 		Eq_n eax_n = IsDebuggerPresent();
@@ -738,17 +668,11 @@ void fn0000000140001B24(struct Eq_n ** rcx, int32 * rbx, word64 rsi, word64 rdi)
 		return;
 	api-ms-win-crt-runtime-l1-1-0.dll!terminate();
 	int3();
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	// Failed to bind call argument.
-	// Please report this issue at https://github.com/uxmal/reko
-	Eq_n stackArg8 = <invalid>;
-	Eq_n stackArg16 = <invalid>;
-	fn0000000140001B5C(rbx, rsi, rdi, stackArg8, stackArg16);
+	fn0000000140001B5C(rbx, rsi, rdi);
 }
 
-// 0000000140001B5C: void fn0000000140001B5C(Register (ptr64 int32) rbx, Register word64 rsi, Register word64 rdi, Stack Eq_n qwArg08, Stack Eq_n qwArg10)
-void fn0000000140001B5C(int32 * rbx, word64 rsi, word64 rdi, Eq_n qwArg08, Eq_n qwArg10)
+// 0000000140001B5C: void fn0000000140001B5C(Register (ptr64 int32) rbx, Register word64 rsi, Register word64 rdi)
+void fn0000000140001B5C(int32 * rbx, word64 rsi, word64 rdi)
 {
 	word64 * rbx_n;
 	for (rbx_n = &globals->qw40002680; rbx_n < &globals->qw40002680; ++rbx_n)
@@ -762,8 +686,8 @@ void fn0000000140001B5C(int32 * rbx, word64 rsi, word64 rdi, Eq_n qwArg08, Eq_n 
 	}
 }
 
-// 0000000140001BA8: void fn0000000140001BA8(Register word64 rbx, Register word64 rsi, Register word64 rdi, Stack word64 qwArg08, Stack word64 qwArg10)
-void fn0000000140001BA8(word64 rbx, word64 rsi, word64 rdi, word64 qwArg08, word64 qwArg10)
+// 0000000140001BA8: void fn0000000140001BA8(Register word64 rbx, Register word64 rsi, Register word64 rdi)
+void fn0000000140001BA8(word64 rbx, word64 rsi, word64 rdi)
 {
 	word64 * rbx_n;
 	for (rbx_n = &globals->qw40002690; rbx_n < &globals->qw40002690; ++rbx_n)
@@ -783,8 +707,8 @@ void fn0000000140001BF4()
 	globals->ptr40002190();
 }
 
-// 0000000140001BFC: void fn0000000140001BFC(Register word32 edx, Register Eq_n ebx, Stack Eq_n qwArg08, Stack Eq_n qwArg10, Stack Eq_n qwArg18)
-void fn0000000140001BFC(word32 edx, Eq_n ebx, Eq_n qwArg08, Eq_n qwArg10, Eq_n qwArg18)
+// 0000000140001BFC: void fn0000000140001BFC(Register word32 edx, Register Eq_n ebx)
+void fn0000000140001BFC(word32 edx, Eq_n ebx)
 {
 	word32 ebx_n = (word32) rbx;
 	globals->dw4000301C = 0x02;
@@ -795,7 +719,6 @@ void fn0000000140001BFC(word32 edx, Eq_n ebx, Eq_n qwArg08, Eq_n qwArg10, Eq_n q
 	ui32 r8d_n = (word32) (uint64) globals->dw40003614;
 	__cpuid(0x01, 0x00, &0x01, &ebx_n, &0x00, &edx_n);
 	byte bLoc20_n = SLICE(dwLoc20 & 0x00, byte, 0);
-	bLoc20_n = SLICE(dwLoc20 & 0x00, byte, 0);
 	word32 r11d_n = (word32) (uint64) ((word32) (uint64) ((word32) (uint64) ((word32) (uint64) ebx_n ^ 1752462657) | (word32) ((uint64) ((word32) ((uint64) edx) ^ 0x69746E65))) | 0x444D4163);
 	uint64 rdx_n = DPB(rdx_n, edx_n, 0);
 	rdx_n = DPB(rdx_n, edx_n, 0);
@@ -836,7 +759,6 @@ l0000000140001CE9:
 	if (false)
 	{
 		__cpuid(0x07, 0x00, &0x07, &ebx_n, &0x00, &edx_n);
-		bLoc20_n = SLICE(ebx_n, byte, 0);
 		bLoc20_n = SLICE(ebx_n, byte, 0);
 		if (!__bt(ebx_n, 0x09))
 			globals->dw40003614 = (word32) (uint64) (r8d_n | 0x02);

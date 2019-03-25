@@ -52,31 +52,30 @@ ptr16 g_ptr0212 = 0x0000;
 ptr16 g_ptr0214 = 0x0000;
 Eq_n g_t0216 = 
 	{
-		0x0000
-	};
+		;
 ptr16 g_ptr0218 = 0x000A;
 ptr16 g_ptr021A = 0x0000;
 Eq_n g_a021C[] = 
-	{
-	};
+		{
+		};
 Eq_n g_t021E = 
-	{
-		0x0000
-	};
+		{
+			0x0000
+		};
 ptr16 g_ptr0220 = 0x0000;
 Eq_n g_t0222 = 
-	{
-	};
+		{
+		};
 Eq_n g_t0226 = 
-	{
-	};
+		{
+		};
 ptr16 g_ptr0282 = 0x0000;
 ptr16 g_ptr0284 = 0x0000;
 struct <anonymous> * g_ptr028A = null;
 struct <anonymous> * g_ptr029A = null;
 Eq_n g_t09B2 = 
-	{
-		0x0000
-	};
+		{
+			0x0000
+		};
 Eq_n g_a5B78[];
 

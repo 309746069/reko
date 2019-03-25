@@ -88,7 +88,7 @@ Eq_124: (fn void ((ptr32 Eq_19)))
 	T_124 (in fn00001214 : ptr32)
 	T_125 (in signature of fn00001214 : void)
 	T_297 (in fn00001214 : ptr32)
-Eq_160: (struct "Eq_160" 0001 (0 (arr Eq_160) a0000))
+Eq_160: (struct "Eq_160" 0001 (0 Eq_735 t0000))
 	T_160 (in 0x00 : byte)
 	T_162 (in Mem262[a0_260 + d0_261:byte] : byte)
 	T_725
@@ -154,7 +154,7 @@ Eq_485: (struct "Eq_485" (0 (ptr32 Eq_485) ptr0000) (4 (ptr32 Eq_3) ptr0004))
 Eq_490: (fn void (int32))
 	T_490 (in fn00001278 : ptr32)
 	T_491 (in signature of fn00001278 : void)
-Eq_517: (struct "Eq_517" 0001 (0 (arr Eq_517) a0000))
+Eq_517: (union "Eq_517" ((ptr32 code) u0) ((arr Eq_517) u1) (Eq_736 u2))
 	T_517 (in Mem11[0x000014D0 + d0_38:word32] : word32)
 	T_729
 	T_730
@@ -227,6 +227,10 @@ Eq_724: (struct "Eq_724" 0004 (0 byte b0000))
 	T_724
 Eq_734: (struct "Eq_734" 0001 (0 byte b0000) (24 int32 dw0024))
 	T_734
+Eq_735: (union "Eq_735" (byte u0) ((arr Eq_160) u1))
+	T_735
+Eq_736: (struct "Eq_736" 0001 (0 (arr Eq_517) a0000))
+	T_736
 // Type Variables ////////////
 globals_t: (in globals : (ptr32 (struct "Globals")))
   Class: Eq_1
@@ -823,7 +827,7 @@ T_148: (in Mem179[d0_112 + 8:word32] : word32)
 T_149: (in a0_260 : (arr Eq_160))
   Class: Eq_149
   DataType: (ptr32 (arr Eq_160))
-  OrigDataType: (ptr32 (struct (0 (arr T_725) a0000)))
+  OrigDataType: (ptr32 (struct (0 (arr T_160) a0000)))
 T_150: (in 0x00000002 : word32)
   Class: Eq_150
   DataType: word32
@@ -866,7 +870,7 @@ T_159: (in (int32) 0x00000000[d0_252 * 0x00000004] : int32)
   OrigDataType: int32
 T_160: (in 0x00 : byte)
   Class: Eq_160
-  DataType: (struct "Eq_160" 0001 (0 (arr Eq_160) a0000))
+  DataType: (struct "Eq_160" 0001 (0 Eq_735 t0000))
   OrigDataType: byte
 T_161: (in a0_260 + d0_261 : word32)
   Class: Eq_161
@@ -874,8 +878,8 @@ T_161: (in a0_260 + d0_261 : word32)
   OrigDataType: (ptr32 (struct (0 T_162 t0000)))
 T_162: (in Mem262[a0_260 + d0_261:byte] : byte)
   Class: Eq_160
-  DataType: Eq_160
-  OrigDataType: byte
+  DataType: Eq_735
+  OrigDataType: (struct "Eq_160" 0001 (0 Eq_735 t0000))
 T_163: (in 16 : int32)
   Class: Eq_163
   DataType: int32
@@ -2287,7 +2291,7 @@ T_514: (in d2_33 << 0x00000002 : word32)
 T_515: (in 000014D0 : ptr32)
   Class: Eq_515
   DataType: (ptr32 (arr Eq_517))
-  OrigDataType: (ptr32 (struct (0 (arr T_729) a0000)))
+  OrigDataType: (ptr32 (struct (0 (arr T_517) a0000)))
 T_516: (in 0x000014D0 + d0_38 : word32)
   Class: Eq_516
   DataType: (ptr32 Eq_517)
@@ -3127,7 +3131,7 @@ T_724:
 T_725:
   Class: Eq_160
   DataType: Eq_160
-  OrigDataType: (struct 0001 (0 T_162 t0000))
+  OrigDataType: (struct "Eq_160" 0001 (0 Eq_735 t0000))
 T_726:
   Class: Eq_160
   DataType: Eq_160
@@ -3143,7 +3147,7 @@ T_728:
 T_729:
   Class: Eq_517
   DataType: Eq_517
-  OrigDataType: (struct 0001 (0 T_517 t0000))
+  OrigDataType: (struct "Eq_736" 0001 (0 (arr Eq_517) a0000))
 T_730:
   Class: Eq_517
   DataType: Eq_517
@@ -3163,6 +3167,14 @@ T_733:
 T_734:
   Class: Eq_734
   DataType: Eq_734
+  OrigDataType: 
+T_735:
+  Class: Eq_735
+  DataType: Eq_735
+  OrigDataType: 
+T_736:
+  Class: Eq_736
+  DataType: Eq_736
   OrigDataType: 
 */
 typedef struct Globals {
@@ -3238,7 +3250,7 @@ typedef struct Eq_116 {
 typedef void (Eq_124)(Eq_19 *);
 
 typedef struct Eq_160 {	// size: 1 1
-	Eq_160 a0000[];	// 0
+	Eq_735 t0000;	// 0
 } Eq_160;
 
 typedef struct Eq_171 {	// size: 1 1
@@ -3284,8 +3296,10 @@ typedef struct Eq_485 {
 
 typedef void (Eq_490)(int32);
 
-typedef struct Eq_517 {	// size: 1 1
-	Eq_517 a0000[];	// 0
+typedef union Eq_517 {
+	<anonymous> * u0;
+	Eq_517 u1[];
+	Eq_736 u2;
 } Eq_517;
 
 typedef void (Eq_539)(int32, Eq_3 *, Eq_485 *, int32);
@@ -3356,4 +3370,13 @@ typedef struct Eq_734 {	// size: 1 1
 	byte b0000;	// 0
 	int32 dw0024;	// 24
 } Eq_734;
+
+typedef union Eq_735 {
+	byte u0;
+	Eq_160 u1[];
+} Eq_735;
+
+typedef struct Eq_736 {	// size: 1 1
+	Eq_517 a0000[];	// 0
+} Eq_736;
 
