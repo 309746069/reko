@@ -23,6 +23,7 @@ using Reko.Core.Expressions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Reko.Core.Types
 {
@@ -77,7 +78,7 @@ namespace Reko.Core.Types
 			PrimitiveType pb = b as PrimitiveType;
 			if (pa != null && pb != null)
 			{
-				if (pa.Size != pb.Size)
+				if (pa.BitSize != pb.BitSize)
 					return false;
 				return (pa.Domain &  pb.Domain) != 0;
 			}
@@ -196,7 +197,7 @@ namespace Reko.Core.Types
                     AreCompatible(mpA.BasePointer, mpB.BasePointer, ++depth) && 
 				    AreCompatible(mpA.Pointee, mpB.Pointee, ++depth);
 			PrimitiveType pb = b as PrimitiveType;
-			if (pb != null)
+			if (pb != null && pb.BitSize == mpA.BitSize)
 			{
 				if (pb == PrimitiveType.Word16 || pb.Domain == Domain.Pointer ||
                     pb.Domain == Domain.Selector || pb.Domain == Domain.Offset)
@@ -461,11 +462,19 @@ namespace Reko.Core.Types
 		{
 			foreach (UnionAlternative alt in u.Alternatives.Values)
 			{
-				if (AreCompatible(alt.DataType, dt))
+                if (AreCompatible(alt.DataType, dt))
 				{
-					alt.DataType = Unify(alt.DataType, dt);
-					return;
-				}
+                    var dtUnified = Unify(alt.DataType, dt);
+                    if (dtUnified is UnionType ut)
+                    {
+                        Debug.WriteLine($"*** Unifier: expected {0} and {1} to have unified correctly since AreCompatible returned true.");
+                    }
+                    else
+                    {
+                        alt.DataType = dtUnified;
+                        return;
+                    }
+                }
 			}
 			u.Alternatives.Add(new UnionAlternative(dt, u.Alternatives.Count));
 		}
@@ -701,9 +710,9 @@ namespace Reko.Core.Types
 		public DataType UnifyMemberPointer(MemberPointer mpA, DataType b)
 		{
 			PrimitiveType pb = b as PrimitiveType;
-			if (pb != null)
+			if (pb != null && pb.BitSize == mpA.BitSize)
 			{
-                if (pb == PrimitiveType.Word16 || pb == PrimitiveType.Word32 ||
+                if (pb == PrimitiveType.Word16 || pb.Domain == Domain.Pointer ||
                     pb.Domain == Domain.Selector || pb.Domain == Domain.Offset)
 				{
 					//$REVIEW: line above should be if (mpA.Size = b.Size .... as in UnifyPointer.
@@ -735,7 +744,9 @@ namespace Reko.Core.Types
 			{
 				UnifyIntoUnion(u, a.DataType);
 			}
-			foreach (UnionAlternative a in u2.Alternatives.Values)
+            //$HACK: pp.exe exhibits a bad crash that goes away if we do .ToArray() below.
+            // However, that's a drag on performance. Need to find the root cause.
+			foreach (UnionAlternative a in u2.Alternatives.Values.ToArray())
 			{
 				UnifyIntoUnion(u, a.DataType);
 			}
