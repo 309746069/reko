@@ -548,7 +548,7 @@ byte * fn06D6(byte * r4, Eq_n r5, struct Eq_n * pc)
 				{
 					struct Eq_n * sp_n = sp_n - 0x01;
 					sp_n->t0000 = globals->t0F14;
-					sp_n->t0001.u1 = 0x18;
+					sp_n->b0001 = 0x18;
 					byte * r4_n;
 					Eq_n r5_n;
 					byte * r4_n;

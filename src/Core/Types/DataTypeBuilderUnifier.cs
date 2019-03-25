@@ -38,8 +38,8 @@ namespace Reko.Core.Types
         public override DataType UnifyTypeVariables(TypeVariable tA, TypeVariable tB)
         {
             var dt = Unify(
-                tA.Class.DataType ?? tA.OriginalDataType, 
-                tB.Class.DataType ?? tB.OriginalDataType);
+                tA.Class.DataType, 
+                tB.Class.DataType);
             var eq = store.MergeClasses(tA, tB);
             eq.DataType = dt;
             return eq.Representative;

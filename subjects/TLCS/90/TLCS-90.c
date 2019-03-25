@@ -240,7 +240,7 @@ void fn04EE(byte * de, struct Eq_n * ix, byte * wArg20)
 		ui16 hl_n = DPB(hl_n, h_n, 8);
 		c_n = __rcr(c_n, 0x01, SLICE(cond(b_n), bool, 0));
 	}
-	cu8 a_n = (word16) c_n + ix->bFFFFFFEA;
+	uint8 a_n = (word16) c_n + ix->bFFFFFFEA;
 	cu8 a_n = (bool) (a_n < 0x00) + ((word16) b_n + ix->bFFFFFFEB);
 	cu8 a_n = (bool) (a_n < 0x00) + ((word16) l_n + ix->bFFFFFFEC);
 	uint8 a_n = h_n + ix->bFFFFFFED + (a_n < 0x00);
@@ -266,7 +266,7 @@ void fn04EE(byte * de, struct Eq_n * ix, byte * wArg20)
 		byte l_n = (byte) hl_n;
 		byte h_n = SLICE(hl_n, byte, 8);
 	}
-	uint8 a_n = (word16) c_n + ix->bFFFFFFEE;
+	uint8 a_n = (byte) c_n.u1 + ix->bFFFFFFEE;
 	ix->bFFFFFFFC = a_n;
 	uint8 a_n = (bool) (a_n < 0x00) + ((word16) b_n + ix->bFFFFFFEF);
 	ix->bFFFFFFFD = a_n;
@@ -563,7 +563,7 @@ void fn0CB7(cu8 c, cu8 b, byte * de, uint8 h, byte l, struct Eq_n * ix, byte * w
 		byte l_n = (byte) hl_n;
 		byte h_n = SLICE(hl_n, byte, 8);
 	}
-	uint8 a_n = (word16) c_n + ix->bFFFFFFEE;
+	uint8 a_n = (byte) c_n.u1 + ix->bFFFFFFEE;
 	ix->bFFFFFFFC = a_n;
 	uint8 a_n = (bool) (a_n < 0x00) + ((word16) b_n + ix->bFFFFFFEF);
 	ix->bFFFFFFFD = a_n;

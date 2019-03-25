@@ -9474,8 +9474,8 @@ T_2050: (in 0x0000 : word16)
   OrigDataType: word16
 T_2051: (in r5 + 0x0000 : word16)
   Class: Eq_2051
-  DataType: (ptr16 cui16)
-  OrigDataType: (ptr16 cui16)
+  DataType: (ptr16 word16)
+  OrigDataType: (ptr16 word16)
 T_2052: (in Mem62[r5 + 0x0000:word16] : word16)
   Class: Eq_2020
   DataType: cui16
@@ -9498,20 +9498,20 @@ T_2056: (in 0x0000 : word16)
   OrigDataType: word16
 T_2057: (in r5 + 0x0000 : word16)
   Class: Eq_2057
-  DataType: (ptr16 cui16)
-  OrigDataType: (ptr16 cui16)
+  DataType: (ptr16 word16)
+  OrigDataType: (ptr16 word16)
 T_2058: (in Mem64[r5 + 0x0000:word16] : word16)
   Class: Eq_2020
   DataType: cui16
-  OrigDataType: cui16
+  OrigDataType: word16
 T_2059: (in 0x0000 : word16)
   Class: Eq_2059
   DataType: word16
   OrigDataType: word16
 T_2060: (in r5 + 0x0000 : word16)
   Class: Eq_2060
-  DataType: (ptr16 cui16)
-  OrigDataType: (ptr16 cui16)
+  DataType: (ptr16 word16)
+  OrigDataType: (ptr16 word16)
 T_2061: (in Mem64[r5 + 0x0000:word16] : word16)
   Class: Eq_2020
   DataType: cui16
@@ -9530,12 +9530,12 @@ T_2064: (in 0x0000 : word16)
   OrigDataType: word16
 T_2065: (in r5 + 0x0000 : word16)
   Class: Eq_2065
-  DataType: (ptr16 cui16)
-  OrigDataType: (ptr16 cui16)
+  DataType: (ptr16 word16)
+  OrigDataType: (ptr16 word16)
 T_2066: (in Mem66[r5 + 0x0000:word16] : word16)
   Class: Eq_2020
   DataType: cui16
-  OrigDataType: cui16
+  OrigDataType: word16
 T_2067: (in 0x0002 : word16)
   Class: Eq_2067
   DataType: int16
@@ -9634,12 +9634,12 @@ T_2090: (in 0x0000 : word16)
   OrigDataType: word16
 T_2091: (in r5 + 0x0000 : word16)
   Class: Eq_2091
-  DataType: (ptr16 cui16)
-  OrigDataType: (ptr16 cui16)
+  DataType: (ptr16 word16)
+  OrigDataType: (ptr16 word16)
 T_2092: (in Mem99[r5 + 0x0000:word16] : word16)
   Class: Eq_2020
   DataType: cui16
-  OrigDataType: cui16
+  OrigDataType: word16
 T_2093: (in v43_101 : ci16)
   Class: Eq_1943
   DataType: ci16

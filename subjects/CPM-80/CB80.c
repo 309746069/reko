@@ -254,7 +254,7 @@ bool fn05EF(byte b, Eq_n c, ptr16 & bcOut, union Eq_n & deOut, union Eq_n & fOut
 			break;
 		Eq_n hl_n = DPB(globals->t1671, 0x00, 8);
 		C_n = fn056B(Mem12[Mem12[0x166F:word16] + hl_n:byte], out bc_n, out f);
-		globals->t1671 = (word16) globals->t1671 + 0x01;
+		globals->t1671.u1 = (word16) globals->t1671 + 0x01;
 		de = hl_n;
 	} while (globals->t1671 != 0x00);
 	bcOut = bc_n;
@@ -940,7 +940,7 @@ bool fn0EAB()
 		bool C_n = SLICE(cond(a_n - hl_n->b138C), bool, 0);
 		if (a_n != hl_n->b138C)
 			return C_n;
-		globals->t16A7 = (word16) globals->t16A7 + 0x01;
+		globals->t16A7.u1 = (word16) globals->t16A7 + 0x01;
 	}
 	return C_n;
 }

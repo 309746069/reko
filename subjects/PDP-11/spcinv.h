@@ -658,14 +658,9 @@ Eq_1225: (union "Eq_1225" (int16 u0) (cup16 u1))
 	T_1225 (in 0x0004 : word16)
 Eq_1226: (union "Eq_1226" (int16 u0) (cup16 u1))
 	T_1226 (in r3_9 - 0x0004 : word16)
-Eq_1230: (struct "Eq_1230" (0 Eq_379 t0000) (1 Eq_1238 t0001))
+Eq_1230: (struct "Eq_1230" (0 Eq_379 t0000) (1 byte b0001))
 	T_1230 (in sp_107 : (ptr16 Eq_1230))
 	T_1232 (in sp_106 - 0x0001 : word16)
-Eq_1238: (union "Eq_1238" (wchar_t u0) (byte u1))
-	T_1238 (in 0x18 : byte)
-	T_1241 (in Mem109[sp_107 + 0x0001:byte] : byte)
-Eq_1240: (union "Eq_1240" (wchar_t u0) (byte u1))
-	T_1240 (in sp_107 + 0x0001 : word16)
 Eq_1323: (struct "Eq_1323" 0002 (0 Eq_2352 t0000))
 	T_1323 (in r1_154 : (ptr16 Eq_1323))
 	T_1327 (in Mem94[r2_16 + 0x0DAC:word16] : word16)
@@ -5740,11 +5735,11 @@ T_1239: (in 0x0001 : word16)
   OrigDataType: word16
 T_1240: (in sp_107 + 0x0001 : word16)
   Class: Eq_1240
-  DataType: (ptr16 Eq_1240)
-  OrigDataType: (ptr16 (union (byte u1) (wchar_t u0)))
+  DataType: ptr16
+  OrigDataType: ptr16
 T_1241: (in Mem109[sp_107 + 0x0001:byte] : byte)
   Class: Eq_1238
-  DataType: Eq_1238
+  DataType: byte
   OrigDataType: byte
 T_1242: (in r4_115 : (ptr16 byte))
   Class: Eq_785
@@ -7348,8 +7343,8 @@ T_1641: (in 0x0DB8 : word16)
   OrigDataType: word16
 T_1642: (in r2_16 + 0x0DB8 : word16)
   Class: Eq_1642
-  DataType: (ptr16 ui16)
-  OrigDataType: (ptr16 ui16)
+  DataType: (ptr16 ci16)
+  OrigDataType: (ptr16 ci16)
 T_1643: (in Mem172[r2_16 + 0x0DB8:word16] : word16)
   Class: Eq_61
   DataType: Eq_61
@@ -10596,18 +10591,8 @@ typedef union Eq_1226 {
 
 typedef struct Eq_1230 {
 	Eq_379 t0000;	// 0
-	Eq_1238 t0001;	// 1
+	byte b0001;	// 1
 } Eq_1230;
-
-typedef union Eq_1238 {
-	wchar_t u0;
-	byte u1;
-} Eq_1238;
-
-typedef union Eq_1240 {
-	wchar_t u0;
-	byte u1;
-} Eq_1240;
 
 typedef struct Eq_1323 {	// size: 2 2
 	Eq_2352 t0000;	// 0

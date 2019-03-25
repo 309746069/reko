@@ -989,7 +989,7 @@ l1326:
 l132A:
 			if (*r4_n <= 0x00)
 			{
-				if (Mem101[r3 + 0x1C:word16] - r1_n <u 0x00)
+				if (r3->ptr001C - r1_n < 0x00)
 				{
 					Eq_n r5_n = (int16) *r3->ptr001C;
 					*r3->ptr001C = (union Eq_n *) 0x80;

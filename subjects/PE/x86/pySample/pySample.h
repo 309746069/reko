@@ -1814,12 +1814,12 @@ T_351: (in 0x00000000 : word32)
   OrigDataType: word32
 T_352: (in esp_104 + 0x00000000 : word32)
   Class: Eq_352
-  DataType: (ptr32 word32)
-  OrigDataType: (ptr32 word32)
+  DataType: (ptr32 (ptr32 void))
+  OrigDataType: (ptr32 (ptr32 void))
 T_353: (in Mem105[esp_104 + 0x00000000:word32] : word32)
   Class: Eq_142
   DataType: (ptr32 word32)
-  OrigDataType: word32
+  OrigDataType: (ptr32 void)
 T_354: (in eax_108 : (ptr32 word32))
   Class: Eq_142
   DataType: (ptr32 word32)
@@ -3962,8 +3962,8 @@ T_888: (in 0x00000000 : word32)
   OrigDataType: word32
 T_889: (in esp_31 + 0x00000000 : word32)
   Class: Eq_889
-  DataType: (ptr32 word32)
-  OrigDataType: (ptr32 word32)
+  DataType: (ptr32 ptr32)
+  OrigDataType: (ptr32 ptr32)
 T_890: (in Mem44[esp_31 + 0x00000000:(ptr32 void)] : (ptr32 void))
   Class: Eq_142
   DataType: (ptr32 word32)

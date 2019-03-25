@@ -1399,7 +1399,7 @@ Eq_n gen_aux_info_file(Eq_n o0, ptr32 & l0Out, struct stat & l1Out, char & l4Out
 	char * l4_n;
 	Eq_n o0_n = shortpath(0x00, o1_n, out l0_n, out l2_n, out l3_n, out l4_n, out i0_n, out i1_n);
 	*((word32) globals->t27F3C + l2_n->dw0344 * 0x04) = o0_n;
-	Eq_n o0_n = savestring2(o0_n, strlen(o0_n), 0x02);
+	word32 o0_n = savestring2(o0_n, strlen(o0_n), 0x02);
 	word32 o1_n = globals->dw27F2C;
 	*((word32) globals->t27F3C + globals->dw27F48 * 0x04) = o0_n;
 	if (o1_n != 0x00)
@@ -2300,7 +2300,7 @@ ui32 main(char ** o1)
 					if ((int32) *((word32) o0_n - 0x01) == 99 && (int32) (*((word32) o0_n - 0x02)) == 0x2E)
 					{
 						ui32 o0_n = l4_n->dw034C;
-						((word32) globals->t28160 + o0_n * 0x04)->u0 = 0x00;
+						*((word32) globals->t28160 + o0_n * 0x04) = 0x00;
 						l4_n->dw034C = o0_n + 0x01;
 					}
 					else
@@ -3182,8 +3182,8 @@ l000160C0:
 						}
 						ptr32 * o0_n = globals->ptr28068;
 						Eq_n l2_n;
-						struct Eq_n * o0_n = i1_n[o0_n];
-						Eq_n o1_n = (int32) o0_n->b0001;
+						Eq_n o0_n = i1_n[o0_n];
+						Eq_n o1_n = (int32) *((word32) o0_n + 0x01);
 						if (o1_n != 0x2D)
 						{
 							if (i5_n == 0x00)
@@ -3191,7 +3191,7 @@ l000160C0:
 								o1_n = globals->t2B2C0;
 								goto l000164A0;
 							}
-							if ((int32) o0_n->b0002 != 0x00)
+							if ((int32) *((word32) o0_n + 0x02) != 0x00)
 							{
 								l2_n = globals->t2B2C0;
 l00016114:
@@ -3339,9 +3339,9 @@ l0001640C:
 									if (globals->dw28070 != 0x00)
 									{
 										ptr32 * o0_n = globals->ptr28068;
-										struct Eq_n * o3_n = i1_n[o0_n];
-										if ((int32) o3_n->b0001 != 0x2D)
-											fprintf(&globals->t2B640, "%s: unrecognized option `%c%s'\n", i1_n[0x00], (int32) o3_n->b0000, globals->t2B2C0);
+										Eq_n o3_n = i1_n[o0_n];
+										if ((int32) *((word32) o3_n + 0x01) != 0x2D)
+											fprintf(&globals->t2B640, "%s: unrecognized option `%c%s'\n", i1_n[0x00], (int32) *o3_n, globals->t2B2C0);
 										fprintf(&globals->t2B640, "%s: unrecognized option `--%s'\n", i1_n[0x00], globals->t2B2C0);
 										o0_n = globals->ptr28068;
 									}

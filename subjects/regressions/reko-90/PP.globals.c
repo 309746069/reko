@@ -4,9 +4,4 @@
 
 #include "PP.h"
 
-Eq_2 g_tFFFF83BA;
-Eq_55476 g_a0000[];
-Eq_55475 g_a0001[];
-struct Eq_2 * g_ptr8000 = &g_tFFFF83BA;
-struct Eq_3 * g_ptr14830 = null;
 

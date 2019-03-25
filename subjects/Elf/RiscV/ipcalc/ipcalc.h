@@ -2192,7 +2192,7 @@ Eq_5563: (union "Eq_5563" (int64 u0) (uint64 u1))
 	T_5570 (in (int64) Mem56[a0 + ((a1_103 << 0x00000000) >>u 0x00000000):byte] : int64)
 Eq_5567: (union "Eq_5567" (int64 u0) (uint64 u1))
 	T_5567 (in a1_103 << 0x00000000 >> 0x00000000 : word64)
-Eq_5569: (struct "Eq_5569" 0001 (0 Eq_5783 t0000))
+Eq_5569: (struct "Eq_5569" 0001 (0 (arr Eq_5569) a0000))
 	T_5569 (in Mem56[a0 + ((a1_103 << 0x00000000) >>u 0x00000000):byte] : byte)
 	T_5728
 	T_5729
@@ -2208,23 +2208,23 @@ Eq_5603: (union "Eq_5603" (int64 u0) (uint64 u1))
 	T_5603 (in a3_59 << 0x00000000 >> 0x00000000 : word64)
 Eq_5604: (struct "Eq_5604" (EF8 byte b0EF8))
 	T_5604 (in fp + -16 + ((a3_59 << 0x00000000) >>u 0x00000000) : word64)
-Eq_5631: (union "Eq_5631" (int32 u0) ((ptr64 Eq_5784) u1))
+Eq_5631: (union "Eq_5631" (int32 u0) ((ptr64 Eq_5783) u1))
 	T_5631 (in -16 : int32)
-Eq_5632: (union "Eq_5632" (int32 u0) ((ptr64 Eq_5785) u1))
+Eq_5632: (union "Eq_5632" (int32 u0) ((ptr64 Eq_5784) u1))
 	T_5632 (in fp + -16 : word64)
-Eq_5636: (union "Eq_5636" (int32 u0) ((ptr64 Eq_5786) u1))
+Eq_5636: (union "Eq_5636" (int32 u0) ((ptr64 Eq_5785) u1))
 	T_5636 (in a2_82 << 0x00000000 >> 0x00000000 : word64)
-Eq_5637: (union "Eq_5637" (int32 u0) ((ptr64 Eq_5787) u1))
+Eq_5637: (union "Eq_5637" (int32 u0) ((ptr64 Eq_5786) u1))
 	T_5637 (in fp + -16 + ((a2_82 << 0x00000000) >>u 0x00000000) : word64)
-Eq_5639: (union "Eq_5639" (int32 u0) ((ptr64 Eq_5788) u1))
+Eq_5639: (union "Eq_5639" (int32 u0) ((ptr64 Eq_5787) u1))
 	T_5639 (in (word64) (a2_82 << 0x00000000 >> 0x00000000) + ((word64) fp - 16) + 3832 : word64)
-Eq_5642: (union "Eq_5642" (int32 u0) ((ptr64 Eq_5789) u1))
+Eq_5642: (union "Eq_5642" (int32 u0) ((ptr64 Eq_5788) u1))
 	T_5642 (in fp + -16 : word64)
-Eq_5646: (union "Eq_5646" (int32 u0) ((ptr64 Eq_5790) u1))
+Eq_5646: (union "Eq_5646" (int32 u0) ((ptr64 Eq_5789) u1))
 	T_5646 (in a3_83 << 0x00000000 >> 0x00000000 : word64)
-Eq_5647: (union "Eq_5647" (int32 u0) ((ptr64 Eq_5791) u1))
+Eq_5647: (union "Eq_5647" (int32 u0) ((ptr64 Eq_5790) u1))
 	T_5647 (in fp + -16 + ((a3_83 << 0x00000000) >>u 0x00000000) : word64)
-Eq_5649: (union "Eq_5649" (int32 u0) ((ptr64 Eq_5792) u1))
+Eq_5649: (union "Eq_5649" (int32 u0) ((ptr64 Eq_5791) u1))
 	T_5649 (in (word64) (a3_83 << 0x00000000 >> 0x00000000) + ((word64) fp - 16) + 3832 : word64)
 Eq_5699: (union "Eq_5699" (int64 u0) (ptr64 u1))
 	T_5699 (in 0000000000019E20 : ptr64)
@@ -2293,7 +2293,7 @@ Eq_5755: (struct "sockaddr")
 	T_5755
 Eq_5756: (struct "sockaddr")
 	T_5756
-Eq_5757: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5793) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5842) ai_next))
+Eq_5757: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5792) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5841) ai_next))
 	T_5757
 Eq_5758: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5756) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5757) ai_next))
 	T_5758
@@ -2345,7 +2345,7 @@ Eq_5781: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_s
 	T_5781
 Eq_5782: (struct "Eq_5782" (EF8 byte b0EF8))
 	T_5782
-Eq_5783: (union "Eq_5783" (byte u0) ((arr Eq_5569) u1))
+Eq_5783: (struct "Eq_5783" (EF8 byte b0EF8))
 	T_5783
 Eq_5784: (struct "Eq_5784" (EF8 byte b0EF8))
 	T_5784
@@ -2363,7 +2363,7 @@ Eq_5790: (struct "Eq_5790" (EF8 byte b0EF8))
 	T_5790
 Eq_5791: (struct "Eq_5791" (EF8 byte b0EF8))
 	T_5791
-Eq_5792: (struct "Eq_5792" (EF8 byte b0EF8))
+Eq_5792: (struct "sockaddr")
 	T_5792
 Eq_5793: (struct "sockaddr")
 	T_5793
@@ -2413,57 +2413,57 @@ Eq_5815: (struct "sockaddr")
 	T_5815
 Eq_5816: (struct "sockaddr")
 	T_5816
-Eq_5817: (struct "sockaddr")
+Eq_5817: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5842) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5891) ai_next))
 	T_5817
-Eq_5818: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5843) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5892) ai_next))
+Eq_5818: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5816) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5817) ai_next))
 	T_5818
-Eq_5819: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5817) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5818) ai_next))
+Eq_5819: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5815) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5818) ai_next))
 	T_5819
-Eq_5820: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5816) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5819) ai_next))
+Eq_5820: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5814) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5819) ai_next))
 	T_5820
-Eq_5821: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5815) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5820) ai_next))
+Eq_5821: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5813) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5820) ai_next))
 	T_5821
-Eq_5822: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5814) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5821) ai_next))
+Eq_5822: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5812) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5821) ai_next))
 	T_5822
-Eq_5823: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5813) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5822) ai_next))
+Eq_5823: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5811) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5822) ai_next))
 	T_5823
-Eq_5824: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5812) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5823) ai_next))
+Eq_5824: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5810) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5823) ai_next))
 	T_5824
-Eq_5825: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5811) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5824) ai_next))
+Eq_5825: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5809) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5824) ai_next))
 	T_5825
-Eq_5826: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5810) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5825) ai_next))
+Eq_5826: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5808) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5825) ai_next))
 	T_5826
-Eq_5827: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5809) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5826) ai_next))
+Eq_5827: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5807) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5826) ai_next))
 	T_5827
-Eq_5828: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5808) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5827) ai_next))
+Eq_5828: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5806) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5827) ai_next))
 	T_5828
-Eq_5829: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5807) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5828) ai_next))
+Eq_5829: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5805) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5828) ai_next))
 	T_5829
-Eq_5830: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5806) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5829) ai_next))
+Eq_5830: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5804) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5829) ai_next))
 	T_5830
-Eq_5831: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5805) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5830) ai_next))
+Eq_5831: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5803) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5830) ai_next))
 	T_5831
-Eq_5832: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5804) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5831) ai_next))
+Eq_5832: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5802) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5831) ai_next))
 	T_5832
-Eq_5833: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5803) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5832) ai_next))
+Eq_5833: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5801) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5832) ai_next))
 	T_5833
-Eq_5834: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5802) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5833) ai_next))
+Eq_5834: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5800) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5833) ai_next))
 	T_5834
-Eq_5835: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5801) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5834) ai_next))
+Eq_5835: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5799) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5834) ai_next))
 	T_5835
-Eq_5836: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5800) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5835) ai_next))
+Eq_5836: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5798) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5835) ai_next))
 	T_5836
-Eq_5837: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5799) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5836) ai_next))
+Eq_5837: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5797) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5836) ai_next))
 	T_5837
-Eq_5838: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5798) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5837) ai_next))
+Eq_5838: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5796) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5837) ai_next))
 	T_5838
-Eq_5839: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5797) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5838) ai_next))
+Eq_5839: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5795) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5838) ai_next))
 	T_5839
-Eq_5840: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5796) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5839) ai_next))
+Eq_5840: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5794) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5839) ai_next))
 	T_5840
-Eq_5841: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5795) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5840) ai_next))
+Eq_5841: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5793) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5840) ai_next))
 	T_5841
-Eq_5842: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5794) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5841) ai_next))
+Eq_5842: (struct "sockaddr")
 	T_5842
 Eq_5843: (struct "sockaddr")
 	T_5843
@@ -2513,57 +2513,57 @@ Eq_5865: (struct "sockaddr")
 	T_5865
 Eq_5866: (struct "sockaddr")
 	T_5866
-Eq_5867: (struct "sockaddr")
+Eq_5867: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5892) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5939) ai_next))
 	T_5867
-Eq_5868: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5893) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5940) ai_next))
+Eq_5868: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5866) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5867) ai_next))
 	T_5868
-Eq_5869: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5867) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5868) ai_next))
+Eq_5869: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5865) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5868) ai_next))
 	T_5869
-Eq_5870: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5866) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5869) ai_next))
+Eq_5870: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5864) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5869) ai_next))
 	T_5870
-Eq_5871: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5865) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5870) ai_next))
+Eq_5871: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5863) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5870) ai_next))
 	T_5871
-Eq_5872: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5864) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5871) ai_next))
+Eq_5872: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5862) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5871) ai_next))
 	T_5872
-Eq_5873: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5863) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5872) ai_next))
+Eq_5873: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5861) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5872) ai_next))
 	T_5873
-Eq_5874: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5862) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5873) ai_next))
+Eq_5874: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5860) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5873) ai_next))
 	T_5874
-Eq_5875: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5861) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5874) ai_next))
+Eq_5875: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5859) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5874) ai_next))
 	T_5875
-Eq_5876: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5860) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5875) ai_next))
+Eq_5876: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5858) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5875) ai_next))
 	T_5876
-Eq_5877: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5859) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5876) ai_next))
+Eq_5877: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5857) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5876) ai_next))
 	T_5877
-Eq_5878: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5858) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5877) ai_next))
+Eq_5878: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5856) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5877) ai_next))
 	T_5878
-Eq_5879: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5857) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5878) ai_next))
+Eq_5879: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5855) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5878) ai_next))
 	T_5879
-Eq_5880: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5856) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5879) ai_next))
+Eq_5880: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5854) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5879) ai_next))
 	T_5880
-Eq_5881: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5855) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5880) ai_next))
+Eq_5881: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5853) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5880) ai_next))
 	T_5881
-Eq_5882: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5854) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5881) ai_next))
+Eq_5882: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5852) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5881) ai_next))
 	T_5882
-Eq_5883: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5853) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5882) ai_next))
+Eq_5883: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5851) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5882) ai_next))
 	T_5883
-Eq_5884: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5852) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5883) ai_next))
+Eq_5884: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5850) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5883) ai_next))
 	T_5884
-Eq_5885: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5851) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5884) ai_next))
+Eq_5885: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5849) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5884) ai_next))
 	T_5885
-Eq_5886: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5850) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5885) ai_next))
+Eq_5886: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5848) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5885) ai_next))
 	T_5886
-Eq_5887: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5849) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5886) ai_next))
+Eq_5887: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5847) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5886) ai_next))
 	T_5887
-Eq_5888: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5848) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5887) ai_next))
+Eq_5888: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5846) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5887) ai_next))
 	T_5888
-Eq_5889: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5847) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5888) ai_next))
+Eq_5889: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5845) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5888) ai_next))
 	T_5889
-Eq_5890: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5846) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5889) ai_next))
+Eq_5890: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5844) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5889) ai_next))
 	T_5890
-Eq_5891: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5845) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5890) ai_next))
+Eq_5891: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5843) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5890) ai_next))
 	T_5891
-Eq_5892: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5844) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5891) ai_next))
+Eq_5892: (struct "sockaddr")
 	T_5892
 Eq_5893: (struct "sockaddr")
 	T_5893
@@ -2611,56 +2611,54 @@ Eq_5914: (struct "sockaddr")
 	T_5914
 Eq_5915: (struct "sockaddr")
 	T_5915
-Eq_5916: (struct "sockaddr")
+Eq_5916: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 (struct "sockaddr")) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 (struct "addrinfo")) ai_next))
 	T_5916
-Eq_5917: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 (struct "sockaddr")) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 (struct "addrinfo")) ai_next))
+Eq_5917: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5915) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5916) ai_next))
 	T_5917
-Eq_5918: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5916) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5917) ai_next))
+Eq_5918: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5914) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5917) ai_next))
 	T_5918
-Eq_5919: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5915) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5918) ai_next))
+Eq_5919: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5913) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5918) ai_next))
 	T_5919
-Eq_5920: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5914) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5919) ai_next))
+Eq_5920: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5912) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5919) ai_next))
 	T_5920
-Eq_5921: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5913) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5920) ai_next))
+Eq_5921: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5911) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5920) ai_next))
 	T_5921
-Eq_5922: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5912) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5921) ai_next))
+Eq_5922: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5910) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5921) ai_next))
 	T_5922
-Eq_5923: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5911) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5922) ai_next))
+Eq_5923: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5909) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5922) ai_next))
 	T_5923
-Eq_5924: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5910) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5923) ai_next))
+Eq_5924: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5908) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5923) ai_next))
 	T_5924
-Eq_5925: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5909) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5924) ai_next))
+Eq_5925: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5907) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5924) ai_next))
 	T_5925
-Eq_5926: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5908) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5925) ai_next))
+Eq_5926: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5906) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5925) ai_next))
 	T_5926
-Eq_5927: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5907) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5926) ai_next))
+Eq_5927: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5905) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5926) ai_next))
 	T_5927
-Eq_5928: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5906) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5927) ai_next))
+Eq_5928: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5904) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5927) ai_next))
 	T_5928
-Eq_5929: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5905) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5928) ai_next))
+Eq_5929: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5903) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5928) ai_next))
 	T_5929
-Eq_5930: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5904) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5929) ai_next))
+Eq_5930: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5902) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5929) ai_next))
 	T_5930
-Eq_5931: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5903) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5930) ai_next))
+Eq_5931: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5901) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5930) ai_next))
 	T_5931
-Eq_5932: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5902) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5931) ai_next))
+Eq_5932: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5900) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5931) ai_next))
 	T_5932
-Eq_5933: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5901) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5932) ai_next))
+Eq_5933: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5899) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5932) ai_next))
 	T_5933
-Eq_5934: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5900) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5933) ai_next))
+Eq_5934: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5898) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5933) ai_next))
 	T_5934
-Eq_5935: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5899) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5934) ai_next))
+Eq_5935: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5897) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5934) ai_next))
 	T_5935
-Eq_5936: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5898) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5935) ai_next))
+Eq_5936: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5896) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5935) ai_next))
 	T_5936
-Eq_5937: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5897) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5936) ai_next))
+Eq_5937: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5895) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5936) ai_next))
 	T_5937
-Eq_5938: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5896) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5937) ai_next))
+Eq_5938: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5894) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5937) ai_next))
 	T_5938
-Eq_5939: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5895) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5938) ai_next))
+Eq_5939: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5893) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5938) ai_next))
 	T_5939
-Eq_5940: (struct "addrinfo" (0 int32 ai_flags) (4 int32 ai_family) (8 int32 ai_socktype) (C int32 ai_protocol) (10 socklen_t ai_addrlen) (14 (ptr64 Eq_5894) ai_addr) (18 (ptr64 char) ai_canonname) (1C (ptr64 Eq_5939) ai_next))
-	T_5940
 // Type Variables ////////////
 globals_t: (in globals : (ptr64 (struct "Globals")))
   Class: Eq_1
@@ -6516,12 +6514,12 @@ T_963: (in 56 : int32)
   OrigDataType: int32
 T_964: (in sp_1024 + 56 : word64)
   Class: Eq_964
-  DataType: (ptr64 word64)
-  OrigDataType: (ptr64 word64)
+  DataType: (ptr64 int64)
+  OrigDataType: (ptr64 int64)
 T_965: (in Mem658[sp_1024 + 56:word64] : word64)
   Class: Eq_7
   DataType: Eq_7
-  OrigDataType: word64
+  OrigDataType: int64
 T_966: (in 0x0000000000012000 : word64)
   Class: Eq_136
   DataType: int32
@@ -6784,12 +6782,12 @@ T_1030: (in 56 : int32)
   OrigDataType: int32
 T_1031: (in sp_1024 + 56 : word64)
   Class: Eq_1031
-  DataType: (ptr64 word64)
-  OrigDataType: (ptr64 word64)
+  DataType: (ptr64 int64)
+  OrigDataType: (ptr64 int64)
 T_1032: (in Mem658[sp_1024 + 56:word64] : word64)
   Class: Eq_7
   DataType: Eq_7
-  OrigDataType: word64
+  OrigDataType: int64
 T_1033: (in 0x0000000000012000 : word64)
   Class: Eq_136
   DataType: int32
@@ -8501,19 +8499,19 @@ T_1459: (in s0_136 << 0x00000013 >= 0x0000000000000000 : bool)
 T_1460: (in s2_747 : Eq_7)
   Class: Eq_7
   DataType: Eq_7
-  OrigDataType: word64
+  OrigDataType: int64
 T_1461: (in 240 : int32)
   Class: Eq_1461
   DataType: int32
   OrigDataType: int32
 T_1462: (in sp_1024 + 240 : word64)
   Class: Eq_1462
-  DataType: (ptr64 word64)
-  OrigDataType: (ptr64 word64)
+  DataType: (ptr64 int64)
+  OrigDataType: (ptr64 int64)
 T_1463: (in Mem658[sp_1024 + 240:word64] : word64)
   Class: Eq_7
   DataType: Eq_7
-  OrigDataType: word64
+  OrigDataType: int64
 T_1464: (in 0x0000000000000000 : word64)
   Class: Eq_7
   DataType: int64
@@ -19629,7 +19627,7 @@ T_4241: (in gp : (ptr64 Eq_3))
 T_4242: (in a0 : Eq_2244)
   Class: Eq_2244
   DataType: Eq_2244
-  OrigDataType: (ptr64 (struct (0 (arr T_5569) a0000)))
+  OrigDataType: (ptr64 (struct (0 (arr T_5728) a0000)))
 T_4243: (in a1 : uint64)
   Class: Eq_4198
   DataType: uint64
@@ -25573,7 +25571,7 @@ T_5727: (in s2_23 != s1_30 : bool)
 T_5728:
   Class: Eq_5569
   DataType: Eq_5569
-  OrigDataType: (struct "Eq_5569" 0001 (0 Eq_5783 t0000))
+  OrigDataType: (struct 0001 (0 T_5569 t0000))
 T_5729:
   Class: Eq_5569
   DataType: Eq_5569
@@ -26417,10 +26415,6 @@ T_5938:
 T_5939:
   Class: Eq_5939
   DataType: Eq_5939
-  OrigDataType: 
-T_5940:
-  Class: Eq_5940
-  DataType: Eq_5940
   OrigDataType: 
 */
 typedef struct Globals {
@@ -28286,7 +28280,7 @@ typedef union Eq_5567 {
 } Eq_5567;
 
 typedef struct Eq_5569 {	// size: 1 1
-	Eq_5783 t0000;	// 0
+	Eq_5569 a0000[];	// 0
 } Eq_5569;
 
 typedef union Eq_5577 {
@@ -28319,47 +28313,47 @@ typedef struct Eq_5604 {
 
 typedef union Eq_5631 {
 	int32 u0;
-	struct Eq_5784 * u1;
+	struct Eq_5783 * u1;
 } Eq_5631;
 
 typedef union Eq_5632 {
 	int32 u0;
-	struct Eq_5785 * u1;
+	struct Eq_5784 * u1;
 } Eq_5632;
 
 typedef union Eq_5636 {
 	int32 u0;
-	struct Eq_5786 * u1;
+	struct Eq_5785 * u1;
 } Eq_5636;
 
 typedef union Eq_5637 {
 	int32 u0;
-	struct Eq_5787 * u1;
+	struct Eq_5786 * u1;
 } Eq_5637;
 
 typedef union Eq_5639 {
 	int32 u0;
-	struct Eq_5788 * u1;
+	struct Eq_5787 * u1;
 } Eq_5639;
 
 typedef union Eq_5642 {
 	int32 u0;
-	struct Eq_5789 * u1;
+	struct Eq_5788 * u1;
 } Eq_5642;
 
 typedef union Eq_5646 {
 	int32 u0;
-	struct Eq_5790 * u1;
+	struct Eq_5789 * u1;
 } Eq_5646;
 
 typedef union Eq_5647 {
 	int32 u0;
-	struct Eq_5791 * u1;
+	struct Eq_5790 * u1;
 } Eq_5647;
 
 typedef union Eq_5649 {
 	int32 u0;
-	struct Eq_5792 * u1;
+	struct Eq_5791 * u1;
 } Eq_5649;
 
 typedef union Eq_5699 {
@@ -28755,9 +28749,8 @@ typedef struct Eq_5782 {
 	byte b0EF8;	// EF8
 } Eq_5782;
 
-typedef union Eq_5783 {
-	byte u0;
-	Eq_5569 u1[];
+typedef struct Eq_5783 {
+	byte b0EF8;	// EF8
 } Eq_5783;
 
 typedef struct Eq_5784 {
@@ -28792,8 +28785,7 @@ typedef struct Eq_5791 {
 	byte b0EF8;	// EF8
 } Eq_5791;
 
-typedef struct Eq_5792 {
-	byte b0EF8;	// EF8
+typedef struct sockaddr {
 } Eq_5792;
 
 typedef struct sockaddr {
@@ -28868,7 +28860,15 @@ typedef struct sockaddr {
 typedef struct sockaddr {
 } Eq_5816;
 
-typedef struct sockaddr {
+typedef struct addrinfo {
+	int32 ai_flags;	// 0
+	int32 ai_family;	// 4
+	int32 ai_socktype;	// 8
+	int32 ai_protocol;	// C
+	socklen_t ai_addrlen;	// 10
+	struct sockaddr * ai_addr;	// 14
+	char * ai_canonname;	// 18
+	struct addrinfo * ai_next;	// 1C
 } Eq_5817;
 
 typedef struct addrinfo {
@@ -29135,15 +29135,7 @@ typedef struct addrinfo {
 	struct addrinfo * ai_next;	// 1C
 } Eq_5841;
 
-typedef struct addrinfo {
-	int32 ai_flags;	// 0
-	int32 ai_family;	// 4
-	int32 ai_socktype;	// 8
-	int32 ai_protocol;	// C
-	socklen_t ai_addrlen;	// 10
-	struct sockaddr * ai_addr;	// 14
-	char * ai_canonname;	// 18
-	struct addrinfo * ai_next;	// 1C
+typedef struct sockaddr {
 } Eq_5842;
 
 typedef struct sockaddr {
@@ -29218,7 +29210,15 @@ typedef struct sockaddr {
 typedef struct sockaddr {
 } Eq_5866;
 
-typedef struct sockaddr {
+typedef struct addrinfo {
+	int32 ai_flags;	// 0
+	int32 ai_family;	// 4
+	int32 ai_socktype;	// 8
+	int32 ai_protocol;	// C
+	socklen_t ai_addrlen;	// 10
+	struct sockaddr * ai_addr;	// 14
+	char * ai_canonname;	// 18
+	struct addrinfo * ai_next;	// 1C
 } Eq_5867;
 
 typedef struct addrinfo {
@@ -29485,15 +29485,7 @@ typedef struct addrinfo {
 	struct addrinfo * ai_next;	// 1C
 } Eq_5891;
 
-typedef struct addrinfo {
-	int32 ai_flags;	// 0
-	int32 ai_family;	// 4
-	int32 ai_socktype;	// 8
-	int32 ai_protocol;	// C
-	socklen_t ai_addrlen;	// 10
-	struct sockaddr * ai_addr;	// 14
-	char * ai_canonname;	// 18
-	struct addrinfo * ai_next;	// 1C
+typedef struct sockaddr {
 } Eq_5892;
 
 typedef struct sockaddr {
@@ -29565,12 +29557,20 @@ typedef struct sockaddr {
 typedef struct sockaddr {
 } Eq_5915;
 
-typedef struct sockaddr {
-} Eq_5916;
-
 typedef struct sockaddr;
 struct addrinfo;
 struct addrinfo {
+	int32 ai_flags;	// 0
+	int32 ai_family;	// 4
+	int32 ai_socktype;	// 8
+	int32 ai_protocol;	// C
+	socklen_t ai_addrlen;	// 10
+	struct sockaddr * ai_addr;	// 14
+	char * ai_canonname;	// 18
+	struct addrinfo * ai_next;	// 1C
+} Eq_5916;
+
+typedef struct addrinfo {
 	int32 ai_flags;	// 0
 	int32 ai_family;	// 4
 	int32 ai_socktype;	// 8
@@ -29822,15 +29822,4 @@ typedef struct addrinfo {
 	char * ai_canonname;	// 18
 	struct addrinfo * ai_next;	// 1C
 } Eq_5939;
-
-typedef struct addrinfo {
-	int32 ai_flags;	// 0
-	int32 ai_family;	// 4
-	int32 ai_socktype;	// 8
-	int32 ai_protocol;	// C
-	socklen_t ai_addrlen;	// 10
-	struct sockaddr * ai_addr;	// 14
-	char * ai_canonname;	// 18
-	struct addrinfo * ai_next;	// 1C
-} Eq_5940;
 

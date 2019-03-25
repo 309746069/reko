@@ -561,7 +561,7 @@ Eq_940: (union "Eq_940" (bool u0) (byte u1))
 	T_940 (in a_76 < 0x00 : bool)
 Eq_951: (union "Eq_951" (bool u0) (byte u1))
 	T_951 (in a_83 < 0x00 : bool)
-Eq_1038: (union "Eq_1038" (bool u0) (byte u1))
+Eq_1038: (union "Eq_1038" (bool u0) (cu8 u1))
 	T_1038 (in a_155 < 0x00 : bool)
 Eq_1046: (union "Eq_1046" (bool u0) (byte u1))
 	T_1046 (in a_161 < 0x00 : bool)
@@ -628,7 +628,7 @@ Eq_1549: (fn void ())
 Eq_1552: (fn void ())
 	T_1552 (in __halt : ptr32)
 	T_1553 (in signature of __halt : void)
-Eq_1562: (struct "Eq_1562" (FFFFFFDA byte bFFFFFFDA) (FFFFFFDB byte bFFFFFFDB) (FFFFFFDC byte bFFFFFFDC) (FFFFFFDD byte bFFFFFFDD) (FFFFFFDE byte bFFFFFFDE) (FFFFFFDF cu8 bFFFFFFDF) (FFFFFFE0 byte bFFFFFFE0) (FFFFFFE1 byte bFFFFFFE1) (FFFFFFEE byte bFFFFFFEE) (FFFFFFEF byte bFFFFFFEF) (FFFFFFF0 byte bFFFFFFF0) (FFFFFFF1 byte bFFFFFFF1) (FFFFFFF2 cu8 bFFFFFFF2) (FFFFFFF3 cu8 bFFFFFFF3) (FFFFFFF4 byte bFFFFFFF4) (FFFFFFF5 byte bFFFFFFF5) (FFFFFFF6 Eq_68 tFFFFFFF6) (FFFFFFF7 Eq_68 tFFFFFFF7) (FFFFFFF8 Eq_68 tFFFFFFF8) (FFFFFFF9 uint8 bFFFFFFF9) (FFFFFFFA uint8 bFFFFFFFA) (FFFFFFFB uint8 bFFFFFFFB) (FFFFFFFC uint8 bFFFFFFFC) (FFFFFFFD ui8 bFFFFFFFD) (FFFFFFFE cu8 bFFFFFFFE) (FFFFFFFF byte bFFFFFFFF) (1 byte b0001))
+Eq_1562: (struct "Eq_1562" (FFFFFFDA byte bFFFFFFDA) (FFFFFFDB byte bFFFFFFDB) (FFFFFFDC byte bFFFFFFDC) (FFFFFFDD byte bFFFFFFDD) (FFFFFFDE byte bFFFFFFDE) (FFFFFFDF cu8 bFFFFFFDF) (FFFFFFE0 byte bFFFFFFE0) (FFFFFFE1 byte bFFFFFFE1) (FFFFFFEE byte bFFFFFFEE) (FFFFFFEF cu8 bFFFFFFEF) (FFFFFFF0 byte bFFFFFFF0) (FFFFFFF1 byte bFFFFFFF1) (FFFFFFF2 cu8 bFFFFFFF2) (FFFFFFF3 cu8 bFFFFFFF3) (FFFFFFF4 byte bFFFFFFF4) (FFFFFFF5 byte bFFFFFFF5) (FFFFFFF6 Eq_68 tFFFFFFF6) (FFFFFFF7 Eq_68 tFFFFFFF7) (FFFFFFF8 Eq_68 tFFFFFFF8) (FFFFFFF9 uint8 bFFFFFFF9) (FFFFFFFA uint8 bFFFFFFFA) (FFFFFFFB uint8 bFFFFFFFB) (FFFFFFFC uint8 bFFFFFFFC) (FFFFFFFD ui8 bFFFFFFFD) (FFFFFFFE cu8 bFFFFFFFE) (FFFFFFFF byte bFFFFFFFF) (1 byte b0001))
 	T_1562 (in ix : (ptr16 Eq_1562))
 	T_1708 (in ix : (ptr16 Eq_1562))
 	T_3339 (in ix : word16)
@@ -716,15 +716,15 @@ Eq_2275: (union "Eq_2275" (bool u0) (byte u1))
 	T_2275 (in a_95 < 0x00 : bool)
 Eq_2285: (union "Eq_2285" (bool u0) (byte u1))
 	T_2285 (in a_102 < 0x00 : bool)
-Eq_2307: (union "Eq_2307" (bool u0) (byte u1))
+Eq_2307: (union "Eq_2307" (bool u0) (cu8 u1))
 	T_2307 (in a_114 < 0x00 : bool)
-Eq_2318: (union "Eq_2318" (bool u0) (byte u1))
+Eq_2318: (union "Eq_2318" (bool u0) (cu8 u1))
 	T_2318 (in a_121 < 0x00 : bool)
 Eq_2329: (union "Eq_2329" (bool u0) (byte u1))
 	T_2329 (in a_128 < 0x00 : bool)
-Eq_2409: (union "Eq_2409" (bool u0) (byte u1))
+Eq_2409: (union "Eq_2409" (bool u0) (cu8 u1))
 	T_2409 (in a_200 < 0x00 : bool)
-Eq_2417: (union "Eq_2417" (bool u0) (byte u1))
+Eq_2417: (union "Eq_2417" (bool u0) (cu8 u1))
 	T_2417 (in a_206 < 0x00 : bool)
 Eq_2459: (union "Eq_2459" (bool u0) (byte u1))
 	T_2459 (in a_238 < 0x00 : bool)
@@ -732,9 +732,9 @@ Eq_2470: (union "Eq_2470" (bool u0) (byte u1))
 	T_2470 (in a_244 < 0x00 : bool)
 Eq_2480: (union "Eq_2480" (bool u0) (byte u1))
 	T_2480 (in a_250 < 0x00 : bool)
-Eq_2501: (union "Eq_2501" (bool u0) (byte u1))
+Eq_2501: (union "Eq_2501" (bool u0) (cu8 u1))
 	T_2501 (in v65_258 < 0x47 : bool)
-Eq_2513: (union "Eq_2513" (bool u0) (byte u1))
+Eq_2513: (union "Eq_2513" (bool u0) (cu8 u1))
 	T_2513 (in a_266 < 0x00 : bool)
 Eq_2524: (union "Eq_2524" (bool u0) (byte u1))
 	T_2524 (in a_272 < 0x00 : bool)
@@ -880,7 +880,7 @@ Eq_3494: (union "Eq_3494" (bool u0) (byte u1))
 	T_3494 (in a_108 < 0x00 : bool)
 Eq_3505: (union "Eq_3505" (bool u0) (byte u1))
 	T_3505 (in a_115 < 0x00 : bool)
-Eq_3526: (union "Eq_3526" (bool u0) (byte u1))
+Eq_3526: (union "Eq_3526" (bool u0) (cu8 u1))
 	T_3526 (in a_127 < 0x00 : bool)
 Eq_3537: (union "Eq_3537" (bool u0) (byte u1))
 	T_3537 (in a_134 < 0x00 : bool)
@@ -911,11 +911,11 @@ Eq_3651: (union "Eq_3651" (bool u0) (byte u1))
 Eq_3653: (fn bool (uint8))
 	T_3653 (in OVERFLOW : ptr32)
 	T_3654 (in signature of OVERFLOW : void)
-Eq_3691: (union "Eq_3691" (int16 u0) (cu8 u1))
+Eq_3691: (union "Eq_3691" (int16 u0) (byte u1))
 	T_3691 (in 1 : int16)
-Eq_3692: (union "Eq_3692" (int16 u0) (cu8 u1))
+Eq_3692: (union "Eq_3692" (int16 u0) (byte u1))
 	T_3692 (in v41_141 - 1 : word16)
-Eq_3697: (union "Eq_3697" (int16 u0) (cu8 u1))
+Eq_3697: (union "Eq_3697" (int16 u0) (byte u1))
 	T_3697 (in v41_141 - 1 : word16)
 Eq_3705: (fn bool (uint8))
 	T_3705 (in OVERFLOW : ptr32)
@@ -1323,39 +1323,39 @@ T_99: (in Mem58[ix + -7:byte] : byte)
 T_100: (in v26_64 : uint8)
   Class: Eq_60
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_101: (in -10 : int16)
   Class: Eq_101
   DataType: int16
   OrigDataType: int16
 T_102: (in ix + -10 : word16)
   Class: Eq_102
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_103: (in Mem63[ix + -10:byte] : byte)
   Class: Eq_60
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_104: (in v27_66 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_105: (in -9 : int16)
   Class: Eq_105
   DataType: int16
   OrigDataType: int16
 T_106: (in ix + -9 : word16)
   Class: Eq_106
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_107: (in Mem63[ix + -9:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_108: (in c_65 : uint8)
   Class: Eq_60
   DataType: uint8
-  OrigDataType: ui8
+  OrigDataType: uint8
 T_109: (in b_67 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
@@ -1406,12 +1406,12 @@ T_120: (in -8 : int16)
   OrigDataType: int16
 T_121: (in ix + -8 : word16)
   Class: Eq_121
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_122: (in Mem63[ix + -8:byte] : byte)
   Class: Eq_79
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_123: (in DPB(DPB(DPB(DPB(DPB(hl_130, a_8, 0), a_15, 8), a_29, 0), a_33, 8), Mem63[ix + -8:byte], 0) : word16)
   Class: Eq_123
   DataType: word16
@@ -1554,8 +1554,8 @@ T_157: (in Mem63[ix + -34:byte] : byte)
   OrigDataType: byte
 T_158: (in c_65 + Mem63[ix + -34:byte] : byte)
   Class: Eq_158
-  DataType: ui8
-  OrigDataType: ui8
+  DataType: uint8
+  OrigDataType: uint8
 T_159: (in DPB(af, c_65 + Mem63[ix + -34:byte], 8) : word16)
   Class: Eq_154
   DataType: word16
@@ -2158,12 +2158,12 @@ T_308: (in -5 : int16)
   OrigDataType: int16
 T_309: (in ix + -5 : word16)
   Class: Eq_309
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_310: (in Mem58[ix + -5:byte] : byte)
   Class: Eq_48
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_311: (in -4 : int16)
   Class: Eq_311
   DataType: int16
@@ -2186,12 +2186,12 @@ T_315: (in -4 : int16)
   OrigDataType: int16
 T_316: (in ix + -4 : word16)
   Class: Eq_316
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_317: (in Mem62[ix + -4:byte] : byte)
   Class: Eq_53
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_318: (in -3 : int16)
   Class: Eq_318
   DataType: int16
@@ -4754,12 +4754,12 @@ T_957: (in -4 : int16)
   OrigDataType: int16
 T_958: (in ix + -4 : word16)
   Class: Eq_958
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 uint8)
+  OrigDataType: (ptr16 uint8)
 T_959: (in Mem95[ix + -4:byte] : byte)
   Class: Eq_53
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: uint8
 T_960: (in -3 : int16)
   Class: Eq_960
   DataType: int16
@@ -4782,12 +4782,12 @@ T_964: (in -3 : int16)
   OrigDataType: int16
 T_965: (in ix + -3 : word16)
   Class: Eq_965
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_966: (in Mem99[ix + -3:byte] : byte)
   Class: Eq_58
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_967: (in -2 : int16)
   Class: Eq_967
   DataType: int16
@@ -4810,12 +4810,12 @@ T_971: (in -2 : int16)
   OrigDataType: int16
 T_972: (in ix + -2 : word16)
   Class: Eq_972
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_973: (in Mem103[ix + -2:byte] : byte)
   Class: Eq_891
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_974: (in -1 : int16)
   Class: Eq_974
   DataType: int16
@@ -4863,35 +4863,35 @@ T_984: (in Mem119[ix + -24:byte] : byte)
 T_985: (in c_121 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: ui8
 T_986: (in -26 : int16)
   Class: Eq_986
   DataType: int16
   OrigDataType: int16
 T_987: (in ix + -26 : word16)
   Class: Eq_987
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 ui8)
+  OrigDataType: (ptr16 ui8)
 T_988: (in Mem119[ix + -26:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: ui8
 T_989: (in b_123 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_990: (in -25 : int16)
   Class: Eq_990
   DataType: int16
   OrigDataType: int16
 T_991: (in ix + -25 : word16)
   Class: Eq_991
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_992: (in Mem119[ix + -25:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_993: (in l_125 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
@@ -5028,10 +5028,10 @@ T_1026: (in a_130 != 0x00 : bool)
   Class: Eq_1026
   DataType: bool
   OrigDataType: bool
-T_1027: (in a_155 : cu8)
+T_1027: (in a_155 : uint8)
   Class: Eq_1027
-  DataType: cu8
-  OrigDataType: cu8
+  DataType: uint8
+  OrigDataType: uint8
 T_1028: (in -22 : int16)
   Class: Eq_1028
   DataType: int16
@@ -5046,8 +5046,8 @@ T_1030: (in Mem119[ix + -22:byte] : byte)
   OrigDataType: byte
 T_1031: (in c_121 + Mem119[ix + -22:byte] : byte)
   Class: Eq_1027
-  DataType: cu8
-  OrigDataType: byte
+  DataType: uint8
+  OrigDataType: ui8
 T_1032: (in a_161 : cu8)
   Class: Eq_1032
   DataType: cu8
@@ -5063,23 +5063,23 @@ T_1034: (in ix + -21 : word16)
 T_1035: (in Mem119[ix + -21:byte] : byte)
   Class: Eq_217
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1036: (in b_123 + Mem119[ix + -21:byte] : byte)
   Class: Eq_1036
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_1037: (in 0x00 : byte)
   Class: Eq_1027
-  DataType: cu8
+  DataType: uint8
   OrigDataType: cu8
 T_1038: (in a_155 < 0x00 : bool)
   Class: Eq_1038
   DataType: Eq_1038
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_1039: (in b_123 + Mem119[ix + -21:byte] + (a_155 <u 0x00) : byte)
   Class: Eq_1032
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1040: (in a_167 : cu8)
   Class: Eq_1040
   DataType: cu8
@@ -5154,12 +5154,12 @@ T_1057: (in -2 : int16)
   OrigDataType: int16
 T_1058: (in ix + -2 : word16)
   Class: Eq_1058
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1059: (in Mem119[ix + -2:byte] : byte)
   Class: Eq_891
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1060: (in a_167 ^ ix->bFFFFFFFE : byte)
   Class: Eq_1056
   DataType: ui8
@@ -5194,12 +5194,12 @@ T_1067: (in -3 : int16)
   OrigDataType: int16
 T_1068: (in ix + -3 : word16)
   Class: Eq_1068
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1069: (in Mem119[ix + -3:byte] : byte)
   Class: Eq_58
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1070: (in a_161 ^ ix->bFFFFFFFD : byte)
   Class: Eq_1066
   DataType: ui8
@@ -5226,12 +5226,12 @@ T_1075: (in -4 : int16)
   OrigDataType: int16
 T_1076: (in ix + -4 : word16)
   Class: Eq_1076
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 uint8)
+  OrigDataType: (ptr16 uint8)
 T_1077: (in Mem119[ix + -4:byte] : byte)
   Class: Eq_53
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: uint8
 T_1078: (in a_155 ^ ix->bFFFFFFFC : byte)
   Class: Eq_1078
   DataType: ui8
@@ -5383,19 +5383,19 @@ T_1114: (in Mem214[ix + -31:byte] : byte)
 T_1115: (in c_223 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: ui8
+  OrigDataType: uint8
 T_1116: (in -34 : int16)
   Class: Eq_1116
   DataType: int16
   OrigDataType: int16
 T_1117: (in ix + -34 : word16)
   Class: Eq_1117
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1118: (in Mem221[ix + -34:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1119: (in b_225 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
@@ -5406,12 +5406,12 @@ T_1120: (in -33 : int16)
   OrigDataType: int16
 T_1121: (in ix + -33 : word16)
   Class: Eq_1121
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1122: (in Mem221[ix + -33:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1123: (in hl_240 : ui16)
   Class: Eq_1123
   DataType: ui16
@@ -5438,12 +5438,12 @@ T_1128: (in -32 : int16)
   OrigDataType: int16
 T_1129: (in ix + -32 : word16)
   Class: Eq_1129
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1130: (in Mem221[ix + -32:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1131: (in DPB(DPB(DPB(DPB(DPB(hl_306, a_167, 0), a_173, 8), a_185, 0), a_189, 8), Mem221[ix + -32:byte], 0) : word16)
   Class: Eq_1131
   DataType: ui16
@@ -5571,19 +5571,19 @@ T_1161: (in Mem221[ix + -18:byte] : byte)
 T_1162: (in c_223 + Mem221[ix + -18:byte] : byte)
   Class: Eq_53
   DataType: uint8
-  OrigDataType: ui8
+  OrigDataType: uint8
 T_1163: (in -4 : int16)
   Class: Eq_1163
   DataType: int16
   OrigDataType: int16
 T_1164: (in ix + -4 : word16)
   Class: Eq_1164
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 uint8)
+  OrigDataType: (ptr16 uint8)
 T_1165: (in Mem255[ix + -4:byte] : byte)
   Class: Eq_53
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: uint8
 T_1166: (in a_259 : uint8)
   Class: Eq_58
   DataType: uint8
@@ -5622,12 +5622,12 @@ T_1174: (in -3 : int16)
   OrigDataType: int16
 T_1175: (in ix + -3 : word16)
   Class: Eq_1175
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1176: (in Mem261[ix + -3:byte] : byte)
   Class: Eq_58
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1177: (in a_266 : uint8)
   Class: Eq_891
   DataType: uint8
@@ -5666,12 +5666,12 @@ T_1185: (in -2 : int16)
   OrigDataType: int16
 T_1186: (in ix + -2 : word16)
   Class: Eq_1186
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1187: (in Mem268[ix + -2:byte] : byte)
   Class: Eq_891
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1188: (in -15 : int16)
   Class: Eq_1188
   DataType: int16
@@ -5715,19 +5715,19 @@ T_1197: (in Mem276[ix + -1:byte] : byte)
 T_1198: (in v64_277 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1199: (in -34 : int16)
   Class: Eq_1199
   DataType: int16
   OrigDataType: int16
 T_1200: (in ix + -34 : word16)
   Class: Eq_1200
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_1201: (in Mem276[ix + -34:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_1202: (in fn0607 : ptr32)
   Class: Eq_1202
   DataType: (ptr32 Eq_1202)
@@ -9090,12 +9090,12 @@ T_2041: (in -3 : int16)
   OrigDataType: int16
 T_2042: (in ix + -3 : word16)
   Class: Eq_2042
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2043: (in Mem64[ix + -3:byte] : byte)
   Class: Eq_58
   DataType: uint8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2044: (in v28_65 : uint8)
   Class: Eq_891
   DataType: uint8
@@ -9755,19 +9755,19 @@ T_2207: (in Mem53[ix + -31:byte] : byte)
 T_2208: (in c_59 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: ui8
+  OrigDataType: uint8
 T_2209: (in -34 : int16)
   Class: Eq_2209
   DataType: int16
   OrigDataType: int16
 T_2210: (in ix + -34 : word16)
   Class: Eq_2210
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2211: (in Mem57[ix + -34:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2212: (in b_61 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
@@ -9778,12 +9778,12 @@ T_2213: (in -33 : int16)
   OrigDataType: int16
 T_2214: (in ix + -33 : word16)
   Class: Eq_2214
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2215: (in Mem57[ix + -33:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2216: (in hl_350 : ui16)
   Class: Eq_2216
   DataType: ui16
@@ -9806,12 +9806,12 @@ T_2220: (in -32 : int16)
   OrigDataType: int16
 T_2221: (in ix + -32 : word16)
   Class: Eq_2221
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2222: (in Mem57[ix + -32:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2223: (in DPB(DPB(DPB(DPB(hl_345, a_9, 8), a_24, 0), a_28, 8), Mem57[ix + -32:byte], 0) : word16)
   Class: Eq_2223
   DataType: word16
@@ -9939,7 +9939,7 @@ T_2253: (in Mem57[ix + -18:byte] : byte)
 T_2254: (in c_59 + Mem57[ix + -18:byte] : byte)
   Class: Eq_53
   DataType: uint8
-  OrigDataType: ui8
+  OrigDataType: uint8
 T_2255: (in -4 : int16)
   Class: Eq_2255
   DataType: int16
@@ -10090,12 +10090,12 @@ T_2291: (in -34 : int16)
   OrigDataType: int16
 T_2292: (in ix + -34 : word16)
   Class: Eq_2292
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2293: (in Mem110[ix + -34:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2294: (in -38 : int16)
   Class: Eq_2294
   DataType: int16
@@ -10107,11 +10107,11 @@ T_2295: (in ix + -38 : word16)
 T_2296: (in Mem110[ix + -38:byte] : byte)
   Class: Eq_435
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2297: (in Mem110[ix + -34:byte] + Mem110[ix + -38:byte] : byte)
   Class: Eq_2290
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2298: (in a_121 : cu8)
   Class: Eq_2298
   DataType: cu8
@@ -10122,12 +10122,12 @@ T_2299: (in -33 : int16)
   OrigDataType: int16
 T_2300: (in ix + -33 : word16)
   Class: Eq_2300
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2301: (in Mem110[ix + -33:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2302: (in -37 : int16)
   Class: Eq_2302
   DataType: int16
@@ -10139,11 +10139,11 @@ T_2303: (in ix + -37 : word16)
 T_2304: (in Mem110[ix + -37:byte] : byte)
   Class: Eq_440
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2305: (in Mem110[ix + -33:byte] + Mem110[ix + -37:byte] : byte)
   Class: Eq_2305
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2306: (in 0x00 : byte)
   Class: Eq_2290
   DataType: cu8
@@ -10151,11 +10151,11 @@ T_2306: (in 0x00 : byte)
 T_2307: (in a_114 < 0x00 : bool)
   Class: Eq_2307
   DataType: Eq_2307
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_2308: (in Mem110[ix + -33:byte] + Mem110[ix + -37:byte] + (a_114 <u 0x00) : byte)
   Class: Eq_2298
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2309: (in a_128 : cu8)
   Class: Eq_2309
   DataType: cu8
@@ -10166,12 +10166,12 @@ T_2310: (in -32 : int16)
   OrigDataType: int16
 T_2311: (in ix + -32 : word16)
   Class: Eq_2311
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2312: (in Mem110[ix + -32:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2313: (in -36 : int16)
   Class: Eq_2313
   DataType: int16
@@ -10183,11 +10183,11 @@ T_2314: (in ix + -36 : word16)
 T_2315: (in Mem110[ix + -36:byte] : byte)
   Class: Eq_448
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2316: (in Mem110[ix + -32:byte] + Mem110[ix + -36:byte] : byte)
   Class: Eq_2316
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2317: (in 0x00 : byte)
   Class: Eq_2298
   DataType: cu8
@@ -10195,11 +10195,11 @@ T_2317: (in 0x00 : byte)
 T_2318: (in a_121 < 0x00 : bool)
   Class: Eq_2318
   DataType: Eq_2318
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_2319: (in Mem110[ix + -32:byte] + Mem110[ix + -36:byte] + (a_121 <u 0x00) : byte)
   Class: Eq_2309
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2320: (in a_135 : byte)
   Class: Eq_2320
   DataType: byte
@@ -10359,51 +10359,51 @@ T_2358: (in Mem157[ix + -1:byte] : byte)
 T_2359: (in c_166 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2360: (in -34 : int16)
   Class: Eq_2360
   DataType: int16
   OrigDataType: int16
 T_2361: (in ix + -34 : word16)
   Class: Eq_2361
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2362: (in Mem164[ix + -34:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2363: (in b_168 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2364: (in -33 : int16)
   Class: Eq_2364
   DataType: int16
   OrigDataType: int16
 T_2365: (in ix + -33 : word16)
   Class: Eq_2365
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2366: (in Mem164[ix + -33:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2367: (in l_170 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2368: (in -32 : int16)
   Class: Eq_2368
   DataType: int16
   OrigDataType: int16
 T_2369: (in ix + -32 : word16)
   Class: Eq_2369
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2370: (in Mem164[ix + -32:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2371: (in h_172 : uint8)
   Class: Eq_248
   DataType: uint8
@@ -10527,11 +10527,11 @@ T_2400: (in ix + -14 : word16)
 T_2401: (in Mem164[ix + -14:byte] : byte)
   Class: Eq_481
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2402: (in c_166 + Mem164[ix + -14:byte] : byte)
   Class: Eq_2398
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2403: (in a_206 : cu8)
   Class: Eq_2403
   DataType: cu8
@@ -10547,11 +10547,11 @@ T_2405: (in ix + -13 : word16)
 T_2406: (in Mem164[ix + -13:byte] : byte)
   Class: Eq_489
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2407: (in b_168 + Mem164[ix + -13:byte] : byte)
   Class: Eq_2407
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2408: (in 0x00 : byte)
   Class: Eq_2398
   DataType: cu8
@@ -10559,11 +10559,11 @@ T_2408: (in 0x00 : byte)
 T_2409: (in a_200 < 0x00 : bool)
   Class: Eq_2409
   DataType: Eq_2409
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_2410: (in b_168 + Mem164[ix + -13:byte] + (a_200 <u 0x00) : byte)
   Class: Eq_2403
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2411: (in a_212 : cu8)
   Class: Eq_2411
   DataType: cu8
@@ -10579,11 +10579,11 @@ T_2413: (in ix + -12 : word16)
 T_2414: (in Mem164[ix + -12:byte] : byte)
   Class: Eq_500
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2415: (in l_170 + Mem164[ix + -12:byte] : byte)
   Class: Eq_2415
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2416: (in 0x00 : byte)
   Class: Eq_2403
   DataType: cu8
@@ -10591,11 +10591,11 @@ T_2416: (in 0x00 : byte)
 T_2417: (in a_206 < 0x00 : bool)
   Class: Eq_2417
   DataType: Eq_2417
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_2418: (in l_170 + Mem164[ix + -12:byte] + (a_206 <u 0x00) : byte)
   Class: Eq_2411
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2419: (in a_226 : ui8)
   Class: Eq_2419
   DataType: ui8
@@ -10870,32 +10870,32 @@ T_2486: (in -38 : int16)
   OrigDataType: int16
 T_2487: (in ix + -38 : word16)
   Class: Eq_2487
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2488: (in Mem257[ix + -38:byte] : byte)
   Class: Eq_435
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2489: (in 0x47 : byte)
   Class: Eq_2489
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2490: (in v65_258 + 0x47 : byte)
   Class: Eq_435
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2491: (in -38 : int16)
   Class: Eq_2491
   DataType: int16
   OrigDataType: int16
 T_2492: (in ix + -38 : word16)
   Class: Eq_2492
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2493: (in Mem262[ix + -38:byte] : byte)
   Class: Eq_435
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2494: (in a_266 : cu8)
   Class: Eq_440
   DataType: cu8
@@ -10906,20 +10906,20 @@ T_2495: (in -37 : int16)
   OrigDataType: int16
 T_2496: (in ix + -37 : word16)
   Class: Eq_2496
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2497: (in Mem262[ix + -37:byte] : byte)
   Class: Eq_440
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2498: (in 0x86 : byte)
   Class: Eq_2498
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2499: (in ix->bFFFFFFDB + 0x86 : byte)
   Class: Eq_2499
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2500: (in 0x47 : byte)
   Class: Eq_435
   DataType: cu8
@@ -10927,23 +10927,23 @@ T_2500: (in 0x47 : byte)
 T_2501: (in v65_258 < 0x47 : bool)
   Class: Eq_2501
   DataType: Eq_2501
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_2502: (in Mem262[ix + -37:byte] + 0x86 + (v65_258 <u 0x47) : byte)
   Class: Eq_440
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2503: (in -37 : int16)
   Class: Eq_2503
   DataType: int16
   OrigDataType: int16
 T_2504: (in ix + -37 : word16)
   Class: Eq_2504
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2505: (in Mem268[ix + -37:byte] : byte)
   Class: Eq_440
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2506: (in a_272 : cu8)
   Class: Eq_448
   DataType: cu8
@@ -10954,20 +10954,20 @@ T_2507: (in -36 : int16)
   OrigDataType: int16
 T_2508: (in ix + -36 : word16)
   Class: Eq_2508
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2509: (in Mem268[ix + -36:byte] : byte)
   Class: Eq_448
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2510: (in 0xC8 : byte)
   Class: Eq_2510
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2511: (in ix->bFFFFFFDC + 0xC8 : byte)
   Class: Eq_2511
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_2512: (in 0x00 : byte)
   Class: Eq_440
   DataType: cu8
@@ -10975,23 +10975,23 @@ T_2512: (in 0x00 : byte)
 T_2513: (in a_266 < 0x00 : bool)
   Class: Eq_2513
   DataType: Eq_2513
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_2514: (in Mem268[ix + -36:byte] + 0xC8 + (a_266 <u 0x00) : byte)
   Class: Eq_448
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2515: (in -36 : int16)
   Class: Eq_2515
   DataType: int16
   OrigDataType: int16
 T_2516: (in ix + -36 : word16)
   Class: Eq_2516
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_2517: (in Mem274[ix + -36:byte] : byte)
   Class: Eq_448
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2518: (in -35 : int16)
   Class: Eq_2518
   DataType: int16
@@ -14998,12 +14998,12 @@ T_3518: (in -9 : int16)
   OrigDataType: int16
 T_3519: (in ix + -9 : word16)
   Class: Eq_3519
-  DataType: (ptr16 byte)
-  OrigDataType: (ptr16 byte)
+  DataType: (ptr16 cu8)
+  OrigDataType: (ptr16 cu8)
 T_3520: (in Mem123[ix + -9:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: byte
+  OrigDataType: cu8
 T_3521: (in -17 : int16)
   Class: Eq_3521
   DataType: int16
@@ -15014,12 +15014,12 @@ T_3522: (in ix + -17 : word16)
   OrigDataType: ptr16
 T_3523: (in Mem123[ix + -17:byte] : byte)
   Class: Eq_3523
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_3524: (in Mem123[ix + -9:byte] + Mem123[ix + -17:byte] : byte)
   Class: Eq_3524
-  DataType: byte
-  OrigDataType: byte
+  DataType: cu8
+  OrigDataType: cu8
 T_3525: (in 0x00 : byte)
   Class: Eq_1558
   DataType: cu8
@@ -15027,11 +15027,11 @@ T_3525: (in 0x00 : byte)
 T_3526: (in a_127 < 0x00 : bool)
   Class: Eq_3526
   DataType: Eq_3526
-  OrigDataType: (union (bool u0) (byte u1))
+  OrigDataType: (union (bool u0) (cu8 u1))
 T_3527: (in Mem123[ix + -9:byte] + Mem123[ix + -17:byte] + (a_127 <u 0x00) : byte)
   Class: Eq_1559
   DataType: cu8
-  OrigDataType: byte
+  OrigDataType: cu8
 T_3528: (in a_134 : byte)
   Class: Eq_1559
   DataType: cu8
@@ -15674,12 +15674,12 @@ T_3687: (in v41_141 : Eq_68)
   OrigDataType: (union (uint8 u0) (int16 u1))
 T_3688: (in hl_30 + 2 : word16)
   Class: Eq_3688
-  DataType: (ptr16 cu8)
-  OrigDataType: (ptr16 cu8)
+  DataType: (ptr16 byte)
+  OrigDataType: (ptr16 byte)
 T_3689: (in Mem140[hl_30 + 2:word16] : word16)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: cu8
+  OrigDataType: byte
 T_3690: (in l_144 : Eq_68)
   Class: Eq_68
   DataType: Eq_68
@@ -15687,23 +15687,23 @@ T_3690: (in l_144 : Eq_68)
 T_3691: (in 1 : int16)
   Class: Eq_3691
   DataType: int16
-  OrigDataType: (union (cu8 u1) (int16 u0))
+  OrigDataType: (union (byte u1) (int16 u0))
 T_3692: (in v41_141 - 1 : word16)
   Class: Eq_3692
   DataType: Eq_3692
-  OrigDataType: (union (cu8 u1) (int16 u0))
+  OrigDataType: (union (byte u1) (int16 u0))
 T_3693: (in (byte) (v41_141 - 1) : byte)
   Class: Eq_68
   DataType: Eq_68
   OrigDataType: byte
 T_3694: (in hl_30 + 2 : word16)
   Class: Eq_3694
-  DataType: (ptr16 cu8)
-  OrigDataType: (ptr16 cu8)
+  DataType: (ptr16 byte)
+  OrigDataType: (ptr16 byte)
 T_3695: (in Mem145[hl_30 + 2:byte] : byte)
   Class: Eq_68
   DataType: Eq_68
-  OrigDataType: cu8
+  OrigDataType: byte
 T_3696: (in h_146 : byte)
   Class: Eq_1561
   DataType: byte
@@ -15711,7 +15711,7 @@ T_3696: (in h_146 : byte)
 T_3697: (in v41_141 - 1 : word16)
   Class: Eq_3697
   DataType: Eq_3697
-  OrigDataType: (union (cu8 u1) (int16 u0))
+  OrigDataType: (union (byte u1) (int16 u0))
 T_3698: (in SLICE(v41_141 - 1, byte, 8) : byte)
   Class: Eq_1561
   DataType: byte
@@ -16178,7 +16178,7 @@ typedef union Eq_951 {
 
 typedef union Eq_1038 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_1038;
 
 typedef union Eq_1046 {
@@ -16313,7 +16313,7 @@ typedef struct Eq_1562 {
 	byte bFFFFFFE0;	// FFFFFFE0
 	byte bFFFFFFE1;	// FFFFFFE1
 	byte bFFFFFFEE;	// FFFFFFEE
-	byte bFFFFFFEF;	// FFFFFFEF
+	cu8 bFFFFFFEF;	// FFFFFFEF
 	byte bFFFFFFF0;	// FFFFFFF0
 	byte bFFFFFFF1;	// FFFFFFF1
 	cu8 bFFFFFFF2;	// FFFFFFF2
@@ -16488,12 +16488,12 @@ typedef union Eq_2285 {
 
 typedef union Eq_2307 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_2307;
 
 typedef union Eq_2318 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_2318;
 
 typedef union Eq_2329 {
@@ -16503,12 +16503,12 @@ typedef union Eq_2329 {
 
 typedef union Eq_2409 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_2409;
 
 typedef union Eq_2417 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_2417;
 
 typedef union Eq_2459 {
@@ -16528,12 +16528,12 @@ typedef union Eq_2480 {
 
 typedef union Eq_2501 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_2501;
 
 typedef union Eq_2513 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_2513;
 
 typedef union Eq_2524 {
@@ -16809,7 +16809,7 @@ typedef union Eq_3505 {
 
 typedef union Eq_3526 {
 	bool u0;
-	byte u1;
+	cu8 u1;
 } Eq_3526;
 
 typedef union Eq_3537 {
@@ -16860,17 +16860,17 @@ typedef bool (Eq_3653)(uint8);
 
 typedef union Eq_3691 {
 	int16 u0;
-	cu8 u1;
+	byte u1;
 } Eq_3691;
 
 typedef union Eq_3692 {
 	int16 u0;
-	cu8 u1;
+	byte u1;
 } Eq_3692;
 
 typedef union Eq_3697 {
 	int16 u0;
-	cu8 u1;
+	byte u1;
 } Eq_3697;
 
 typedef bool (Eq_3705)(uint8);

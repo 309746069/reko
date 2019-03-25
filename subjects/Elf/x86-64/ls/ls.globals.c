@@ -16,12 +16,10 @@ Eq_n g_t402640 = Unexpected function type (fn (ptr64 void) (int32))
 ;
 Eq_n g_t4028C0 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
 ;
-<anonymous> g_t404980 = <code>;
 <anonymous> g_t404990 = <code>;
 int32 g_dw4049D0 = -2614295;
 Eq_n g_t40A200 = Unexpected function type (fn void ((ptr64 void)))
 ;
-<anonymous> g_t40AC60 = <code>;
 <anonymous> g_t40AC70 = <code>;
 <anonymous> g_t410800 = <code>;
 Eq_n g_t411E60 = Unexpected function type (fn void ())
@@ -295,7 +293,10 @@ Eq_n g_t61A5F0 =
 	{
 		1
 	};
-char * g_ptr61A600 = &g_strC34C00;
+Eq_n g_t61A600 = 
+	{
+		&g_strC34C00
+	};
 FILE * g_ptr61A610 = &g_tC34C10;
 word32 g_dw61A620 = 0x00C34C20;
 Eq_n g_t61A640 = 

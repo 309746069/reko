@@ -40,7 +40,7 @@ Eq_81: (fn void (word64, word64))
 	T_81 (in register_tm_clones : ptr64)
 	T_82 (in signature of register_tm_clones : void)
 	T_84 (in register_tm_clones : ptr64)
-Eq_110: (struct "Eq_110" 0001 (0 Eq_249 t0000))
+Eq_110: (struct "Eq_110" 0001 (0 (arr Eq_110) a0000))
 	T_110 (in Mem11[rdi + (int64) ((word32) ((uint64) dwLoc0C_103)):byte] : byte)
 	T_246
 	T_247
@@ -71,8 +71,6 @@ Eq_236: (union "Eq_236" (int64 u0) (uint64 u1))
 	T_237 (in 0x0000000000000000 : uint64)
 	T_243 (in rbx_35 + 0x0000000000000001 : word64)
 	T_244 (in rbp_18 >> 0x0000000000000003 : word64)
-Eq_249: (union "Eq_249" (byte u0) ((arr Eq_110) u1))
-	T_249
 // Type Variables ////////////
 globals_t: (in globals : (ptr64 (struct "Globals")))
   Class: Eq_1
@@ -421,7 +419,7 @@ T_86: (in eax : word32)
 T_87: (in rdi : (arr Eq_110))
   Class: Eq_87
   DataType: (ptr64 (arr Eq_110))
-  OrigDataType: (ptr64 (struct (0 (arr T_110) a0000)))
+  OrigDataType: (ptr64 (struct (0 (arr T_246) a0000)))
 T_88: (in dwLoc0C_103 : word32)
   Class: Eq_88
   DataType: word32
@@ -526,7 +524,7 @@ T_113: (in (word32) (uint64) (word32) Mem11[rdi + (int64) ((word32) ((uint64) dw
   Class: Eq_113
   DataType: word32
   OrigDataType: word32
-T_114: (in (word32) (uint64) dwLoc0C_103 ^ (word32) ((uint64) ((word32) (rdi)[(int64) ((word32) ((uint64) dwLoc0C_103))].t0000)) : word32)
+T_114: (in (word32) (uint64) dwLoc0C_103 ^ (word32) ((uint64) ((word32) (&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&(rdi)[(int64) ((word32) ((uint64) dwLoc0C_103))].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000)[0])) : word32)
   Class: Eq_114
   DataType: ui32
   OrigDataType: ui32
@@ -1057,7 +1055,7 @@ T_245: (in rbx_35 != rbp_18 >> 0x0000000000000003 : bool)
 T_246:
   Class: Eq_110
   DataType: Eq_110
-  OrigDataType: (struct "Eq_110" 0001 (0 Eq_249 t0000))
+  OrigDataType: (struct 0001 (0 T_110 t0000))
 T_247:
   Class: Eq_110
   DataType: Eq_110
@@ -1066,10 +1064,6 @@ T_248:
   Class: Eq_248
   DataType: (ptr64 code)
   OrigDataType: (struct 0008 (0 T_241 t0000))
-T_249:
-  Class: Eq_249
-  DataType: Eq_249
-  OrigDataType: 
 */
 typedef struct Globals {
 	Eq_17 t4005C5;	// 4005C5
@@ -1109,7 +1103,7 @@ typedef void (Eq_58)(ptr64, word64);
 typedef void (Eq_81)(word64, word64);
 
 typedef struct Eq_110 {	// size: 1 1
-	Eq_249 t0000;	// 0
+	Eq_110 a0000[];	// 0
 } Eq_110;
 
 typedef struct Eq_121 {
@@ -1142,9 +1136,4 @@ typedef union Eq_236 {
 	int64 u0;
 	uint64 u1;
 } Eq_236;
-
-typedef union Eq_249 {
-	byte u0;
-	Eq_110 u1[];
-} Eq_249;
 

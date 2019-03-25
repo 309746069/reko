@@ -1736,12 +1736,12 @@ void client_new(struct Eq_n * r4, struct Eq_n * r5, int32 r6, int32 r7, ptr32 r3
 	else
 	{
 		bzero((word32) r2_n + 6040, 0x0010);
-		*((word32) r2_n + 6040) = 0x02;
-		*((word32) r2_n + 0x0000179A) = (word16) (word32) r4->w0002;
+		((word32) r2_n + 6040)->u1 = 0x02;
+		((word32) r2_n + 0x0000179A)->u1 = (word16) (word32) r4->w0002;
 		*((word32) r2_n + 6044) = r4->dw0004;
 		*r2_n = accept(r6, (word32) r2_n + 6040, fp + -0x0020);
-		*((word32) r2_n + 6056) = 0x02;
-		*((word32) r2_n + 0x000017AA) = (word16) (word32) r5->w0002;
+		((word32) r2_n + 6056)->u1 = 0x02;
+		((word32) r2_n + 0x000017AA)->u1 = (word16) (word32) r5->w0002;
 		*((word32) r2_n + 6060) = r5->dw0004;
 		*((word32) r2_n + 0x00001790) = r7;
 		word32 r5_n;
@@ -1934,10 +1934,10 @@ void client_parse_request(word32 r3, Eq_n r4, word32 r7, word32 r30, word32 ra)
 				word32 r3_n;
 				request_get_host(r3_n, dwLoc20_n, fp + -0x0810, fp + -0x0838, ra, out r3_n, out r5_n, out r6_n, out r7_n);
 				request_make_url(r3_n, dwLoc20_n, ra);
-				word32 r2_n = strlen(dwLoc20_n + 0x0214);
+				Eq_n r2_n = strlen((byte) dwLoc20_n.u0 + 0x0214);
 				word32 r7_n;
 				Eq_n r3_n;
-				dwLoc28_n = add_to_request(r3_n, r4, request_add_lines(dwLoc20_n, r4, add_to_request(r2_n, r4, dwLoc28_n, dwLoc20_n + 0x0214, r2_n, ra, out r3_n, out r5_n, out r6_n, out r7_n), r7_n, fp + -0x0838, ra, out r3_n), fp + -0x0810, 0x00, ra, out r3_n, out r5_n, out r6_n, out r7_n);
+				dwLoc28_n = add_to_request(r3_n, r4, request_add_lines(dwLoc20_n, r4, add_to_request(r2_n, r4, dwLoc28_n, (byte) dwLoc20_n.u0 + 0x0214, r2_n, ra, out r3_n, out r5_n, out r6_n, out r7_n), r7_n, fp + -0x0838, ra, out r3_n), fp + -0x0810, 0x00, ra, out r3_n, out r5_n, out r6_n, out r7_n);
 				((word32) r4 + 6036)->u0 = 0x02;
 			}
 			goto l00402A34;
@@ -1960,8 +1960,8 @@ l00402A34:
 	}
 }
 
-// 00402A60: Register (ptr32 void) add_to_request(Register Eq_n r3, Register Eq_n r4, Register (ptr32 void) r5, Register Eq_n r6, Register Eq_n r7, Register word32 ra, Register out Eq_n r3Out, Register out Eq_n r5Out, Register out Eq_n r6Out, Register out Eq_n r7Out)
-void * add_to_request(Eq_n r3, Eq_n r4, void * r5, Eq_n r6, Eq_n r7, word32 ra, union Eq_n & r3Out, union Eq_n & r5Out, union Eq_n & r6Out, union Eq_n & r7Out)
+// 00402A60: Register (ptr32 void) add_to_request(Register Eq_n r3, Register Eq_n r4, Register (ptr32 void) r5, Register (ptr32 void) r6, Register Eq_n r7, Register word32 ra, Register out Eq_n r3Out, Register out Eq_n r5Out, Register out Eq_n r6Out, Register out Eq_n r7Out)
+void * add_to_request(Eq_n r3, Eq_n r4, void * r5, void * r6, Eq_n r7, word32 ra, union Eq_n & r3Out, union Eq_n & r5Out, union Eq_n & r6Out, union Eq_n & r7Out)
 {
 	Eq_n r7_n;
 	Eq_n r6_n;
@@ -1973,7 +1973,7 @@ void * add_to_request(Eq_n r3, Eq_n r4, void * r5, Eq_n r6, Eq_n r7, word32 ra, 
 		print_log((int32 *) 0x01, 0x0040A0E4, 0x0040A114, 0x0100, fp + -0x0028, ra, out r3_n, out r4_n, out r5_n, out r6_n, out r7_n);
 		r2_n = null;
 	}
-	else if (r6 != 0x00 && r7 > 0x00)
+	else if (r6 != null && r7 > 0x00)
 	{
 		Mem54[r4 + 0x0FAC:word32] = Mem21[r4 + 0x0FAC:word32] + r7;
 		if ((word32) (*((word32) r4 + 0x0FAC) < 2000) != 0x00)
@@ -2262,9 +2262,9 @@ Eq_n clist_new(ptr32 r30, word32 ra, union Eq_n & r3Out, union Eq_n & r4Out, uni
 	}
 	else
 	{
-		*((word32) r2_n + 0x08) = 0x00;
-		*r2_n = 0x00;
-		*((word32) r2_n + 0x04) = 0x00;
+		((word32) r2_n + 0x08)->u0 = 0x00;
+		r2_n->u0 = 0x00;
+		((word32) r2_n + 0x04)->u0 = 0x00;
 		r2_n = r2_n;
 	}
 	r3Out.u0 = <invalid>;
@@ -2411,8 +2411,8 @@ Eq_n request_parse_line(Eq_n r2, Eq_n r4, Eq_n r5, ptr32 r30, word32 ra, union E
 	return r2_n;
 }
 
-// 00404458: Register Eq_n request_save_line(Register Eq_n r3, Register Eq_n r4, Register Eq_n r5, Register Eq_n r6, Register ptr32 r30, Register word32 ra, Register out Eq_n r7Out)
-Eq_n request_save_line(Eq_n r3, Eq_n r4, Eq_n r5, Eq_n r6, ptr32 r30, word32 ra, union Eq_n & r7Out)
+// 00404458: Register Eq_n request_save_line(Register Eq_n r3, Register Eq_n r4, Register (ptr32 void) r5, Register Eq_n r6, Register ptr32 r30, Register word32 ra, Register out Eq_n r7Out)
+Eq_n request_save_line(Eq_n r3, Eq_n r4, void * r5, Eq_n r6, ptr32 r30, word32 ra, union Eq_n & r7Out)
 {
 	Eq_n r7_n;
 	Eq_n r3_n;
@@ -2434,7 +2434,7 @@ Eq_n request_save_line(Eq_n r3, Eq_n r4, Eq_n r5, Eq_n r6, ptr32 r30, word32 ra,
 		}
 		else
 		{
-			(word32) r4 + 0x04 + ((word32) (*((word32) r4 + 0x0558)) + 0x0510) = (int8 *) (byte) (word32) bArg0B_n;
+			(word32) r4 + 0x04 + ((word32) (*((word32) r4 + 0x0558)) + 0x0510) = (byte *) (byte) (word32) bArg0B_n;
 			memcpy(*((word32) ((word32) r4 + 0x04) + (*((word32) r4 + 0x0558) * 0x04 + 1040)), r5, SEQ(nArg08_n, bArg0B_n));
 			r3_n.u0 = <invalid>;
 			r7_n.u0 = <invalid>;
@@ -3096,15 +3096,15 @@ Eq_n server_new(word32 r4, word32 r5, Eq_n r6, int32 r7, ptr32 r30, word32 ra, p
 	}
 	else
 	{
-		r2_n->u0 = -0x01;
+		*r2_n = -0x01;
 		*((word32) r2_n + 0x0020) = r7;
 		((word32) r2_n + 0x0018)->u0 = 0x00;
 		((word32) r2_n + 0x001C)->u0 = 0x00;
 		*((word32) r2_n + 0x04) = r6;
 		bzero((word32) r2_n + 0x08, 0x0010);
-		((word32) r2_n + 0x08)->u0 = 0x02;
+		((word32) r2_n + 0x08)->u1 = 0x02;
 		word32 r2_n = (word32) wArg06_n;
-		*((word32) r2_n + 0x0A) = (word16) r2_n;
+		((word32) r2_n + 0x0A)->u1 = (word16) r2_n;
 		Eq_n r7_n = <invalid>;
 		Eq_n r6_n = <invalid>;
 		Eq_n r5_n = <invalid>;
@@ -3205,8 +3205,8 @@ Eq_n slist_new(ptr32 r30, word32 ra, union Eq_n & r3Out)
 	else
 	{
 		((word32) r2_n + 0x08)->u0 = 0x00;
-		r2_n->u0 = 0x00;
-		*((word32) r2_n + 0x04) = 0x00;
+		*r2_n = 0x00;
+		((word32) r2_n + 0x04)->u0 = 0x00;
 		r2_n = r2_n;
 	}
 	r3Out.u0 = <invalid>;
@@ -4535,13 +4535,13 @@ int32 __unpack_d(struct Eq_n * r4, struct Eq_n * r5, union Eq_n & r3Out, union E
 				Eq_n r2_n = r5->t0008;
 				r8_n = r8_n << 0x01 | r9_n >> 0x1F;
 				r9_n <<= 0x01;
-				r2_n = (word32) r2_n - 0x01;
+				r2_n = (word32) r2_n.u0 - 0x01;
 				r3_n = (word32) (r8_n > 0x0FFFFFFF);
 				if (r3_n != 0x00)
 					break;
-				r5->t0008 = (word32) r2_n - 0x01;
+				r5->t0008 = (word32) r2_n.u0 - 0x01;
 			}
-			r5->t0008 = (word32) r2_n - 0x01;
+			r5->t0008 = (word32) r2_n.u0 - 0x01;
 		}
 		else
 			r5->dw0000 = 0x03;

@@ -4,9 +4,11 @@
 
 #include "FIBO.h"
 
+Eq_n g_tFFFFFFFF;
 struct Eq_n * g_ptr0000;
 Eq_n g_t0001;
 struct Eq_n * g_ptr0004;
+Eq_n g_t0005;
 word32 g_a0008[];
 ui32 g_a0010[];
 byte g_b1410 = 0x49;
@@ -15,7 +17,6 @@ Eq_n g_t28B1 =
 	{
 		
 		{
-			0x20
 		},
 	};
 ptr32 g_ptr3E94 = 0x00000000;
@@ -35,7 +36,6 @@ Eq_n g_t3ED0 =
 	{
 		
 		{
-			0x06
 		},
 	};
 word32 g_dw3FD4;

@@ -558,7 +558,7 @@ Eq_509: (union "Eq_509" (byte u0) (ptr16 u1))
 	T_796 (in out f_29 : ptr16)
 	T_986 (in out f_147 : ptr16)
 	T_1023 (in out f_152 : ptr16)
-Eq_520: (union "Eq_520" (byte u0) (cup16 u1))
+Eq_520: (union "Eq_520" (cu8 u0) (word16 u1))
 	T_520 (in 0x01 : byte)
 	T_522 (in Mem11[0x1671:byte] : byte)
 	T_528 (in Mem12[0x1671:word16] : word16)
@@ -1019,7 +1019,7 @@ Eq_2360: (struct "Eq_2360" (0 byte b0000) (1 byte b0001))
 Eq_2401: (fn Eq_71 ())
 	T_2401 (in fn0EAB : ptr16)
 	T_2402 (in signature of fn0EAB : void)
-Eq_2418: (union "Eq_2418" (byte u0) (cup16 u1))
+Eq_2418: (union "Eq_2418" (cu8 u0) (word16 u1))
 	T_2418 (in 0x00 : byte)
 	T_2420 (in Mem4[0x16A7:byte] : byte)
 	T_2424 (in Mem23[0x16A7:word16] : word16)
@@ -3239,7 +3239,7 @@ T_519: (in Mem9[0x166F:byte] : byte)
   OrigDataType: byte
 T_520: (in 0x01 : byte)
   Class: Eq_520
-  DataType: byte
+  DataType: cu8
   OrigDataType: byte
 T_521: (in 0x1671 : word16)
   Class: Eq_521
@@ -3248,7 +3248,7 @@ T_521: (in 0x1671 : word16)
 T_522: (in Mem11[0x1671:byte] : byte)
   Class: Eq_520
   DataType: Eq_520
-  OrigDataType: byte
+  OrigDataType: cu8
 T_523: (in de : word16)
   Class: Eq_508
   DataType: Eq_508
@@ -3347,7 +3347,7 @@ T_546: (in Mem36[0x1671:byte] : byte)
   OrigDataType: byte
 T_547: (in 0x00 : byte)
   Class: Eq_520
-  DataType: byte
+  DataType: cu8
   OrigDataType: byte
 T_548: (in globals->t1671 != 0x00 : bool)
   Class: Eq_548
@@ -3356,7 +3356,7 @@ T_548: (in globals->t1671 != 0x00 : bool)
 T_549: (in a_14 : Eq_520)
   Class: Eq_520
   DataType: Eq_520
-  OrigDataType: (union (byte u0) (cup16 u1))
+  OrigDataType: cu8
 T_550: (in 0x166F : word16)
   Class: Eq_550
   DataType: (ptr16 Eq_506)
@@ -3400,7 +3400,7 @@ T_559: (in SLICE(cond(a_14 - globals->t1671), bool, 0) : bool)
 T_560: (in Mem12[0x1671:byte] : byte)
   Class: Eq_520
   DataType: Eq_520
-  OrigDataType: (union (byte u0) (cup16 u1))
+  OrigDataType: cu8
 T_561: (in a_14 < globals->t1671 : bool)
   Class: Eq_561
   DataType: bool
@@ -8360,7 +8360,7 @@ T_1799: (in 0x03 : byte)
 T_1800: (in 0x1696 : word16)
   Class: Eq_1800
   DataType: (ptr16 Eq_63)
-  OrigDataType: (ptr16 (struct (0 T_63 t0000)))
+  OrigDataType: (ptr16 (struct (0 T_1526 t0000)))
 T_1801: (in Mem166[0x1696:byte] : byte)
   Class: Eq_63
   DataType: Eq_63
@@ -8380,7 +8380,7 @@ T_1804: (in SLICE(cond(0x03 - globals->t1696), bool, 0) : bool)
 T_1805: (in Mem166[0x1696:byte] : byte)
   Class: Eq_63
   DataType: Eq_63
-  OrigDataType: (union (cu8 u0) (word16 u1))
+  OrigDataType: cu8
 T_1806: (in globals->t1696 <= 0x03 : bool)
   Class: Eq_1806
   DataType: bool
@@ -8844,7 +8844,7 @@ T_1920: (in 0x168B : word16)
 T_1921: (in Mem295[0x168B:word16] : word16)
   Class: Eq_1070
   DataType: Eq_1070
-  OrigDataType: (ptr16 (struct (20 T_1924 t0020)))
+  OrigDataType: (ptr16 (struct (20 byte b0020)))
 T_1922: (in 0x0020 : word16)
   Class: Eq_1922
   DataType: word16
@@ -9332,7 +9332,7 @@ T_2042: (in SLICE(cond(0x02 - globals->t1697), bool, 0) : bool)
 T_2043: (in Mem365[0x1697:byte] : byte)
   Class: Eq_1659
   DataType: Eq_1659
-  OrigDataType: (union (cu8 u0) (word16 u1))
+  OrigDataType: cu8
 T_2044: (in globals->t1697 > 0x02 : bool)
   Class: Eq_2044
   DataType: bool
@@ -10831,7 +10831,7 @@ T_2417: (in C : bool)
   OrigDataType: bool
 T_2418: (in 0x00 : byte)
   Class: Eq_2418
-  DataType: byte
+  DataType: cu8
   OrigDataType: byte
 T_2419: (in 0x16A7 : word16)
   Class: Eq_2419
@@ -10840,7 +10840,7 @@ T_2419: (in 0x16A7 : word16)
 T_2420: (in Mem4[0x16A7:byte] : byte)
   Class: Eq_2418
   DataType: Eq_2418
-  OrigDataType: byte
+  OrigDataType: cu8
 T_2421: (in C_9 : bool)
   Class: Eq_2417
   DataType: bool
@@ -10976,7 +10976,7 @@ T_2453: (in Mem35[0x16A7:byte] : byte)
 T_2454: (in a_6 : Eq_2418)
   Class: Eq_2418
   DataType: Eq_2418
-  OrigDataType: (union (byte u0) (cup16 u1))
+  OrigDataType: cu8
 T_2455: (in 0x138C : word16)
   Class: Eq_2455
   DataType: (ptr16 Eq_2418)
@@ -11008,7 +11008,7 @@ T_2461: (in SLICE(cond(a_6 - globals->t16A7), bool, 0) : bool)
 T_2462: (in Mem5[0x16A7:byte] : byte)
   Class: Eq_2418
   DataType: Eq_2418
-  OrigDataType: (union (byte u0) (cup16 u1))
+  OrigDataType: cu8
 T_2463: (in a_6 < globals->t16A7 : bool)
   Class: Eq_2463
   DataType: bool
@@ -14425,8 +14425,8 @@ typedef union Eq_509 {
 } Eq_509;
 
 typedef union Eq_520 {
-	byte u0;
-	cup16 u1;
+	cu8 u0;
+	word16 u1;
 } Eq_520;
 
 typedef union Eq_564 {
@@ -14718,8 +14718,8 @@ typedef struct Eq_2360 {
 typedef Eq_71 (Eq_2401)();
 
 typedef union Eq_2418 {
-	byte u0;
-	cup16 u1;
+	cu8 u0;
+	word16 u1;
 } Eq_2418;
 
 typedef struct Eq_2422 {

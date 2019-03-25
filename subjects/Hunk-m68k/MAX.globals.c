@@ -13,7 +13,6 @@ Eq_n g_t2BED =
 	{
 		
 		{
-			0x20
 		},
 	};
 ptr32 g_ptr3D90 = 0x00000000;
@@ -33,7 +32,6 @@ Eq_n g_t3DCC =
 	{
 		
 		{
-			0x06
 		},
 	};
 word32 g_dw3ED0;
