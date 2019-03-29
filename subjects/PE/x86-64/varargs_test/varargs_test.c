@@ -253,7 +253,7 @@ void fn00000001400012BC(word64 rax, ptr64 rdx, int32 * rbx, ptr64 rbp, word64 rs
 // 0000000140001434: Register Eq_n Win32CrtStartup()
 Eq_n Win32CrtStartup()
 {
-	word64 rax_n = fn000000014000186C(qwLoc20, dwLoc18);
+	word64 rax_n = fn000000014000186C(qwLoc20, dwLoc18, dwLoc14);
 	fn00000001400012BC(rax_n, rdx, rbx, rbp, rsi, rdi, r8, r9, xmm0);
 	return <invalid>;
 }
@@ -271,8 +271,7 @@ Eq_n fn0000000140001448(Eq_n tArg00, Eq_n tArg08)
 // 000000014000147C: Register word64 fn000000014000147C(Register Eq_n rcx, Register word64 rbx, Register word64 rsi, Register word64 rdi, Stack word64 qwArg00, Register out ptr64 rcxOut, Register out ptr64 rdxOut, Register out ptr64 r8Out)
 word64 fn000000014000147C(Eq_n rcx, word64 rbx, word64 rsi, word64 rdi, word64 qwArg00, ptr64 & rcxOut, ptr64 & rdxOut, ptr64 & r8Out)
 {
-	word32 dwLoc34_n = SLICE(qwLoc38, word32, 32);
-	word64 qwLoc38_n = SEQ(dwLoc34_n, tLoc38);
+	word64 qwLoc38_n = SEQ(dwLoc34, tLoc38);
 	if (IsProcessorFeaturePresent(tLoc38) == 0x00)
 	{
 		fn0000000140001550(&globals->t400030E0, rbx, rsi, rdi, qwLoc38_n);
@@ -524,17 +523,16 @@ word64 fn0000000140001854(Eq_n rax, Eq_n rcx, int32 * rbx)
 	return rdx_n;
 }
 
-// 000000014000186C: Register word64 fn000000014000186C(Stack ui64 qwArg10, Stack word32 dwArg18)
-word64 fn000000014000186C(ui64 qwArg10, word32 dwArg18)
+// 000000014000186C: Register word64 fn000000014000186C(Stack ui64 qwArg10, Stack word32 dwArg18, Stack word32 dwArg1C)
+word64 fn000000014000186C(ui64 qwArg10, word32 dwArg18, word32 dwArg1C)
 {
-	word32 dwArg1C_n = SLICE(qwArg18, word32, 32);
 	Eq_n rax_n = globals->t40003000;
 	if (rax_n == 769630770)
 	{
 		GetSystemTimeAsFileTime(tLoc28);
 		ui64 v14_n = qwArg10 & 0x00 ^ (uint64) GetCurrentThreadId() ^ (uint64) GetCurrentProcessId();
 		QueryPerformanceCounter(tLoc28);
-		ui64 rax_n = (uint64) dwArg18 << 0x20 ^ SEQ(dwArg1C_n, dwArg18) ^ v14_n ^ fp + 0x08;
+		ui64 rax_n = (uint64) dwArg18 << 0x20 ^ SEQ(dwArg1C, dwArg18) ^ v14_n ^ fp + 0x08;
 		rax_n = rax_n & 0xFFFFFFFF;
 		if ((rax_n & 0xFFFFFFFF) == 769630770)
 			rax_n.u0 = 769630771;
@@ -596,9 +594,8 @@ void fn000000014000196C()
 // 0000000140001974: Register Eq_n fn0000000140001974(Register word32 ecx, Register (ptr64 int32) rbx, Register ptr64 rbp, Stack Eq_n qwArg00, Stack word64 qwArg10, Register out Eq_n rcxOut, Register out Eq_n rdxOut, Register out Eq_n r8Out)
 Eq_n fn0000000140001974(word32 ecx, int32 * rbx, ptr64 rbp, Eq_n qwArg00, word64 qwArg10, union Eq_n & rcxOut, union Eq_n & rdxOut, union Eq_n & r8Out)
 {
-	word32 dwLoc05C4_n = SLICE(ptrLoc05C8, word32, 32);
+	Eq_n ptrLoc05C8_n = SEQ(dwLoc05C4, tLoc05C8);
 	word32 ebx_n = (word32) (uint64) ecx;
-	Eq_n ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8);
 	word32 dwLoc05C4_n = SLICE(ptrLoc05C8_n, word32, 32);
 	if (IsProcessorFeaturePresent(tLoc05C8) == 0x00)
 	{

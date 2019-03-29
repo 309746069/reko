@@ -35,15 +35,13 @@ void fn0000149C()
 	__syscall(~0x560B);
 }
 
-// 000014E8: void fn000014E8(Register word32 a3, Register word32 a5, Stack int32 dwArg02)
-void fn000014E8(word32 a3, word32 a5, int32 dwArg02)
+// 000014E8: void fn000014E8(Register word32 a3, Register word32 a5, Stack word16 wArg00, Stack int32 dwArg02)
+void fn000014E8(word32 a3, word32 a5, word16 wArg00, int32 dwArg02)
 {
 	word16 wLoc12_n = SLICE(dwLoc12, word16, 16);
-	word16 wArg00_n = SLICE(dwLoc02, word16, 0);
 	0x00 = 0x00;
 	__syscall(43424);
-	word16 wLoc02_n = SLICE(a3, word16, 0);
-	Eq_n dwLoc02_n = SEQ(wLoc02_n, wArg00_n);
+	Eq_n dwLoc02_n = SEQ(SLICE(a3, word16, 0), wArg00);
 	struct Eq_n ** dwLoc12_n = SEQ(wLoc12_n, 0x4441);
 	dwLoc02_n.u0 = SLICE(dwLoc02_n, word16, 0);
 	if (SEQ(wLoc12_n, 0x4441) == 0x00)
