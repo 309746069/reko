@@ -6914,7 +6914,7 @@ Eq_14214: (union "Eq_14214" (uint64 u0) (word32 u1))
 Eq_14224: (union "Eq_14224" (int64 u0) (uint64 u1))
 	T_14224 (in rax_151 : Eq_14224)
 	T_14226 (in (uint64) (rdx_rax_148 /u r8) : uint64)
-Eq_14248: (union "Eq_14248" (real64 u0) (up64 u1) (word32 u2))
+Eq_14248: (union "Eq_14248" (real64 u0) (up64 u1))
 	T_14248 (in ST523[Top - 1 + 0x00:real64] : real64)
 	T_14251 (in *(Top - (union Eq_14248 *) 1) + globals->t415F08 : real64)
 	T_14255 (in ST525[Top - 1 + 0x00:real64] : real64)
@@ -65540,7 +65540,7 @@ T_14379: (in ST706[Top - 4 + 0x00:real64] : real64)
 T_14380: (in v42_707 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_14381: (in Top - (union Eq_14248 *) 4 : int8)
   Class: Eq_14381
   DataType: (ptr8 Eq_14248)
@@ -66320,7 +66320,7 @@ T_14574: (in ST721[Top - 3 + 0x00:real64] : real64)
 T_14575: (in v53_723 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_14576: (in 3 : int8)
   Class: Eq_14576
   DataType: (ptr8 Eq_14248)
@@ -66684,7 +66684,7 @@ T_14665: (in rsi_182 > rax_203 : bool)
 T_14666: (in v64_742 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_14667: (in Top - (union Eq_14248 *) 2 : int8)
   Class: Eq_14667
   DataType: (ptr8 Eq_14248)
@@ -66936,7 +66936,7 @@ T_14728: (in ST757[Top - 2 + 0x00:real64] : real64)
 T_14729: (in v49_758 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_14730: (in Top - (union Eq_14248 *) 2 : int8)
   Class: Eq_14730
   DataType: (ptr8 Eq_14248)
@@ -67124,7 +67124,7 @@ T_14775: (in ST767[Top - 2 + 0x00:real64] : real64)
 T_14776: (in v58_768 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_14777: (in Top - (union Eq_14248 *) 2 : int8)
   Class: Eq_14777
   DataType: (ptr8 Eq_14248)
@@ -67948,7 +67948,7 @@ T_14981: (in ST842[Top - 2 + 0x00:real64] : real64)
 T_14982: (in v60_843 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_14983: (in Top - (union Eq_14248 *) 2 : int8)
   Class: Eq_14983
   DataType: (ptr8 Eq_14248)
@@ -68024,7 +68024,7 @@ T_15000: (in ST845[Top - 1 + 0x00:real64] : real64)
 T_15001: (in v57_846 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_15002: (in Top - (union Eq_14248 *) 2 : int8)
   Class: Eq_15002
   DataType: (ptr8 Eq_14248)
@@ -69044,7 +69044,7 @@ T_15255: (in ST918[Top - 2 + 0x00:real64] : real64)
 T_15256: (in v61_919 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_15257: (in 2 : int8)
   Class: Eq_15257
   DataType: (ptr8 Eq_14248)
@@ -69232,7 +69232,7 @@ T_15302: (in ST928[Top - 2 + 0x00:real64] : real64)
 T_15303: (in v62_929 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_15304: (in 2 : int8)
   Class: Eq_15304
   DataType: (ptr8 Eq_14248)
@@ -70776,7 +70776,7 @@ T_15688: (in ST576[Top - 2 + 0x00:real64] : real64)
 T_15689: (in v67_577 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_15690: (in Top - (union Eq_14248 *) 2 : int8)
   Class: Eq_15690
   DataType: (ptr8 Eq_14248)
@@ -70960,7 +70960,7 @@ T_15734: (in ST586[Top - 2 + 0x00:real64] : real64)
 T_15735: (in v68_587 : Eq_14248)
   Class: Eq_14248
   DataType: Eq_14248
-  OrigDataType: (union (real64 u0) (word32 u1))
+  OrigDataType: real64
 T_15736: (in Top - (union Eq_14248 *) 2 : int8)
   Class: Eq_15736
   DataType: (ptr8 Eq_14248)
@@ -81425,7 +81425,7 @@ T_18351: (in 0x05 : byte)
   Class: Eq_18351
   DataType: byte
   OrigDataType: byte
-T_18352: (in (byte) rdx_625 >> 0x05 : word32)
+T_18352: (in (byte) rdx_625 >> 0x05 : byte)
   Class: Eq_18352
   DataType: uint8
   OrigDataType: uint8
@@ -83105,7 +83105,7 @@ T_18771: (in 0x06 : byte)
   Class: Eq_18771
   DataType: byte
   OrigDataType: byte
-T_18772: (in (byte) rsi_734 >> 0x06 : word32)
+T_18772: (in (byte) rsi_734 >> 0x06 : byte)
   Class: Eq_18772
   DataType: uint8
   OrigDataType: uint8
@@ -83205,7 +83205,7 @@ T_18796: (in 0x03 : byte)
   Class: Eq_18796
   DataType: byte
   OrigDataType: byte
-T_18797: (in (byte) rsi_751 >> 0x03 : word32)
+T_18797: (in (byte) rsi_751 >> 0x03 : byte)
   Class: Eq_18797
   DataType: uint8
   OrigDataType: uint8
@@ -84721,7 +84721,7 @@ T_19175: (in 0x05 : byte)
   Class: Eq_19175
   DataType: byte
   OrigDataType: byte
-T_19176: (in sil_12 >> 0x05 : word32)
+T_19176: (in sil_12 >> 0x05 : byte)
   Class: Eq_19176
   DataType: uint8
   OrigDataType: uint8
@@ -96894,7 +96894,6 @@ typedef union Eq_14224 {
 typedef union Eq_14248 {
 	real64 u0;
 	up64 u1;
-	word32 u2;
 } Eq_14248;
 
 typedef union Eq_14302 {

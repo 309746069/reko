@@ -2206,4 +2206,4 @@ Parameter name: key
 === regressions\snowman-82\flags
 === regressions\snowman-83\flags3
 Stripping SSA identifier numbers
-Decompiled 56 binaries in 64.58 seconds ---
+Decompiled 56 binaries in 54.02 seconds ---
