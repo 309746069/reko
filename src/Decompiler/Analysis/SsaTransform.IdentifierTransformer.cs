@@ -707,7 +707,6 @@ namespace Reko.Analysis
                         // in this block. Look for the gap in another block.
                         var intv = Interval.Create(offsetLo, intFrom.Start);
                         var sidR = ReadIntervalRecursive(bs, intv);
-                        this.id = oldId;
                         sequence.Add((sidR, intv));
                         offsetLo = intFrom.Start;
                     }
