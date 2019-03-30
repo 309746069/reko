@@ -1558,7 +1558,6 @@ l00002516:
 					Eq_n d1_n;
 					Eq_n d2_n = __swap(d5_n);
 					Eq_n d3_n = __swap(d7_n);
-					dwLoc24.u0 = SLICE(dwLoc24, word16, 0);
 					if ((word16) (d2_n - d3_n) == 0x00)
 						d1_n.u0 = 0x0000FFFF;
 					else
@@ -1567,7 +1566,7 @@ l00002516:
 					while (true)
 					{
 						Eq_n d4_n = __swap(d5_n - __swap(d7_n) * (word16) d1_n);
-						dwLoc24.u0 = SLICE(dwLoc24, word16, 0);
+						word16 wLoc22_n = SLICE(dwLoc24, word16, 0);
 						uint32 d2_n = d1_n * (word16) d7_n;
 						up32 d4_n = DPB(d4_n, (word16) d6_n, 0);
 						if ((word16) d4_n != 0x00 || d2_n - d4_n <= 0x00)
@@ -1598,7 +1597,7 @@ l00002516:
 					d5_n = DPB(d5_n, (word16) d6_n, 0);
 					d6_n = DPB(d6_n, 0x00, 0);
 					bLoc26_n.u0 = true;
-					dwLoc24 = SEQ((word16) d1_n, dwLoc24);
+					dwLoc24 = SEQ((word16) d1_n, wLoc22_n);
 				}
 				Eq_n d6_n = __swap(DPB(d6_n, (word16) d5_n, 0));
 				d0 = DPB(dwLoc24, (word16) d1_n, 0);

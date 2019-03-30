@@ -453,13 +453,13 @@ l0636:
 	word16 v17_26 = __rol(wLoc04, wLoc04)
 	wLoc04 = v17_26
 	word16 r2_28 = 0x0090
-	byte bArg02_91 = SEQ(bArg03_100, bArg02_102)
+	word16 wArg02_103 = SEQ(bArg03_100, bArg02_102)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0640:
-	bArg02_91 = SLICE(bArg02_91, byte, 0) (alias)
+	byte bArg02_91 = SLICE(wArg02_103, byte, 0)
 	r1_15 = __rol(r1_15, r1_15)
 	branch r1_15 <u 0x0000 l0648
 // DataOut:
@@ -490,6 +490,7 @@ fn0608_exit:
 
 l0644:
 	r2_28 = r2_28 - 0x0001
+	wArg02_103 = SEQ(bArg03_100, bArg02_91)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
@@ -1339,7 +1340,8 @@ l0B02:
 	byte bLoc03_109 = SLICE(v15_25, byte, 8)
 	byte bArg00_108 = SLICE(wArg00_96, byte, 0)
 	byte bArg01_110 = SLICE(wArg00_96, byte, 8)
-	byte bArg03_112 = SLICE(wArg02_106, byte, 8)
+	byte bArg02_111 = SLICE(wArg02_106, byte, 0)
+	byte bArg03_113 = SLICE(wArg02_106, byte, 8)
 	byte bArg00_116 = SLICE(wArg00_114, byte, 0)
 	byte bArg01_117 = SLICE(wArg00_114, byte, 8)
 	byte bArg02_118 = SLICE(wArg02_115, byte, 0)
@@ -1353,7 +1355,7 @@ l0B22:
 	Mem38[r3_6 + 0x0052:word16] = wArg00_96
 	Mem40[r3_6 + 0x0044:word16] = wArg04
 	call wArg06 (retsize: 2;)
-		uses: Stack +0000:wArg06,Stack +0002:wArg02_106,Stack +FFFFFFF8:v15_25,Stack +FFFFFFF9:bLoc03_109,Stack +FFFFFFFA:r3,Stack +FFFFFFFC:bArg00_108,Stack +FFFFFFFD:SEQ(bArg02_105, bArg01_110),Stack +FFFFFFFE:SEQ(bArg03_112, bArg02_105),Stack +FFFFFFFF:bArg03_112
+		uses: Stack +0000:wArg06,Stack +0002:wArg02_106,Stack +FFFFFFF8:v15_25,Stack +FFFFFFF9:bLoc03_109,Stack +FFFFFFFA:r3,Stack +FFFFFFFC:bArg00_108,Stack +FFFFFFFD:SEQ(bArg02_111, bArg01_110),Stack +FFFFFFFE:wArg02_106,Stack +FFFFFFFF:bArg03_113
 	return
 // DataOut:
 // DataOut (flags):
@@ -1491,6 +1493,7 @@ l0B7C:
 	word16 wLoc04_148 = v22_25
 	bArg00_165 = SLICE(wArg00_151, byte, 0) (alias)
 	byte bArg01_183 = SLICE(wArg00_151, byte, 8)
+	byte bArg02_184 = SLICE(wArg02_155, byte, 0)
 	bArg03_168 = SLICE(wArg02_155, byte, 8) (alias)
 	byte bArg00_165 = SLICE(wArg00_161, byte, 0)
 	byte bArg01_179 = SLICE(wArg00_161, byte, 8)
@@ -1509,7 +1512,7 @@ l0BA4:
 	wLoc04_148 = r0
 	ptrArg06 = r3
 	sp_102 = fp + 0x0006
-	wArg01_167 = SEQ(bArg02_154, bArg01_183)
+	wArg01_167 = SEQ(bArg02_184, bArg01_183)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:

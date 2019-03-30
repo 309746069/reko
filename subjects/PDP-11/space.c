@@ -167,14 +167,15 @@ void fn0608(<anonymous> * wArg00, Eq_n wArg02)
 	Eq_n v17_n = __rol(wLoc04, wLoc04);
 	wLoc04 = v17_n;
 	cui16 r2_n = 0x90;
-	Eq_n bArg02_n = SEQ(bArg03_n, bArg02_n);
+	word16 wArg02_n = SEQ(bArg03_n, bArg02_n);
 	while (true)
 	{
-		bArg02_n.u0 = SLICE(bArg02_n, byte, 0);
+		byte bArg02_n = SLICE(wArg02_n, byte, 0);
 		r1_n = __rol(r1_n, r1_n);
 		if (r1_n < 0x00)
 			break;
 		--r2_n;
+		wArg02_n = SEQ(bArg03_n, bArg02_n);
 	}
 	Eq_n r1_n = __swab(DPB(r1_n, 0x00, 0) | r2_n);
 	wLoc02 = __ror(wLoc02, v17_n);
@@ -537,6 +538,7 @@ void fn0AE6(word16 r3, <anonymous> ** r4, byte bArg00, cup16 wArg01, byte bArg03
 	byte bLoc03_n = SLICE(v15_n, byte, 8);
 	byte bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);
+	byte bArg02_n = SLICE(wArg02_n, byte, 0);
 	byte bArg03_n = SLICE(wArg02_n, byte, 8);
 	byte bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);
@@ -594,6 +596,7 @@ void fn0B60(uint16 r0, word16 * r3, byte bArg00, cup16 wArg01, byte bArg03, <ano
 	uint16 wLoc04_n = v22_n;
 	bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);
+	byte bArg02_n = SLICE(wArg02_n, byte, 0);
 	bArg03_n = SLICE(wArg02_n, byte, 8);
 	byte bArg00_n = SLICE(wArg00_n, byte, 0);
 	byte bArg01_n = SLICE(wArg00_n, byte, 8);

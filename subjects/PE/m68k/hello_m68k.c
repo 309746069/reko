@@ -41,9 +41,8 @@ void fn000014E8(word32 a3, word32 a5, word16 wArg00, int32 dwArg02)
 	word16 wLoc12_n = SLICE(dwLoc12, word16, 16);
 	0x00 = 0x00;
 	__syscall(43424);
-	Eq_n dwLoc02_n = SEQ(SLICE(a3, word16, 0), wArg00);
 	struct Eq_n ** dwLoc12_n = SEQ(wLoc12_n, 0x4441);
-	dwLoc02_n.u0 = SLICE(dwLoc02_n, word16, 0);
+	word32 dwLoc02_n = SEQ(SLICE(a3, word16, 0), wArg00);
 	if (SEQ(wLoc12_n, 0x4441) == 0x00)
 	{
 		*(word16 *) 0x0AF0 = ~0x025C;
@@ -62,17 +61,14 @@ void fn000014E8(word32 a3, word32 a5, word16 wArg00, int32 dwArg02)
 			do
 			{
 				*a0_n = 0x00;
-				dwLoc02_n.u0 = SLICE(dwLoc02_n, word16, 0);
 				++a0_n;
 				--d0_n;
-				dwLoc02_n = dwLoc02_n;
 			} while (d0_n != 0x00);
 		}
 		word32 a2_n = a2_n - a3_n->dw0004;
 		__syscall(0xA02E);
 		uint32 d0_n = a3_n->dw0008;
 		word16 * a2_n = a2_n - d0_n;
-		dwLoc02_n.u0 = SLICE(dwLoc02_n, word16, 0);
 		word16 * a0_n = a2_n;
 		uint32 d0_n = d0_n >> 0x01;
 		if (d0_n >> 0x01 != 0x00)
@@ -80,10 +76,8 @@ void fn000014E8(word32 a3, word32 a5, word16 wArg00, int32 dwArg02)
 			do
 			{
 				*a0_n = 0x00;
-				dwLoc02_n.u0 = SLICE(dwLoc02_n, word16, 0);
 				++a0_n;
 				--d0_n;
-				dwLoc02_n = dwLoc02_n;
 			} while (d0_n != 0x00);
 		}
 		union Eq_n * a2_n = a2_n - a3_n->dw000C;
@@ -107,7 +101,7 @@ l00001578:
 					if (dwArg02 != 0x00 && *a2_n >= 0x00)
 						*a2_n = (union Eq_n *) ((char *) *a2_n + dwArg02)[0x02];
 					else
-						Mem161[a2_n + 0x00:word32] = Mem83[a2_n + 0x00:word32] + dwLoc02_n;
+						*a2_n = (union Eq_n *) ((char *) *a2_n + dwLoc02_n);
 					goto l00001556;
 				}
 l0000159A:

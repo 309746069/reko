@@ -272,6 +272,7 @@ Eq_n fn0000000140001448(Eq_n tArg00, Eq_n tArg08)
 word64 fn000000014000147C(Eq_n rcx, word64 rbx, word64 rsi, word64 rdi, word64 qwArg00, ptr64 & rcxOut, ptr64 & rdxOut, ptr64 & r8Out)
 {
 	word64 qwLoc38_n = SEQ(dwLoc34, tLoc38);
+	Eq_n tLoc38_n = SLICE(qwLoc38_n, DWORD, 0);
 	if (IsProcessorFeaturePresent(tLoc38) == 0x00)
 	{
 		fn0000000140001550(&globals->t400030E0, rbx, rsi, rdi, qwLoc38_n);
@@ -283,7 +284,7 @@ word64 fn000000014000147C(Eq_n rcx, word64 rbx, word64 rsi, word64 rdi, word64 q
 		globals->dw40003044 = 0x01;
 		globals->dw40003058 = 0x01;
 		globals->qw40003060 = 0x02;
-		word64 rax_n = DPB(0x08, fn0000000140001448(tLoc40, tLoc38), 0);
+		word64 rax_n = DPB(0x08, fn0000000140001448(tLoc40, tLoc38_n), 0);
 		rcxOut = rcx_n;
 		rdxOut = rdx_n;
 		r8Out = r8_n;
@@ -596,18 +597,18 @@ Eq_n fn0000000140001974(word32 ecx, int32 * rbx, ptr64 rbp, Eq_n qwArg00, word64
 {
 	Eq_n ptrLoc05C8_n = SEQ(dwLoc05C4, tLoc05C8);
 	word32 ebx_n = (word32) (uint64) ecx;
+	Eq_n tLoc05C8_n = SLICE(ptrLoc05C8_n, DWORD, 0);
 	word32 dwLoc05C4_n = SLICE(ptrLoc05C8_n, word32, 32);
 	if (IsProcessorFeaturePresent(tLoc05C8) == 0x00)
 	{
 		globals->dw40003610 &= 0x00;
 		memset(ptrLoc05C8_n, dwLoc05C0, tLoc05B8);
-		RtlCaptureContext(SEQ(dwLoc05C4_n, tLoc05C8));
+		RtlCaptureContext(ptrLoc05C8_n);
 		Eq_n rax_n = RtlLookupFunctionEntry(qwLoc03E0, fp + 0x10, null);
-		Eq_n ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8);
 		if (rax_n != null)
 		{
 			KERNEL32.dll!RtlVirtualUnwind();
-			ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8);
+			ptrLoc05C8_n = SEQ(dwLoc05C4_n, tLoc05C8_n);
 		}
 		memset(ptrLoc05C8_n, dwLoc05C0, tLoc05B8);
 		Eq_n eax_n = IsDebuggerPresent();

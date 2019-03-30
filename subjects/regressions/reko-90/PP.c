@@ -6327,7 +6327,7 @@ word16 fn0800-4357(segptr32 ptrArg02, segptr32 ptrArg06)
 	while (true)
 	{
 		word16 wArg02_n = SLICE(ptrArg02, word16, 0);
-		ptrArg02 = SLICE(ptrArg02, word16, 16);
+		word16 wArg04_n = SLICE(ptrArg02, word16, 16);
 		word16 wArg06_n = SLICE(ptrArg06, word16, 0);
 		word16 wArg08_n = SLICE(ptrArg06, word16, 16);
 		if (Mem11[ptrArg06 + 0x00:byte] == 0x00)
@@ -6341,13 +6341,18 @@ word16 fn0800-4357(segptr32 ptrArg02, segptr32 ptrArg06)
 				if (ax_n != 0x3F)
 					goto l0800_nA7;
 				if (Mem11[ptrArg02 + 0x00:byte] != 0x2E)
-					ptrArg02 = SEQ(ptrArg02, wArg02_n);
+				{
+					ptrArg02 = SEQ(wArg04_n, wArg02_n);
+					if (Mem11[ptrArg02 + 0x00:byte] != 0x00)
+						ptrArg02 = SEQ(wArg04_n, wArg02_n + 0x01);
+				}
 			}
 			else if (Mem11[ptrArg02 + 0x00:byte] != 0x00)
 			{
 l0800_nA7:
 				if (al_n != Mem11[ptrArg02 + 0x00:byte])
 					return 0x00;
+				ptrArg02 = SEQ(wArg04_n, wArg02_n + 0x01);
 			}
 		}
 		else
@@ -6355,10 +6360,13 @@ l0800_nA7:
 			while (true)
 			{
 				word16 wArg02_n = SLICE(ptrArg02, word16, 0);
-				ptrArg02 = SLICE(ptrArg02, word16, 16);
-				if (Mem27[ptrArg02 + 0x00:byte] == 0x2E || Mem27[ptrArg02 + 0x00:byte] == 0x00)
+				word16 wArg04_n = SLICE(ptrArg02, word16, 16);
+				if (Mem27[ptrArg02 + 0x00:byte] == 0x2E)
 					break;
-				ptrArg02 = SEQ(ptrArg02, wArg02_n + 0x01);
+				ptrArg02 = SEQ(wArg04_n, wArg02_n);
+				if (Mem27[ptrArg02 + 0x00:byte] == 0x00)
+					break;
+				ptrArg02 = SEQ(wArg04_n, wArg02_n + 0x01);
 				Mem27 = Mem36;
 			}
 		}
@@ -6398,30 +6406,35 @@ void fn0800-441C(selector ds, word16 wArg02, selector psegArg04, word16 wArg06)
 {
 	word16 di_n = 0x00;
 	word16 cx_n = 0x00;
-	word16 si_n = wArg02;
-	psegArg04 = SEQ(psegArg04, wArg02);
+	word16 si_n = ptrArg02_n;
+	segptr32 ptrArg02_n = SEQ(psegArg04, ptrArg02_n);
 	if (wArg06 >u 0x00)
 	{
 		do
 		{
+			word16 wArg02_n = SLICE(ptrArg02_n, word16, 0);
+			ptrArg02_n = SEQ(psegArg04, wArg02_n);
+			ptrArg02_n = SEQ(psegArg04, wArg02_n);
 			if ((Mem28[psegArg04:si_n + 0x00:word16] | Mem28[psegArg04:si_n + 0x02:word16]) != 0x00)
 			{
 				++di_n;
 				wLoc04 = cx_n;
 				Mem47 = Mem40;
 			}
+			ptrArg02_n = SLICE(ptrArg02_n, word16, 0);
+			psegArg04 = SLICE(ptrArg02_n, selector, 16);
 			si_n += 0x0C;
 			++cx_n;
 		} while (cx_n <u wArg06);
 	}
-	selector psegArg04_n = SLICE(psegArg04, selector, 16);
-	word16 wArg02_n = SLICE(psegArg04, word16, 0);
+	selector psegArg04_n = SLICE(ptrArg02_n, selector, 16);
+	word16 wArg02_n = SLICE(ptrArg02_n, word16, 0);
 	if (di_n == 0x00)
 		return;
 	if (di_n == 0x01)
 	{
-		selector es_n = SLICE(psegArg04, selector, 16);
-		word16 bx_n = (word16) (psegArg04 + wLoc04 *s 0x0C);
+		selector es_n = SLICE(ptrArg02_n, selector, 16);
+		word16 bx_n = (word16) (ptrArg02_n + wLoc04 *s 0x0C);
 		Mem71[es_n:bx_n + 0x0A:word16] = Mem60[es_n:bx_n + 0x0A:word16] + 0x01;
 	}
 	else
@@ -6469,13 +6482,13 @@ void fn0800-441C(selector ds, word16 wArg02, selector psegArg04, word16 wArg06)
 			Mem198[es_n:bx_n + 0x04:word16] = Mem174[ds:18008:word16];
 			word16 bx_n = wArg02_n + ax_n;
 			Mem204[es_n:bx_n + 0x0A:word16] = Mem198[es_n:bx_n + 0x0A:word16] + 0x01;
-			psegArg04_n = SEQ(psegArg04_n, wArg02_n);
+			segptr32 ptrArg02_n = SEQ(psegArg04_n, wArg02_n);
 			while (true)
 			{
-				psegArg04_n = SLICE(psegArg04_n, selector, 16);
-				wArg02_n = SLICE(psegArg04_n, word16, 0);
-				word16 bx_n = (word16) psegArg04_n + cx_n;
-				if (Mem208[SLICE(psegArg04_n, selector, 16):bx_n + 0x04:word16] == ~0x00)
+				psegArg04_n = SLICE(ptrArg02_n, selector, 16);
+				wArg02_n = SLICE(ptrArg02_n, word16, 0);
+				word16 bx_n = (word16) ptrArg02_n + cx_n;
+				if (Mem208[SLICE(ptrArg02_n, selector, 16):bx_n + 0x04:word16] == ~0x00)
 					break;
 				word16 ax_n = Mem208[psegArg04_n:bx_n + 0x04:word16];
 				Mem220[ds:18008:word16] = ax_n;
@@ -6483,6 +6496,7 @@ void fn0800-441C(selector ds, word16 wArg02, selector psegArg04, word16 wArg06)
 				word16 bx_n = wArg02_n + ax_n;
 				Mem229[psegArg04_n:bx_n + 0x0A:word16] = Mem220[psegArg04_n:bx_n + 0x0A:word16] + 0x01;
 				cx_n = ax_n;
+				ptrArg02_n = SEQ(psegArg04_n, wArg02_n);
 			}
 		}
 		fn0800-4550(wArg02_n, psegArg04_n, wArg06);
@@ -10624,11 +10638,11 @@ void fn0800-8489(selector ds, word16 wArg02, word16 wArg04)
 void fn0800-854B(selector ds, word16 wArg02, byte bArg04, byte bArg05)
 {
 	word16 di_n = 0x01 << bArg04 - 0x01;
-	byte bArg05_n = SEQ(bArg05, bArg04);
+	word16 wArg04_n = SEQ(bArg05, bArg04);
 	while (true)
 	{
-		bArg05_n = SLICE(bArg05_n - 0x01, byte, 8);
-		if (bArg05_n == 0x00)
+		--wArg04_n;
+		if (wArg04_n == 0x00)
 			break;
 		Mem39[ds:11843:word16] = Mem25[ds:11843:word16] << 0x01;
 		if ((wArg02 & di_n) != 0x00)
@@ -10640,11 +10654,8 @@ void fn0800-854B(selector ds, word16 wArg02, byte bArg04, byte bArg05)
 		{
 			word16 ax_n = (word16) fn0800-8624(ds, SLICE(DPB(ax_n, Mem52[ds:11843:byte], 0), byte, 0), out di_n, out ds);
 			word16 si_n = 18050;
-			while (true)
+			while (Mem79[ds:20098:word16] != 0x00)
 			{
-				bArg05_n = SLICE(bArg05_n, byte, 8);
-				if (Mem79[ds:20098:word16] == 0x00)
-					break;
 				ax_n = (word16) fn0800-8624(ds, SLICE(DPB(ax_n, Mem79[ds:si_n + 0x00:byte], 0), byte, 0), out di_n, out ds);
 				Mem108[ds:20098:word16] = Mem92[ds:20098:word16] - 0x01;
 				++si_n;
@@ -13143,9 +13154,9 @@ word16 fn0800-9828(word16 cx, word16 dx, word16 bx, selector ds, word16 wArg02, 
 l0800_n:
 	word16 di_n = wLoc06_n;
 l0800_n:
-	psegArg06_n = SLICE(psegArg06_n, selector, 16);
-	word16 si_n = (word16) psegArg06_n;
-	selector es_n = SLICE(psegArg06_n, selector, 16);
+	selector psegArg06_n = SLICE(ptrArg04, selector, 16);
+	word16 si_n = (word16) ptrArg04;
+	selector es_n = SLICE(ptrArg04, selector, 16);
 	while (true)
 	{
 		byte al_n = Mem36[ds:si_n + 0x00:byte];
@@ -13378,13 +13389,13 @@ l0800_nA0A:
 						bx = DPB(bx_n, bh_n, 8);
 						word16 bx_n = DPB(bx, bh_n, 8);
 						word16 di_n = di_n + 0x01;
-						psegArg06_n = SEQ(psegArg06_n, si_n);
+						ptrArg04 = SEQ(psegArg06_n, si_n);
+						ptrArg04 = SEQ(psegArg06_n, si_n);
 						if ((wLoc04_n & 0x10) != 0x00)
 						{
 							dx_n = Mem368[ss:di_n + 0x01:word16];
 							di_n = di_n + 0x03;
 						}
-						psegArg06_n = SLICE(psegArg06_n, selector, 16);
 						wArg02 = di_n;
 						ax = ax_n;
 						bx_n = bx_n;
@@ -13425,6 +13436,8 @@ l0800_nA32:
 						Mem270[ss:sp_n + 0x00:word16] = Mem265[ss:wArg02 + 0x00:word16];
 						word16 di_n = fp - 0x48;
 						wArg02 += 0x02;
+						ptrArg04 = SEQ(psegArg06_n, si_n);
+						ptrArg04 = SEQ(psegArg06_n, si_n);
 						if ((wLoc04_n & 0x20) != 0x00)
 						{
 							word16 dx_n = Mem273[ss:wArg02 + 0x02:word16];
@@ -13455,6 +13468,8 @@ l0800_nA32:
 						goto l0800_nB46;
 					case 0x0F:
 						word16 cx_n = wLoc0C_n;
+						ptrArg04 = SEQ(psegArg06_n, si_n);
+						ptrArg04 = SEQ(psegArg06_n, si_n);
 						if (wLoc0C_n < 0x00)
 							cx_n = 0x06;
 						word16 ax_n;
@@ -13484,18 +13499,15 @@ l0800_nA32:
 						sp_n = sp_n;
 						di_n = fp - 0x47;
 l0800_nB46:
-						psegArg06_n = SLICE(psegArg06_n, selector, 16);
 						if ((wLoc04_n & 0x08) != 0x00)
 						{
 							dx_n = wLoc0A_n;
 							if (wLoc0A_n > 0x00)
 							{
 l0800_nB54:
-								psegArg06_n = SLICE(psegArg06_n, selector, 16);
 								word16 cx_n = fn0800-9842(di_n, es_n);
 								if (Mem508[es_n:di_n + 0x00:byte] == 0x2D)
 									--cx_n;
-								psegArg06_n = SLICE(psegArg06_n, selector, 16);
 								dx_n -= cx_n;
 								if (dx_n > 0x00)
 								{
@@ -13504,7 +13516,6 @@ l0800_nB54:
 								}
 							}
 						}
-						psegArg06_n = SLICE(psegArg06_n, selector, 16);
 						if (Mem528[es_n:di_n + 0x00:byte] != 0x2D)
 						{
 							if (bLoc0D_n == 0x00)
@@ -13528,10 +13539,13 @@ l0800_nB86:
 						sp_n = sp_n + 0x02;
 						di_n = fp - 0x47;
 						cx_n = 0x01;
+						ptrArg04 = SEQ(psegArg06_n, si_n);
 						Mem574 = Mem200;
 						goto l0800_nB89;
 					case 0x11:
 						bool Z_n;
+						ptrArg04 = SEQ(psegArg06_n, si_n);
+						ptrArg04 = SEQ(psegArg06_n, si_n);
 						if ((wLoc04_n & 0x20) == 0x00)
 						{
 							word16 di_n = Mem132[ss:wArg02 + 0x00:word16];
@@ -13562,7 +13576,6 @@ l0800_nB86:
 						if (cx_n >u wLoc0C_n)
 							cx_n = wLoc0C_n;
 l0800_nB89:
-						psegArg06_n = SLICE(psegArg06_n, selector, 16);
 						word16 si_n = di_n;
 						word16 bx_n = wLoc0A_n;
 						ax = wLoc04_n & 0x05;
@@ -13587,29 +13600,22 @@ l0800_nB89:
 									}
 								}
 l0800_nBCC:
-								psegArg06_n = SLICE(psegArg06_n, selector, 16);
 								cx = cx_n + wLoc10_n;
 								if ((wLoc04_n & 0x02) == 0x00)
 								{
-									while (true)
+									for (; bx_n > cx; --bx_n)
 									{
-										psegArg06_n = SLICE(psegArg06_n, selector, 16);
-										if (bx_n <= cx)
-											break;
 										ax = DPB(ax, 0x20, 0);
 										di_n = fn0800-984F(0x20, cx, dx_n, bx_n, fp - 0x02, di_n, es_n);
 										sp_n += ~0x01;
-										--bx_n;
 									}
 								}
-								psegArg06_n = SLICE(psegArg06_n, selector, 16);
 								if ((wLoc04_n & 0x40) != 0x00)
 								{
 									ax = DPB(ax, dl_n, 0);
 									di_n = fn0800-984F(dl_n, cx, dx_n, bx_n, fp - 0x02, fn0800-984F(0x30, cx, dx_n, bx_n, fp - 0x02, di_n, es_n), es_n);
 									sp_n += ~0x03;
 								}
-								psegArg06_n = SLICE(psegArg06_n, selector, 16);
 								dx = wLoc10_n;
 								if (wLoc10_n > 0x00)
 								{
@@ -13634,18 +13640,15 @@ l0800_nBCC:
 									{
 										do
 										{
-											psegArg06_n = SLICE(ptrArg04_n, selector, 16);
 											ax = DPB(ax, 0x30, 0);
 											di_n = fn0800-984F(0x30, cx_n, cx_n, bx_n, fp - 0x02, di_n, es_n);
 											sp_n += ~0x01;
 											--cx_n;
-											ptrArg04_n = psegArg06_n;
 										} while (cx_n != 0x00);
 									}
 									dx = cx_n;
 									cx = cx_n;
 								}
-								psegArg06_n = SLICE(psegArg06_n, selector, 16);
 								if (cx != 0x00)
 								{
 									bx_n -= cx;
@@ -13654,32 +13657,27 @@ l0800_nBCC:
 										byte al_n = Mem812[ds:si_n + 0x00:byte];
 										Mem817[ss:di_n + 0x00:byte] = al_n;
 										byte v45_n = bLoc16_n - 0x01;
-										psegArg06_n = SLICE(psegArg06_n, selector, 16);
 										ax = DPB(ax, al_n, 0);
 										++si_n;
 										++di_n;
 										bLoc16_n = v45_n;
 										if (v45_n <= 0x00)
 											di_n = fn0800-9858(cx, dx, bx_n, fp - 0x02, di_n, es_n);
-										psegArg06_n = SLICE(psegArg06_n, selector, 16);
 										--cx;
 										Mem812 = Mem821;
 										Mem1113 = Mem821;
 									} while (cx != 0x00);
 								}
-								psegArg06_n = SLICE(psegArg06_n, selector, 16);
 								bx = bx_n;
 								if (bx_n > 0x00)
 								{
 									cx = bx_n;
 									do
 									{
-										psegArg06_n = SLICE(ptrArg04_n, selector, 16);
 										ax = DPB(ax, 0x20, 0);
 										di_n = fn0800-984F(0x20, cx, dx, bx_n, fp - 0x02, di_n, es_n);
 										sp_n += ~0x01;
 										--cx;
-										ptrArg04_n = psegArg06_n;
 									} while (cx != 0x00);
 								}
 								goto l0800_n;
@@ -13694,6 +13692,8 @@ l0800_nBCC:
 					case 0x12:
 						word16 di_n;
 						selector es_n;
+						ptrArg04 = SEQ(psegArg06_n, si_n);
+						ptrArg04 = SEQ(psegArg06_n, si_n);
 						if ((wLoc04_n & 0x20) == 0x00)
 						{
 							di_n = Mem92[ss:wArg02 + 0x00:word16];
@@ -14339,10 +14339,10 @@ word16 fn0800_A2A3(selector ds, word16 wArg04, byte bArg05, word16 wArg06, ptr16
 	msdos_unknown_n();
 	word16 dx_n = (word16) ptrArg06;
 	word16 ax_n = DPB(DPB(ax, 0x44, 8), bArg04, 0);
-	byte bArg05_n = SLICE(SEQ(bArg05, bArg04), byte, 8);
+	word16 wArg04_n = SEQ(bArg05, bArg04);
 	if (!C)
 	{
-		if (SEQ(bArg05_n, bArg04) == 0x00)
+		if (wArg04_n == 0x00)
 			ax_n = dx_n;
 	}
 	else
@@ -16006,31 +16006,20 @@ l0800_B4A8:
 		fn0800-8E29(ds, (int16) Mem56[es_n:wArg04_n + 0x04:byte], 0x00, 0x00, 0x02, out cx_n, out dx_n, out bx_n);
 		ptrArg04 = SEQ(wArg06_n, wArg04_n);
 	}
-	segptr32 ptrArg04_n;
-	ptrArg04_n = SLICE(ptrArg04, word16, 0);
-	word16 wArg06_n = SLICE(ptrArg04, word16, 16);
-	segptr32 ptrArg04_n = SEQ(wArg06_n, ptrArg04_n);
-	if (Mem73[ds:0x4EE6:byte] == 0x0A)
+	if (Mem73[ds:0x4EE6:byte] == 0x0A && (Mem73[ptrArg04 + 0x02:word16] & 0x40) == 0x00)
 	{
-		ptrArg04_n = SEQ(wArg06_n, ptrArg04_n);
-		if ((Mem73[ptrArg04 + 0x02:word16] & 0x40) == 0x00)
+		ax_n = fn0800_C779(ds, (int16) Mem92[ptrArg04 + 0x04:byte], SEQ(ds, 9902), 0x01, out cx, out dx, out bx_n);
+		if (ax_n != 0x01)
 		{
-			ax_n = fn0800_C779(ds, (int16) Mem92[ptrArg04 + 0x04:byte], SEQ(ds, 9902), 0x01, out cx, out dx, out bx_n);
-			ptrArg04_n = SEQ(wArg06_n, ptrArg04_n);
-			if (ax_n != 0x01)
-			{
 l0800_B495:
-				sp_n = fp - 0x04;
-				bx_n = (word16) ptrArg04_n;
-				ptrArg04 = SEQ(SLICE(ptrArg04_n, word16, 16), SLICE(ptrArg04_n, word16, 0));
-				if ((Mem140[ptrArg04_n + 0x02:word16] & 0x0200) != 0x00)
-					goto l0800_B4A3;
-				goto l0800_B39C;
-			}
+			sp_n = fp - 0x04;
+			bx_n = (word16) ptrArg04;
+			if ((Mem140[ptrArg04 + 0x02:word16] & 0x0200) != 0x00)
+				goto l0800_B4A3;
+			goto l0800_B39C;
 		}
 	}
-	ptrArg04_n = SLICE(ptrArg04_n, word16, 16);
-	ax_n = fn0800_C779(ds, (int16) Mem118[ptrArg04_n + 0x04:byte], SEQ(ds, 0x4EE6), 0x01, out cx, out dx, out bx_n);
+	ax_n = fn0800_C779(ds, (int16) Mem118[ptrArg04 + 0x04:byte], SEQ(ds, 0x4EE6), 0x01, out cx, out dx, out bx_n);
 	sp_n = fp - 0x04;
 	if (ax_n == 0x01)
 		goto l0800_B4A3;
@@ -16580,7 +16569,7 @@ void fn0800_BA67(selector ds, word16 wArg02, word16 wArg04)
 word16 fn0800_BA89(selector ds, segptr32 ptrArg02, word16 wArg06, word16 wArg08, word16 wArg0A, word16 wArg0C, ptr16 & cxOut, ptr16 & bpOut, ptr16 & siOut, ptr16 & diOut, ptr16 & dsOut)
 {
 	word16 wArg02_n = SLICE(ptrArg02, word16, 0);
-	segptr32 ptrArg02_n = SLICE(ptrArg02, word16, 16);
+	word16 wArg04_n = SLICE(ptrArg02, word16, 16);
 	word16 ax_n;
 	word16 bp_n = fp - 0x02;
 	word16 sp_n = fp - 0x06;
@@ -16591,9 +16580,10 @@ l0800_BAAB:
 		ax_n = ~0x00;
 		goto l0800_BB94;
 	}
+	segptr32 ptrArg02_n;
 	if (Mem14[ds:0x26B2:word16] == 0x00)
 	{
-		ptrArg02_n = SEQ(ptrArg02_n, wArg02_n);
+		ptrArg02_n = SEQ(wArg04_n, wArg02_n);
 		if (wArg02_n == 0x236C)
 		{
 			Mem41[ds:0x26B2:word16] = 0x01;
@@ -16601,16 +16591,13 @@ l0800_BADB:
 			word16 wArg04_n = SLICE(ptrArg02_n, word16, 16);
 			word16 wArg02_n = SLICE(ptrArg02_n, word16, 0);
 			word16 bx_n = (word16) ptrArg02_n;
-			segptr32 ptrArg02_n = SEQ(wArg04_n, wArg02_n);
 			if (Mem44[ptrArg02_n + 0x00:word16] != 0x00)
 			{
 				fn0800_ACB3(ds, bx_n, wArg04_n, 0x01, out cx, out dx_n, out bx_n);
 				ptrArg02_n = SEQ(wArg04_n, wArg02_n);
 			}
-			word16 wArg02_n = SLICE(ptrArg02_n, word16, 0);
 			word16 wArg04_n = SLICE(ptrArg02_n, word16, 16);
-			segptr32 ptrArg02_n = SEQ(wArg04_n, wArg02_n);
-			ptrArg02_n = SEQ(wArg04_n, wArg02_n);
+			word16 wArg02_n = SLICE(ptrArg02_n, word16, 0);
 			if ((Mem81[ptrArg02_n + 0x02:word16] & 0x04) != 0x00)
 			{
 				word16 v18_n = Mem81[ptrArg02_n + 0x0A:word16];
@@ -16619,9 +16606,7 @@ l0800_BADB:
 			}
 			Mem117[ptrArg02_n + 0x02:word16] = Mem112[ptrArg02_n + 0x02:word16] & ~0x0C;
 			Mem119[ptrArg02_n + 0x06:word16] = 0x00;
-			word16 wArg04_n = SLICE(ptrArg02_n, word16, 16);
 			Mem123[ptrArg02_n + 0x0A:word16] = wArg04_n;
-			word16 wArg02_n = SLICE(ptrArg02_n, word16, 0);
 			Mem124[ptrArg02_n + 0x08:word16] = wArg02_n + 0x05;
 			Mem125[ptrArg02_n + 0x0E:word16] = wArg04_n;
 			Mem126[ptrArg02_n + 0x0C:word16] = wArg02_n + 0x05;
@@ -16672,8 +16657,14 @@ l0800_BB94:
 			return ax_n;
 		}
 	}
-	if (Mem14[ds:9904:word16] == 0x00 && wArg02_n == 0x2358)
-		Mem40[ds:9904:word16] = 0x01;
+	ptrArg02_n = SEQ(wArg04_n, wArg02_n);
+	if (Mem14[ds:9904:word16] == 0x00)
+	{
+		ptrArg02_n = SEQ(wArg04_n, wArg02_n);
+		ptrArg02_n = SEQ(wArg04_n, wArg02_n);
+		if (wArg02_n == 0x2358)
+			Mem40[ds:9904:word16] = 0x01;
+	}
 	goto l0800_BADB;
 }
 
@@ -17255,13 +17246,14 @@ word16 fn0800_C379(selector ds)
 	{
 		segptr32 ptrLoc06_n = SEQ(dx_n, ax_n);
 		word16 wLoc06_n = SLICE(ptrLoc06_n, word16, 0);
-		segptr32 ptrLoc06_n = SLICE(ptrLoc06_n, word16, 16);
+		word16 wLoc04_n = SLICE(ptrLoc06_n, word16, 16);
 		if (fn0800_BFC7(SEQ(dx_n, ax_n), out cx_n) >=u 0x04)
 		{
 			selector es_n = SLICE(ptrLoc06_n, selector, 16);
 			if (((int16) Mem45[ds:(int16) Mem45[ptrLoc06_n + 0x00:byte] + 0x2251:byte] & 0x0C) != 0x00 && (((int16) Mem45[ds:(int16) Mem45[es_n:wLoc06_n + 0x01:byte] + 0x2251:byte] & 0x0C) != 0x00 && ((int16) Mem45[ds:(int16) Mem45[es_n:wLoc06_n + 0x02:byte] + 0x2251:byte] & 0x0C) != 0x00))
 			{
-				ptrLoc06_n = SEQ(ptrLoc06_n, wLoc06_n);
+				segptr32 ptrLoc06_n = SEQ(wLoc04_n, wLoc06_n);
+				ptrLoc06_n = SEQ(wLoc04_n, wLoc06_n);
 				if (Mem45[es_n:wLoc06_n + 0x03:byte] == 0x2D || (Mem45[es_n:wLoc06_n + 0x03:byte] == 0x2B || (Mem45[ds:(int16) Mem45[es_n:wLoc06_n + 0x03:byte] + 0x2251:byte] & 0x02) != 0x00))
 				{
 					word16 wLoc06_n = SLICE(ptrLoc06_n, word16, 0);
@@ -17410,6 +17402,7 @@ word16 fn0800_C632(selector ds, word16 wArg02, word16 wArg04, word16 wArg06, wor
 					segptr32 ptrLoc06_n = SEQ(wLoc04_n, wLoc06_n);
 					word16 wLoc0E_n = SLICE(ptrLoc0E_n, word16, 0);
 					word16 wLoc0C_n = SLICE(ptrLoc0E_n, word16, 16);
+					word16 wLoc06_n = SLICE(ptrLoc06_n, word16, 0);
 					word16 wLoc04_n = SLICE(ptrLoc06_n, word16, 16);
 					if (wLoc08_n == 0x00)
 					{
@@ -17433,7 +17426,6 @@ word16 fn0800_C632(selector ds, word16 wArg02, word16 wArg04, word16 wArg06, wor
 					word16 v20_n = wLoc08_n - 0x01;
 					wLoc08_n = v20_n;
 					byte al_n = Mem131[ptrLoc0E_n + 0x00:byte];
-					segptr32 ptrLoc06_n = SEQ(wLoc04_n, wLoc06_n);
 					ptrLoc0E_n = SEQ(wLoc0C_n, wLoc0E_n + 0x01);
 					ptrLoc0E_n = SEQ(wLoc0C_n, wLoc0E_n + 0x01);
 					if (al_n == 0x0A)

@@ -678,6 +678,7 @@ fn000000014000147C_entry:
 
 l000000014000147C:
 	word64 qwLoc38_63 = SEQ(dwLoc34, tLoc38)
+	DWORD tLoc38_68 = SLICE(qwLoc38_63, DWORD, 0)
 	branch IsProcessorFeaturePresent(tLoc38) == 0x00000000 l000000014000149A
 // DataOut:
 // DataOut (flags):
@@ -693,11 +694,11 @@ l000000014000149A:
 	Mem33[0x0000000140003044:word32] = 0x00000001
 	Mem34[0x0000000140003058:word32] = 0x00000001
 	Mem38[0x0000000140003060:word64] = 0x0000000000000002
-	word64 rax_70 = DPB(0x0000000000000008, fn0000000140001448(tLoc40, tLoc38), 0)
+	word64 rax_71 = DPB(0x0000000000000008, fn0000000140001448(tLoc40, tLoc38_68), 0)
 	rcxOut = rcx_50
 	rdxOut = rdx_51
 	r8Out = r8_15
-	return rax_70
+	return rax_71
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
@@ -1617,7 +1618,8 @@ fn0000000140001974_entry:
 l0000000140001974:
 	void * ptrLoc05C8_106 = SEQ(dwLoc05C4, tLoc05C8)
 	word32 ebx_99 = (word32) (uint64) ecx
-	word32 dwLoc05C4_109 = SLICE(ptrLoc05C8_106, word32, 32)
+	DWORD tLoc05C8_116 = SLICE(ptrLoc05C8_106, DWORD, 0)
+	word32 dwLoc05C4_117 = SLICE(ptrLoc05C8_106, word32, 32)
 	branch IsProcessorFeaturePresent(tLoc05C8) == 0x00000000 l000000014000199D
 // DataOut:
 // DataOut (flags):
@@ -1626,9 +1628,8 @@ l0000000140001974:
 l000000014000199D:
 	Mem18[0x0000000140003610:word32] = Mem7[0x0000000140003610:word32] & 0x00000000
 	memset(ptrLoc05C8_106, dwLoc05C0, tLoc05B8)
-	RtlCaptureContext(SEQ(dwLoc05C4_109, tLoc05C8))
+	RtlCaptureContext(ptrLoc05C8_106)
 	word64 rax_27 = RtlLookupFunctionEntry(qwLoc03E0, fp + 0x0000000000000010, 0x0000000000000000)
-	void * ptrLoc05C8_122 = SEQ(dwLoc05C4_109, tLoc05C8)
 	branch rax_27 == 0x0000000000000000 l0000000140001A1A
 // DataOut:
 // DataOut (flags):
@@ -1636,26 +1637,26 @@ l000000014000199D:
 
 l00000001400019DE:
 	call KERNEL32.dll!RtlVirtualUnwind (retsize: 8;)
-		uses: r8:qwLoc03E0,r9:rax_27,rax:rax_27,rbp:fp - 0x00000000000004C8,rbx:qwLoc03E0,rcx:0x0000000000000000,rdx:qwArg10,rsp:fp - 1480,Stack +0008:tLoc05C8,Stack +000C:dwLoc05C4_109,Stack +0010:dwLoc05C0,Stack +0018:tLoc05B8,Stack +0028:fp - 0x00000000000004D8,Stack +0030:fp + 0x0000000000000020,Stack +0038:fp + 0x0000000000000018,Stack +0040:qwLoc0590 & 0x0000000000000000,Stack +0048:qwLoc0588,Stack +0050:qwLoc0580,Stack +0058:dwLoc0578,Stack +005C:dwLoc0574,Stack +0068:qwLoc0568,Stack +0190:qwLoc0440,Stack +01F0:qwLoc03E0,Stack +05C8:rbp,Stack +05D0:qwArg00,Stack +05D8:rbx,Stack +05E0:qwArg10
-	ptrLoc05C8_122 = SEQ(dwLoc05C4_109, tLoc05C8)
+		uses: r8:qwLoc03E0,r9:rax_27,rax:rax_27,rbp:fp - 0x00000000000004C8,rbx:qwLoc03E0,rcx:0x0000000000000000,rdx:qwArg10,rsp:fp - 1480,Stack +0008:tLoc05C8_116,Stack +000C:dwLoc05C4_117,Stack +0010:dwLoc05C0,Stack +0018:tLoc05B8,Stack +0028:fp - 0x00000000000004D8,Stack +0030:fp + 0x0000000000000020,Stack +0038:fp + 0x0000000000000018,Stack +0040:qwLoc0590 & 0x0000000000000000,Stack +0048:qwLoc0588,Stack +0050:qwLoc0580,Stack +0058:dwLoc0578,Stack +005C:dwLoc0574,Stack +0068:qwLoc0568,Stack +0190:qwLoc0440,Stack +01F0:qwLoc03E0,Stack +05C8:rbp,Stack +05D0:qwArg00,Stack +05D8:rbx,Stack +05E0:qwArg10
+	ptrLoc05C8_106 = SEQ(dwLoc05C4_117, tLoc05C8_116)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0000000140001A1A:
-	memset(ptrLoc05C8_122, dwLoc05C0, tLoc05B8)
+	memset(ptrLoc05C8_106, dwLoc05C0, tLoc05B8)
 	word32 eax_69 = IsDebuggerPresent()
-	SetUnhandledExceptionFilter(ptrLoc05C8_122)
-	word32 eax_80 = UnhandledExceptionFilter(ptrLoc05C8_122)
-	word64 rax_142 = DPB(fp - 0x00000000000004D8, eax_80, 0)
+	SetUnhandledExceptionFilter(ptrLoc05C8_106)
+	word32 eax_80 = UnhandledExceptionFilter(ptrLoc05C8_106)
+	word64 rax_141 = DPB(fp - 0x00000000000004D8, eax_80, 0)
 	branch eax_80 != 0x00000000 l0000000140001AA8
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0000000140001A9E:
-	rax_142 = (uint64) (0x00000000 - (-(eax_69 == 0x00000001) == 0x00))
-	Mem89[0x0000000140003610:word32] = Mem76[0x0000000140003610:word32] & (word32) rax_142
+	rax_141 = (uint64) (0x00000000 - (-(eax_69 == 0x00000001) == 0x00))
+	Mem89[0x0000000140003610:word32] = Mem76[0x0000000140003610:word32] & (word32) rax_141
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
@@ -1664,7 +1665,7 @@ l0000000140001AA8:
 	rcxOut = fp - 0x0000000000000588
 	rdxOut = 0x0000000000000000
 	r8Out = 0x0000000000000098
-	return rax_142
+	return rax_141
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
