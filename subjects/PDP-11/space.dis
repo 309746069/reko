@@ -416,8 +416,8 @@ void fn0608(word16 wArg00, word16 wArg02)
 // Trashed: NZVC r1 r2 r4
 // Preserved: sp
 fn0608_entry:
-	byte bArg03_100 = SLICE(wArg02, byte, 8)
-	byte bArg02_102 = SLICE(wArg02, byte, 0)
+	byte bArg03_99 = SLICE(wArg02, byte, 8)
+	byte bArg02_101 = SLICE(wArg02, byte, 0)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
@@ -453,13 +453,11 @@ l0636:
 	word16 v17_26 = __rol(wLoc04, wLoc04)
 	wLoc04 = v17_26
 	word16 r2_28 = 0x0090
-	word16 wArg02_103 = SEQ(bArg03_100, bArg02_102)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0640:
-	byte bArg02_91 = SLICE(wArg02_103, byte, 0)
 	r1_15 = __rol(r1_15, r1_15)
 	branch r1_15 <u 0x0000 l0648
 // DataOut:
@@ -470,14 +468,14 @@ l0648:
 	word16 r1_43 = __swab(DPB(r1_15, 0x00, 0) | r2_28)
 	wLoc02 = __ror(wLoc02, v17_26)
 	wArg00_75 = __ror(r1_43, r1_43)
-	wArg02 = SEQ(__ror(bArg03_100, bArg03_100), bArg02_91)
+	wArg02 = SEQ(__ror(bArg03_99, bArg03_99), bArg02_101)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l065C:
 	call Mem58[r4_4 + 0x002A:word16] (retsize: 2;)
-		uses: Stack +0000:wLoc02_95,Stack +0002:wArg00_88,Stack +0003:SLICE(wArg00_88, byte, 8),Stack +0004:wArg02_89,Stack +0005:SLICE(wArg02_89, byte, 8),Stack +FFFFFFFE:wLoc04_93
+		uses: Stack +0000:wLoc02_94,Stack +0002:wArg00_88,Stack +0003:SLICE(wArg00_88, byte, 8),Stack +0004:wArg02_89,Stack +0005:SLICE(wArg02_89, byte, 8),Stack +FFFFFFFE:wLoc04_92
 	return
 // DataOut:
 // DataOut (flags):
@@ -490,7 +488,6 @@ fn0608_exit:
 
 l0644:
 	r2_28 = r2_28 - 0x0001
-	wArg02_103 = SEQ(bArg03_100, bArg02_91)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
@@ -1984,17 +1981,17 @@ l0EF8:
 	word16 v22_42 = Mem39[r5:word16]
 	byte bArg00_127 = SLICE(v17_21, byte, 8)
 	byte bLoc01_133 = SLICE(v17_21, byte, 0)
-	byte bLoc03_156 = SLICE(v18_24, byte, 0)
-	byte bLoc02_158 = SLICE(v18_24, byte, 8)
-	byte bLoc03_189 = SLICE(v18_24, byte, 0)
-	byte bLoc02_191 = SLICE(v18_24, byte, 8)
-	byte bLoc05_153 = SLICE(v19_27, byte, 0)
-	byte bLoc04_155 = SLICE(v19_27, byte, 8)
-	byte bLoc05_186 = SLICE(v19_27, byte, 0)
-	byte bLoc04_188 = SLICE(v19_27, byte, 8)
+	byte bLoc03_154 = SLICE(v18_24, byte, 0)
+	byte bLoc02_156 = SLICE(v18_24, byte, 8)
+	byte bLoc03_187 = SLICE(v18_24, byte, 0)
+	byte bLoc02_189 = SLICE(v18_24, byte, 8)
+	byte bLoc05_151 = SLICE(v19_27, byte, 0)
+	byte bLoc04_153 = SLICE(v19_27, byte, 8)
+	byte bLoc05_184 = SLICE(v19_27, byte, 0)
+	byte bLoc04_186 = SLICE(v19_27, byte, 8)
 	word16 r0_32 = v13_14 + 0x0004
-	byte bLoc06_152 = SLICE(v20_31, byte, 8)
-	byte bLoc06_185 = SLICE(v20_31, byte, 8)
+	byte bLoc06_150 = SLICE(v20_31, byte, 8)
+	byte bLoc06_183 = SLICE(v20_31, byte, 8)
 	word16 r5_43 = r5 + 0x0002
 	word16 r1_44 = v22_42
 	word16 wArg00_126 = SEQ(v16_18, bArg00_127)
@@ -2021,7 +2018,6 @@ l0F20:
 
 l0F22:
 	Mem62[r0_32:word16] = Mem58[r5_43:word16]
-	bLoc01_133 = SLICE(bLoc01_133, byte, 0) (alias)
 	r5_43 = r5_43 + 0x0002
 	r0_32 = r0_32 + 0x0002
 	r1_44 = r1_44 - 0x0001
@@ -2039,9 +2035,8 @@ l0F28:
 
 l0F2C:
 	Mem79[r3_17 + 0x0074:byte] = 0x00
-	byte bLoc01_136 = SLICE(bLoc01_133, byte, 0)
 	byte bArg01_131 = SLICE(wArg00_126, byte, 8)
-	byte bArg00_137 = SLICE(wArg00_126, byte, 0)
+	byte bArg00_135 = SLICE(wArg00_126, byte, 0)
 	branch 0x00 == 0x00 l0F34
 // DataOut:
 // DataOut (flags):
@@ -2049,11 +2044,11 @@ l0F2C:
 
 l0F34:
 	call r4 + 0x0002 (retsize: 2;)
-		uses: r0:r0_86,Stack +0001:0x0000,Stack +0002:0x00,Stack +0003:v20_31,Stack +0004:SEQ(bLoc05_186, bLoc06_185),Stack +0005:v19_27,Stack +0006:SEQ(bLoc03_189, bLoc04_188),Stack +0007:v18_24,Stack +0008:SEQ(bLoc01_136, bLoc02_191),Stack +0009:SEQ(bArg00_137, bLoc01_136),Stack +000A:wArg00_126,Stack +000B:bArg01_131
+		uses: r0:r0_86,Stack +0001:0x0000,Stack +0002:0x00,Stack +0003:v20_31,Stack +0004:SEQ(bLoc05_184, bLoc06_183),Stack +0005:v19_27,Stack +0006:SEQ(bLoc03_187, bLoc04_186),Stack +0007:v18_24,Stack +0008:SEQ(bLoc01_133, bLoc02_189),Stack +0009:SEQ(bArg00_135, bLoc01_133),Stack +000A:wArg00_126,Stack +000B:bArg01_131
 	word16 r4_99 = Mem79[0x5424:word16]
-	Mem102[r4_99:word16] = SEQ(bLoc03_156, bLoc04_155)
-	Mem105[r4_99 + 0x000E:word16] = SEQ(bLoc01_136, bLoc02_158)
-	Mem108[r4_99 + 0x0074:byte] = bArg00_137
+	Mem102[r4_99:word16] = SEQ(bLoc03_154, bLoc04_153)
+	Mem105[r4_99 + 0x000E:word16] = SEQ(bLoc01_133, bLoc02_156)
+	Mem108[r4_99 + 0x0074:byte] = bArg00_135
 	return
 // DataOut:
 // DataOut (flags):
@@ -2061,7 +2056,7 @@ l0F34:
 
 l0F32:
 	call Mem79[r4 + 0x0002:word16] (retsize: 2;)
-		uses: r0:r0_86,Stack +0001:0x0000,Stack +0002:0x00,Stack +0003:v20_31,Stack +0004:SEQ(bLoc05_153, bLoc06_152),Stack +0005:v19_27,Stack +0006:SEQ(bLoc03_156, bLoc04_155),Stack +0007:v18_24,Stack +0008:SEQ(bLoc01_136, bLoc02_158),Stack +0009:SEQ(bArg00_137, bLoc01_136),Stack +000A:wArg00_126,Stack +000B:bArg01_131
+		uses: r0:r0_86,Stack +0001:0x0000,Stack +0002:0x00,Stack +0003:v20_31,Stack +0004:SEQ(bLoc05_151, bLoc06_150),Stack +0005:v19_27,Stack +0006:SEQ(bLoc03_154, bLoc04_153),Stack +0007:v18_24,Stack +0008:SEQ(bLoc01_133, bLoc02_156),Stack +0009:SEQ(bArg00_135, bLoc01_133),Stack +000A:wArg00_126,Stack +000B:bArg01_131
 	return
 // DataOut:
 // DataOut (flags):

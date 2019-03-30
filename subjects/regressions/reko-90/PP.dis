@@ -13547,17 +13547,16 @@ fn0800_441C_entry:
 l0800_441C:
 	word16 di_16 = 0x0000
 	word16 cx_17 = 0x0000
-	word16 si_23 = ptrArg02_266
-	segptr32 ptrArg02_262 = SEQ(psegArg04, ptrArg02_266)
+	word16 si_23 = wArg02
+	segptr32 ptrArg02_262 = SEQ(psegArg04, wArg02)
 	branch wArg06 <=u 0x0000 l0800_4452
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0800_4439:
-	word16 wArg02_268 = SLICE(ptrArg02_266, word16, 0)
-	ptrArg02_262 = SEQ(psegArg04, wArg02_268)
-	ptrArg02_262 = SEQ(psegArg04, wArg02_268)
+	ptrArg02_262 = SEQ(psegArg04, wArg02)
+	ptrArg02_262 = SEQ(psegArg04, wArg02)
 	branch (Mem28[psegArg04:si_23:word16] | Mem28[psegArg04:si_23 + 0x0002:word16]) == 0x0000 l0800_4449
 // DataOut:
 // DataOut (flags):
@@ -13572,7 +13571,7 @@ l0800_4445:
 // SymbolicIn:
 
 l0800_4449:
-	ptrArg02_266 = SLICE(ptrArg02_262, word16, 0) (alias)
+	wArg02 = SLICE(ptrArg02_262, word16, 0) (alias)
 	psegArg04 = SLICE(ptrArg02_262, selector, 16) (alias)
 	si_23 = si_23 + 0x000C
 	cx_17 = cx_17 + 0x0001
@@ -13582,8 +13581,8 @@ l0800_4449:
 // SymbolicIn:
 
 l0800_4452:
-	selector psegArg04_282 = SLICE(ptrArg02_262, selector, 16)
-	word16 wArg02_284 = SLICE(ptrArg02_262, word16, 0)
+	selector psegArg04_281 = SLICE(ptrArg02_262, selector, 16)
+	word16 wArg02_283 = SLICE(ptrArg02_262, word16, 0)
 	branch di_16 != 0x0000 l0800_4459
 // DataOut:
 // DataOut (flags):
@@ -13610,15 +13609,15 @@ l0800_445E:
 // SymbolicIn:
 
 l0800_4525:
-	segptr32 ptrArg02_289 = SEQ(psegArg04_282, wArg02_284)
-	word16 wArg02_292 = SLICE(ptrArg02_289, word16, 0)
-	branch fn0800_463B(ds, wArg02_284, psegArg04_282, wArg06) == 0x0000 l0800_453B
+	segptr32 ptrArg02_288 = SEQ(psegArg04_281, wArg02_283)
+	word16 wArg02_291 = SLICE(ptrArg02_288, word16, 0)
+	branch fn0800_463B(ds, wArg02_283, psegArg04_281, wArg06) == 0x0000 l0800_453B
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0800_453B:
-	fn0800_4550(wArg02_284, psegArg04_282, wArg06)
+	fn0800_4550(wArg02_283, psegArg04_281, wArg06)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
@@ -13630,19 +13629,19 @@ l0800_4538:
 
 l0800_4478:
 	word16 ax_133 = (word16) (Mem94[ds:0x4658:word16] *s 0x000C)
-	selector es_138 = SLICE(ptrArg02_289, selector, 16)
-	word16 bx_137 = (word16) ptrArg02_289 + ax_133
+	selector es_138 = SLICE(ptrArg02_288, selector, 16)
+	word16 bx_137 = (word16) ptrArg02_288 + ax_133
 	word16 ax_148 = (word16) (Mem142[ds:0x465A:word16] *s 0x000C)
 	word16 ax_139 = Mem94[es_138:bx_137 + 0x0002:word16]
 	word16 dx_140 = Mem94[es_138:bx_137:word16]
-	word16 bx_151 = wArg02_292 + ax_148
+	word16 bx_151 = wArg02_291 + ax_148
 	Mem155[es_138:bx_151:word16] = v23_154
 	ui32 v24_v23_248 = SEQ(Mem155[es_138:bx_151 + 0x0002:word16], Mem146[es_138:bx_151:word16]) + SEQ(ax_139, dx_140)
 	Mem161[es_138:bx_151 + 0x0002:word16] = SLICE(v24_v23_248, word16, 16)
-	word16 bx_163 = wArg02_292 + ax_133
+	word16 bx_163 = wArg02_291 + ax_133
 	Mem164[es_138:bx_163 + 0x0002:word16] = 0x0000
 	Mem165[es_138:bx_163:word16] = 0x0000
-	word16 bx_167 = wArg02_292 + ax_148
+	word16 bx_167 = wArg02_291 + ax_148
 	Mem170[es_138:bx_167 + 0x000A:word16] = Mem165[es_138:bx_167 + 0x000A:word16] + 0x0001
 	word16 cx_134 = ax_133
 	word16 dx_149 = ax_148
@@ -13652,53 +13651,53 @@ l0800_4478:
 // SymbolicIn:
 
 l0800_44DD:
-	selector psegArg04_294 = SLICE(ptrArg02_289, selector, 16)
-	word16 wArg02_295 = SLICE(ptrArg02_289, word16, 0)
-	selector es_180 = SLICE(ptrArg02_289, selector, 16)
-	word16 bx_178 = (word16) ptrArg02_289 + dx_149
+	selector psegArg04_293 = SLICE(ptrArg02_288, selector, 16)
+	word16 wArg02_294 = SLICE(ptrArg02_288, word16, 0)
+	selector es_180 = SLICE(ptrArg02_288, selector, 16)
+	word16 bx_178 = (word16) ptrArg02_288 + dx_149
 	branch Mem174[es_180:bx_178 + 0x0004:word16] != 0xFFFF l0800_44C3
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0800_44C3:
-	word16 ax_184 = Mem174[psegArg04_294:bx_178 + 0x0004:word16]
+	word16 ax_184 = Mem174[psegArg04_293:bx_178 + 0x0004:word16]
 	Mem186[ds:0x465A:word16] = ax_184
 	word16 ax_189 = (word16) (ax_184 *s 0x000C)
-	word16 bx_192 = wArg02_295 + ax_189
-	Mem195[psegArg04_294:bx_192 + 0x000A:word16] = Mem186[psegArg04_294:bx_192 + 0x000A:word16] + 0x0001
+	word16 bx_192 = wArg02_294 + ax_189
+	Mem195[psegArg04_293:bx_192 + 0x000A:word16] = Mem186[psegArg04_293:bx_192 + 0x000A:word16] + 0x0001
 	dx_149 = ax_189
-	ptrArg02_289 = SEQ(psegArg04_294, wArg02_295)
+	ptrArg02_288 = SEQ(psegArg04_293, wArg02_294)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0800_44EB:
 	Mem198[es_180:bx_178 + 0x0004:word16] = Mem174[ds:0x4658:word16]
-	word16 bx_201 = wArg02_295 + ax_133
+	word16 bx_201 = wArg02_294 + ax_133
 	Mem204[es_180:bx_201 + 0x000A:word16] = Mem198[es_180:bx_201 + 0x000A:word16] + 0x0001
-	segptr32 ptrArg02_296 = SEQ(psegArg04_294, wArg02_295)
+	segptr32 ptrArg02_295 = SEQ(psegArg04_293, wArg02_294)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0800_4517:
-	psegArg04_282 = SLICE(ptrArg02_296, selector, 16) (alias)
-	wArg02_284 = SLICE(ptrArg02_296, word16, 0) (alias)
-	word16 bx_212 = (word16) ptrArg02_296 + cx_134
-	branch Mem208[SLICE(ptrArg02_296, selector, 16):bx_212 + 0x0004:word16] != 0xFFFF l0800_44FD
+	psegArg04_281 = SLICE(ptrArg02_295, selector, 16) (alias)
+	wArg02_283 = SLICE(ptrArg02_295, word16, 0) (alias)
+	word16 bx_212 = (word16) ptrArg02_295 + cx_134
+	branch Mem208[SLICE(ptrArg02_295, selector, 16):bx_212 + 0x0004:word16] != 0xFFFF l0800_44FD
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:
 
 l0800_44FD:
-	word16 ax_218 = Mem208[psegArg04_282:bx_212 + 0x0004:word16]
+	word16 ax_218 = Mem208[psegArg04_281:bx_212 + 0x0004:word16]
 	Mem220[ds:0x4658:word16] = ax_218
 	word16 ax_223 = (word16) (ax_218 *s 0x000C)
-	word16 bx_226 = wArg02_284 + ax_223
-	Mem229[psegArg04_282:bx_226 + 0x000A:word16] = Mem220[psegArg04_282:bx_226 + 0x000A:word16] + 0x0001
+	word16 bx_226 = wArg02_283 + ax_223
+	Mem229[psegArg04_281:bx_226 + 0x000A:word16] = Mem220[psegArg04_281:bx_226 + 0x000A:word16] + 0x0001
 	cx_134 = ax_223
-	ptrArg02_296 = SEQ(psegArg04_282, wArg02_284)
+	ptrArg02_295 = SEQ(psegArg04_281, wArg02_283)
 // DataOut:
 // DataOut (flags):
 // SymbolicIn:

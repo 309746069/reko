@@ -6406,22 +6406,21 @@ void fn0800-441C(selector ds, word16 wArg02, selector psegArg04, word16 wArg06)
 {
 	word16 di_n = 0x00;
 	word16 cx_n = 0x00;
-	word16 si_n = ptrArg02_n;
-	segptr32 ptrArg02_n = SEQ(psegArg04, ptrArg02_n);
+	word16 si_n = wArg02;
+	segptr32 ptrArg02_n = SEQ(psegArg04, wArg02);
 	if (wArg06 >u 0x00)
 	{
 		do
 		{
-			word16 wArg02_n = SLICE(ptrArg02_n, word16, 0);
-			ptrArg02_n = SEQ(psegArg04, wArg02_n);
-			ptrArg02_n = SEQ(psegArg04, wArg02_n);
+			ptrArg02_n = SEQ(psegArg04, wArg02);
+			ptrArg02_n = SEQ(psegArg04, wArg02);
 			if ((Mem28[psegArg04:si_n + 0x00:word16] | Mem28[psegArg04:si_n + 0x02:word16]) != 0x00)
 			{
 				++di_n;
 				wLoc04 = cx_n;
 				Mem47 = Mem40;
 			}
-			ptrArg02_n = SLICE(ptrArg02_n, word16, 0);
+			wArg02 = SLICE(ptrArg02_n, word16, 0);
 			psegArg04 = SLICE(ptrArg02_n, selector, 16);
 			si_n += 0x0C;
 			++cx_n;

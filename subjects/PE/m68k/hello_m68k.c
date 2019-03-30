@@ -38,12 +38,11 @@ void fn0000149C()
 // 000014E8: void fn000014E8(Register word32 a3, Register word32 a5, Stack word16 wArg00, Stack int32 dwArg02)
 void fn000014E8(word32 a3, word32 a5, word16 wArg00, int32 dwArg02)
 {
-	word16 wLoc12_n = SLICE(dwLoc12, word16, 16);
 	0x00 = 0x00;
 	__syscall(43424);
-	struct Eq_n ** dwLoc12_n = SEQ(wLoc12_n, 0x4441);
+	struct Eq_n ** dwLoc12_n = SEQ(wLoc12, 0x4441);
 	word32 dwLoc02_n = SEQ(SLICE(a3, word16, 0), wArg00);
-	if (SEQ(wLoc12_n, 0x4441) == 0x00)
+	if (SEQ(wLoc12, 0x4441) == 0x00)
 	{
 		*(word16 *) 0x0AF0 = ~0x025C;
 		__syscall(~0x560B);
