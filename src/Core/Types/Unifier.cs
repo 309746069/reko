@@ -737,13 +737,11 @@ namespace Reko.Core.Types
         public UnionType UnifyUnions(UnionType u1, UnionType u2)
 		{
 			UnionType u = new UnionType(null, null);
-			foreach (UnionAlternative a in u1.Alternatives.Values)
+			foreach (UnionAlternative a in u1.Alternatives.Values.ToList())
 			{
 				UnifyIntoUnion(u, a.DataType);
 			}
-            //$HACK: pp.exe exhibits a bad crash that goes away if we do .ToArray() below.
-            // However, that's a drag on performance. Need to find the root cause.
-			foreach (UnionAlternative a in u2.Alternatives.Values.ToArray())
+			foreach (UnionAlternative a in u2.Alternatives.Values.ToList())
 			{
 				UnifyIntoUnion(u, a.DataType);
 			}
